@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  /* Gold colors */
+  --color-gold-100: #F9F1D8;
+  --color-gold-200: #F0E3B6;
+  --color-gold-300: #E6D094;
+  --color-gold-400: #DCC376;
+  --color-gold-500: #CBA135;
+  --color-gold-600: #A68226;
+  --color-gold-700: #83651C;
+
+  /* Nude colors */
+  --color-nude-50: #FDFCF8;
+  --color-nude-100: #F7F5F0;
+  --color-nude-200: #EBE6DC;
+  --color-nude-300: #DFD8C8;
+  --color-nude-800: #5C5548;
+
+  /* Primary alias */
+  --color-primary: #CBA135;
+
+  /* Fonts */
+  --font-serif: var(--font-cormorant), serif;
+  --font-sans: var(--font-manrope), sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-nude-50);
+  color: #44403C;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
