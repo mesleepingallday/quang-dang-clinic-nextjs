@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Shield, Users, Heart, Star, CheckCircle, MapPin, Clock } from 'lucide-react';
 import Button from '@/components/Button';
 
@@ -53,9 +54,11 @@ export default function About() {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2 relative">
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1519823551278-64ac927ac4ac?auto=format&fit=crop&q=80&w=800"
                   alt="Không gian Quang Đăng Spa"
+                  width={800}
+                  height={600}
                   className="w-full h-auto"
                 />
               </div>
@@ -71,7 +74,7 @@ export default function About() {
                 Thẩm Mỹ Viện Quốc Tế Quang Đăng được thành lập với sứ mệnh mang các công nghệ làm đẹp tiên tiến nhất thế giới về với Nghệ An. Chúng tôi hiểu rằng, phụ nữ hiện đại xứng đáng được tận hưởng những dịch vụ đẳng cấp 5 sao ngay tại quê hương mình mà không cần đi xa.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed text-justify">
-                Tại Quang Đăng, chữ <strong>"TÍN"</strong> và chữ <strong>"TÂM"</strong> luôn được đặt lên hàng đầu. Mỗi khách hàng đến với chúng tôi không chỉ là khách hàng, mà là một người thân cần được chăm sóc và trân trọng.
+                 Tại Quang Đăng, chữ <strong>&quot;TÍN&quot;</strong> và chữ <strong>&quot;TÂM&quot;</strong> luôn được đặt lên hàng đầu. Mỗi khách hàng đến với chúng tôi không chỉ là khách hàng, mà là một người thân cần được chăm sóc và trân trọng.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -128,22 +131,40 @@ export default function About() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group relative overflow-hidden rounded-2xl">
-              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=600" alt="Phòng công nghệ cao" className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div className="group relative overflow-hidden rounded-2xl h-80">
+              <Image
+                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=600"
+                alt="Phòng công nghệ cao"
+                fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
                 <h3 className="font-bold text-xl mb-1">Phòng Công Nghệ Cao</h3>
                 <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity">Trang bị máy Laser, Hifu thế hệ mới nhất.</p>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-2xl md:-mt-8">
-              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=600" alt="Phòng Spa Thư Giãn" className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div className="group relative overflow-hidden rounded-2xl h-80 md:-mt-8">
+              <Image
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=600"
+                alt="Phòng Spa Thư Giãn"
+                fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
                 <h3 className="font-bold text-xl mb-1">Phòng Spa Thư Giãn</h3>
                 <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity">Không gian yên tĩnh, hương thơm tinh dầu dịu nhẹ.</p>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-2xl">
-              <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&q=80&w=600" alt="Sảnh Đón Tiếp" className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div className="group relative overflow-hidden rounded-2xl h-80">
+              <Image
+                src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&q=80&w=600"
+                alt="Sảnh Đón Tiếp"
+                fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
                 <h3 className="font-bold text-xl mb-1">Sảnh Đón Tiếp 5 Sao</h3>
                 <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity">Sang trọng, đẳng cấp, phục vụ chu đáo.</p>
@@ -172,7 +193,13 @@ export default function About() {
             ].map((member, idx) => (
               <div key={idx} className="text-center group">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gold-100 mb-6 shadow-lg relative">
-                   <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                   <Image
+                     src={member.img}
+                     alt={member.name}
+                     fill
+                     sizes="192px"
+                     className="object-cover transition-transform duration-500 group-hover:scale-110"
+                   />
                 </div>
                 <h3 className="font-serif text-xl font-bold text-gray-900">{member.name}</h3>
                 <p className="text-gold-600 text-sm uppercase tracking-wide font-medium">{member.role}</p>
@@ -208,9 +235,9 @@ export default function About() {
                   </div>
                 </li>
               </ul>
-              <Link href="/dat-lich">
-                <Button>Đặt Lịch Tư Vấn Ngay</Button>
-              </Link>
+              <Button asChild>
+                <Link href="/dat-lich">Đặt Lịch Tư Vấn Ngay</Link>
+              </Button>
             </div>
             <div className="md:w-1/2 min-h-[300px] bg-gray-200 relative">
                {/* Map Placeholder */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Calendar, ChevronRight, Clock } from 'lucide-react';
 import Button from '@/components/Button';
@@ -99,13 +100,15 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
            </h1>
            <div className="flex items-center justify-center gap-6 text-sm text-gray-500">
              <div className="flex items-center gap-2">
-               {post.author?.avatar?.url && (
-                 <img
-                   src={getStrapiMediaUrl(post.author.avatar.url)}
-                   alt={post.author.name}
-                   className="w-8 h-8 rounded-full object-cover"
-                 />
-               )}
+                {post.author?.avatar?.url && (
+                  <Image
+                    src={getStrapiMediaUrl(post.author.avatar.url)}
+                    alt={post.author.name}
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                )}
                <span className="font-medium text-gray-900">
                  {post.author?.name || "Quang Đăng Clinic"}
                </span>
@@ -127,13 +130,15 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
           <div className="lg:w-2/3">
              {/* Cover Image */}
              {post.coverImage?.url && (
-               <div className="rounded-2xl overflow-hidden shadow-lg mb-10">
-                 <img
-                   src={getStrapiMediaUrl(post.coverImage.url)}
-                   alt={post.title}
-                   className="w-full h-auto object-cover"
-                 />
-               </div>
+                <div className="rounded-2xl overflow-hidden shadow-lg mb-10">
+                  <Image
+                    src={getStrapiMediaUrl(post.coverImage.url)}
+                    alt={post.title}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
              )}
 
              {/* Introduction */}
@@ -148,21 +153,23 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
              <div className="my-12 bg-nude-100 p-8 rounded-2xl text-center border border-gold-200">
                <h3 className="font-serif text-2xl font-bold mb-4">Bạn Đang Gặp Vấn Đề Về Da?</h3>
                <p className="mb-6">Đừng để tình trạng kéo dài. Hãy để chuyên gia của chúng tôi tư vấn miễn phí cho bạn.</p>
-               <Link href="/dat-lich">
-                 <Button>Đặt Lịch Soi Da Ngay</Button>
-               </Link>
+               <Button asChild>
+                 <Link href="/dat-lich">Đặt Lịch Soi Da Ngay</Link>
+               </Button>
              </div>
 
              {/* Author Box */}
              {post.author && (
                <div className="flex items-start gap-6 bg-gray-50 p-8 rounded-2xl border border-gray-100 mt-12">
-                 {post.author.avatar?.url && (
-                   <img
-                     src={getStrapiMediaUrl(post.author.avatar.url)}
-                     alt={post.author.name}
-                     className="w-20 h-20 rounded-full object-cover border-2 border-white shadow-md flex-shrink-0"
-                   />
-                 )}
+                  {post.author.avatar?.url && (
+                    <Image
+                      src={getStrapiMediaUrl(post.author.avatar.url)}
+                      alt={post.author.name}
+                      width={80}
+                      height={80}
+                      className="w-20 h-20 rounded-full object-cover border-2 border-white shadow-md flex-shrink-0"
+                    />
+                  )}
                  <div>
                    <h4 className="font-bold text-gray-900 text-lg mb-1">
                      {post.author.name}
@@ -207,7 +214,8 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
                           className={`block text-sm hover:text-gold-600 transition-colors ${item.level === 2 ? 'font-medium text-gray-800' : 'pl-4 text-gray-600'}`}
                           onClick={(e) => {
                             e.preventDefault();
-                            document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+                            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                            document.getElementById(item.id)?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
                           }}
                         >
                           {item.text}
@@ -229,13 +237,15 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
                           href={`/dich-vu/${service.slug}`}
                           className="flex items-center gap-3 bg-white/10 p-3 rounded-lg hover:bg-white/20 transition-colors"
                         >
-                          {service.image?.url && (
-                            <img
-                              src={getStrapiMediaUrl(service.image.url)}
-                              alt={service.name}
-                              className="w-10 h-10 rounded object-cover"
-                            />
-                          )}
+                           {service.image?.url && (
+                             <Image
+                               src={getStrapiMediaUrl(service.image.url)}
+                               alt={service.name}
+                               width={40}
+                               height={40}
+                               className="w-10 h-10 rounded object-cover"
+                             />
+                           )}
                           <div className="text-sm font-bold leading-tight">{service.name}</div>
                         </Link>
                       ))}
@@ -259,13 +269,15 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
               {relatedPosts.map((p) => (
                 <Link href={`/tin-tuc/${p.slug}`} key={p.id} className="group">
                   {p.coverImage?.url && (
-                    <div className="rounded-xl overflow-hidden mb-4 aspect-video">
-                      <img
-                        src={getStrapiMediaUrl(p.coverImage.url)}
-                        alt={p.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
+                     <div className="rounded-xl overflow-hidden mb-4 aspect-video relative">
+                       <Image
+                         src={getStrapiMediaUrl(p.coverImage.url)}
+                         alt={p.title}
+                         fill
+                         sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                       />
+                     </div>
                   )}
                   <h3 className="font-bold text-gray-900 group-hover:text-gold-600 transition-colors mb-2">
                     {p.title}

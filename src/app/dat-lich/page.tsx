@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Check, Star, ShieldCheck, MapPin, Phone, Clock, Gift, Award, Heart } from 'lucide-react';
 import BookingForm from '@/components/BookingForm';
 import { SERVICES, TESTIMONIALS } from '@/lib/data';
@@ -85,7 +86,7 @@ export default function BookingPage() {
                 <h3 className="font-serif text-2xl font-bold mb-1">Ưu Đãi Tháng Này</h3>
                 <p className="opacity-90">Giảm 50% phí dịch vụ & Tặng set mỹ phẩm</p>
               </div>
-              <div className="bg-white/20 p-3 rounded-full animate-bounce">
+              <div className="bg-white/20 p-3 rounded-full motion-safe:animate-bounce motion-reduce:animate-none">
                 <Gift size={32} />
               </div>
             </div>
@@ -118,16 +119,56 @@ export default function BookingPage() {
             {/* Gallery Section */}
             <div>
               <h2 className="font-serif text-3xl font-bold text-gray-900 mb-6">Không Gian & Hình Ảnh Thực Tế</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                 <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=500" alt="Spa Reception" className="rounded-lg h-32 w-full object-cover" />
-                 <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500" alt="Facial Treatment" className="rounded-lg h-32 w-full object-cover" />
-                 <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500" alt="Spa Room" className="rounded-lg h-32 w-full object-cover" />
-                 <img src="https://images.unsplash.com/photo-1519823551278-64ac927ac4ac?w=500" alt="Massage" className="rounded-lg h-32 w-full object-cover" />
-                 <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500" alt="Products" className="rounded-lg h-32 w-full object-cover" />
-                 <div className="rounded-lg h-32 w-full bg-gold-100 flex items-center justify-center text-gold-600 font-bold cursor-pointer hover:bg-gold-200 transition-colors">
-                   + Xem Thêm
-                 </div>
-              </div>
+               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="relative rounded-lg h-32 w-full overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=500"
+                      alt="Spa Reception"
+                      fill
+                      sizes="(min-width: 768px) 33vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg h-32 w-full overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500"
+                      alt="Facial Treatment"
+                      fill
+                      sizes="(min-width: 768px) 33vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg h-32 w-full overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500"
+                      alt="Spa Room"
+                      fill
+                      sizes="(min-width: 768px) 33vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg h-32 w-full overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1519823551278-64ac927ac4ac?w=500"
+                      alt="Massage"
+                      fill
+                      sizes="(min-width: 768px) 33vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-lg h-32 w-full overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500"
+                      alt="Products"
+                      fill
+                      sizes="(min-width: 768px) 33vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="rounded-lg h-32 w-full bg-gold-100 flex items-center justify-center text-gold-600 font-bold cursor-pointer hover:bg-gold-200 transition-colors">
+                    + Xem Thêm
+                  </div>
+               </div>
               <p className="text-xs text-gray-500 mt-2 italic text-center">
                 *Hình ảnh thực tế tại cơ sở 123 Nguyễn Văn Cừ
               </p>

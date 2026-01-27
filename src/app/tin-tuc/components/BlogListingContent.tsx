@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Search, Calendar, ArrowRight } from 'lucide-react';
 
 interface BlogAuthor {
@@ -80,7 +81,9 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
             <div className="relative max-w-md mx-auto">
               <input
                 type="text"
-                placeholder="Tìm kiếm bài viết..."
+                name="q"
+                aria-label="Tìm kiếm bài viết"
+                placeholder="Tìm kiếm bài viết…"
                 className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none shadow-sm"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -96,9 +99,11 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
         <section className="container mx-auto px-4 mb-16">
           <Link href={`/tin-tuc/${featuredPost.slug}`} className="group block">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[16/9] md:aspect-[21/9]">
-              <img
-                src={featuredPost.coverImage}
+              <Image
+                src={featuredPost.coverImage || 'https://via.placeholder.com/1200x675'}
                 alt={featuredPost.title}
+                fill
+                sizes="(min-width: 768px) 90vw, 100vw"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
@@ -114,7 +119,7 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
                 <p className="text-white/80 line-clamp-2 mb-6 text-lg">
                   {featuredPost.excerpt}
                 </p>
-                <span className="inline-flex items-center text-gold-300 font-bold uppercase tracking-wide group-hover:gap-2 transition-all">
+                <span className="inline-flex items-center text-gold-300 font-bold uppercase tracking-wide group-hover:gap-2 transition-[gap]">
                   Đọc ngay <ArrowRight size={18} className="ml-2" />
                 </span>
               </div>
@@ -128,7 +133,7 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
-            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${activeCategory === 'all' ? 'bg-gold-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-gold-50'}`}
+            className={`px-6 py-2 rounded-full text-sm font-semibold transition-[background-color,color,box-shadow] ${activeCategory === 'all' ? 'bg-gold-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-gold-50'}`}
             onClick={() => setActiveCategory('all')}
           >
             Tất cả
@@ -136,7 +141,7 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
           {blogCategories.map(cat => (
              <button
                key={cat.id}
-               className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${activeCategory === cat.slug ? 'bg-gold-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-gold-50'}`}
+               className={`px-6 py-2 rounded-full text-sm font-semibold transition-[background-color,color,box-shadow] ${activeCategory === cat.slug ? 'bg-gold-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-gold-50'}`}
                onClick={() => setActiveCategory(cat.slug)}
              >
                {cat.name}
@@ -149,11 +154,13 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
           {filteredPosts.map(post => {
             const categoryName = blogCategories.find(c => c.slug === post.category)?.name || 'Uncategorized';
             return (
-              <Link href={`/tin-tuc/${post.slug}`} key={post.id} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100">
+              <Link href={`/tin-tuc/${post.slug}`} key={post.id} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100">
                 <div className="relative overflow-hidden aspect-[4/3]">
-                  <img
+                  <Image
                     src={post.coverImage || 'https://via.placeholder.com/400x300'}
                     alt={post.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gold-600 uppercase">
@@ -174,7 +181,13 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
                   </p>
                   <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-50">
                     {post.author.avatar && (
-                      <img src={post.author.avatar} alt={post.author.name} className="w-8 h-8 rounded-full object-cover" />
+                      <Image
+                        src={post.author.avatar}
+                        alt={post.author.name}
+                        width={32}
+                        height={32}
+                        className="w-8 h-8 rounded-full object-cover"
+                      />
                     )}
                     <div className="text-xs">
                       <p className="font-bold text-gray-800">{post.author.name}</p>

@@ -1,11 +1,21 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === 'development';
+
 const nextConfig: NextConfig = {
   images: {
+    // Allow localhost images in development (bypass private IP restriction)
+    unoptimized: isDev,
     remotePatterns: [
       {
         protocol: 'http',
         hostname: 'localhost',
+        port: '1337',
+        pathname: '/uploads/**',
+      },
+      {
+        protocol: 'http',
+        hostname: '127.0.0.1',
         port: '1337',
         pathname: '/uploads/**',
       },

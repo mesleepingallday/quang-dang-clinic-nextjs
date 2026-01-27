@@ -20,7 +20,7 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
       <h2 className="font-serif text-3xl font-bold text-gray-900 mb-8 border-l-8 border-gold-500 pl-6">Câu Hỏi Thường Gặp</h2>
       <div className="space-y-4">
         {faqs.map((faq, idx) => (
-          <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden transition-all bg-white hover:shadow-md">
+          <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden transition-shadow bg-white hover:shadow-md">
             <button
               className="w-full flex justify-between items-center p-6 text-left font-bold text-gray-800"
               onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}

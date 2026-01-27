@@ -4,7 +4,26 @@
  * Implements ISR revalidation and proper TypeScript typing
  */
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
+const ENV_STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
+const IS_DEV = process.env.NODE_ENV !== 'production';
+const IS_BUILD_PHASE =
+  process.env.NEXT_PHASE === 'phase-production-build' ||
+  process.env.NEXT_PHASE === 'phase-export';
+
+const STRAPI_URL = (() => {
+  if (!ENV_STRAPI_URL) {
+    return IS_DEV ? 'http://localhost:1337' : '';
+  }
+
+  // Avoid treating localhost as a valid Strapi in production build.
+  if (IS_BUILD_PHASE && /localhost|127\.0\.0\.1/.test(ENV_STRAPI_URL)) {
+    return '';
+  }
+
+  return ENV_STRAPI_URL.replace(/\/$/, '');
+})();
+
+let warnedStrapiDisabled = false;
 
 // ============================================================================
 // TYPE DEFINITIONS

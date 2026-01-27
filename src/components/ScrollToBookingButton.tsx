@@ -4,11 +4,12 @@ import Button from './Button';
 
 export default function ScrollToBookingButton() {
   const handleClick = () => {
-    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('booking')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   };
 
   return (
-    <Button onClick={handleClick}>
+    <Button onClick={handleClick} className="shadow-lg shadow-gold-500/40">
       Đặt Lịch Ngay
     </Button>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CheckCircle2, ArrowRight, Sparkles, Shield, Zap, Scissors } from 'lucide-react';
 import Button from '@/components/Button';
 import { getServices, getStrapiMediaUrl, Service } from '@/lib/strapi';
@@ -99,12 +100,14 @@ const Services: React.FC = async () => {
             Chúng tôi tự hào mang đến hệ sinh thái làm đẹp toàn diện, kết hợp giữa tinh hoa thẩm mỹ nội khoa và công nghệ y khoa tiên tiến nhất thế giới.
           </p>
           <div className="flex justify-center gap-4">
-            <Link href="/dat-lich">
-              <Button className="shadow-gold-500/30">Đặt Lịch Tư Vấn</Button>
-            </Link>
-            <a href="tel:0988834446" className="hidden sm:inline-block">
-               <Button variant="outline">Hotline: 0988.834.446</Button>
-            </a>
+            <Button asChild className="shadow-gold-500/30">
+              <Link href="/dat-lich">Đặt Lịch Tư Vấn</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <a href="tel:0988834446" className="hidden sm:inline-block">
+                Hotline: 0988.834.446
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -131,13 +134,15 @@ const Services: React.FC = async () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {cat.services.map((service) => (
-                  <div key={service.id} className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
-                    <div className="relative h-64 overflow-hidden">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
+                    <div key={service.id} className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
+                      <div className="relative h-64 overflow-hidden">
+                        <Image
+                          src={service.image || 'https://via.placeholder.com/800x600'}
+                          alt={service.title}
+                          fill
+                          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
                       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
                       {service.featured && (
                         <div className="absolute top-4 left-4 bg-gold-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
@@ -164,12 +169,16 @@ const Services: React.FC = async () => {
                       </ul>
 
                       <div className="flex items-center justify-between pt-6 border-t border-gray-50">
-                        <Link href={service.link} className="text-gold-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                        <Link href={service.link} className="text-gold-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-[gap]">
                           Tìm hiểu thêm <ArrowRight size={16} />
                         </Link>
-                        <Link href="/dat-lich">
-                           <button className="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-gold-600">Đặt lịch</button>
-                        </Link>
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="px-0 py-0 border-0 shadow-none hover:bg-transparent text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-gold-600"
+                        >
+                          <Link href="/dat-lich">Đặt lịch</Link>
+                        </Button>
                       </div>
                     </div>
                   </div>
@@ -191,11 +200,9 @@ const Services: React.FC = async () => {
             Hãy để Quang Đăng Aesthetic đồng hành cùng bạn trên hành trình chinh phục vẻ đẹp hoàn mỹ nhất của chính mình.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/dat-lich">
-              <Button className="px-10 py-4 text-lg bg-gold-500 hover:bg-gold-600 text-white border-none shadow-2xl">
-                Đăng Ký Tư Vấn Ngay
-              </Button>
-            </Link>
+            <Button asChild className="px-10 py-4 text-lg bg-gold-500 hover:bg-gold-600 text-white border-none shadow-2xl">
+              <Link href="/dat-lich">Đăng Ký Tư Vấn Ngay</Link>
+            </Button>
           </div>
         </div>
       </section>

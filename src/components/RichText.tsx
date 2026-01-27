@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface RichTextBlock {
   type: string;
@@ -151,11 +152,24 @@ const RichText: React.FC<RichTextProps> = ({ content, className = '' }) => {
             if (block.image) {
               return (
                 <figure key={index} className="my-6">
-                  <img
-                    src={block.image.url}
-                    alt={block.image.alternativeText || ''}
-                    className="rounded-lg w-full"
-                  />
+                  {block.image.width && block.image.height ? (
+                    <Image
+                      src={block.image.url}
+                      alt={block.image.alternativeText || ''}
+                      width={block.image.width}
+                      height={block.image.height}
+                      className="rounded-lg w-full h-auto"
+                    />
+                  ) : (
+                    <img
+                      src={block.image.url}
+                      alt={block.image.alternativeText || ''}
+                      className="rounded-lg w-full"
+                      width={1200}
+                      height={675}
+                      loading="lazy"
+                    />
+                  )}
                   {block.image.alternativeText && (
                     <figcaption className="text-sm text-gray-500 mt-2 text-center">
                       {block.image.alternativeText}

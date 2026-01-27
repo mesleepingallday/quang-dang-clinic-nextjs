@@ -1,6 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Check, Clock, Calendar, Shield, AlertCircle, Sparkles, TrendingDown } from 'lucide-react';
 import BookingForm from '@/components/BookingForm';
 import Button from '@/components/Button';
@@ -123,14 +124,16 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
           {/* LEFT CONTENT */}
           <div className="lg:w-2/3">
             {/* Intro Image */}
-            <div className="rounded-[2rem] overflow-hidden mb-12 shadow-2xl relative group border-4 border-white">
-              <img
+            <div className="rounded-[2rem] overflow-hidden mb-12 shadow-2xl relative group border-4 border-white h-[400px]">
+              <Image
                 src={serviceData.heroImage}
                 alt={serviceData.title}
-                className="w-full h-[400px] object-cover transform transition-transform duration-1000 group-hover:scale-110"
+                fill
+                sizes="(min-width: 1024px) 66vw, 100vw"
+                className="object-cover transform transition-transform duration-1000 group-hover:scale-110"
               />
               {serviceData.promotion && (
-                <div className="absolute top-6 right-6 bg-gold-500 text-white font-bold px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce">
+                 <div className="absolute top-6 right-6 bg-gold-500 text-white font-bold px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 motion-safe:animate-bounce motion-reduce:animate-none">
                   <Sparkles size={20} />
                   ƯU ĐÃI {serviceData.promotion.discount}
                 </div>
@@ -188,7 +191,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
                   </thead>
                   <tbody className="divide-y divide-gray-50">
                     {serviceData.pricing.map((item, idx) => (
-                      <tr key={idx} className="hover:bg-gold-50/50 transition-all duration-300">
+                      <tr key={idx} className="hover:bg-gold-50/50 transition-colors duration-300">
                         <td className="px-8 py-6">
                           <div className="text-lg font-bold text-gray-900">{item.name}</div>
                           <div className="text-sm text-gray-500 mt-1">{item.description}</div>
@@ -216,7 +219,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-10 border-l-8 border-gold-500 pl-6">Quy Trình Chuẩn Y Khoa</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {serviceData.process.map((step, idx) => (
-                  <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gold-300 hover:shadow-lg transition-all group">
+                  <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gold-300 hover:shadow-lg transition-[box-shadow,border-color] group">
                     <div className="flex gap-4 items-start">
                       <div className="shrink-0 w-10 h-10 rounded-xl bg-gold-100 text-gold-600 flex items-center justify-center font-serif text-xl font-bold group-hover:bg-gold-500 group-hover:text-white transition-colors">
                         {idx + 1}
@@ -247,11 +250,11 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
                 </div>
                 <p className="text-gray-400 mb-8 px-4">{serviceData.promotion.note}</p>
 
-                <Link href="/dat-lich" className="block">
-                  <Button variant="primary" fullWidth className="py-5 text-lg">
+                <Button asChild variant="primary" fullWidth className="py-5 text-lg">
+                  <Link href="/dat-lich" className="block">
                     NHẬN ƯU ĐÃI NGAY
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
                 <p className="text-[10px] text-gray-600 mt-4 uppercase tracking-widest">Suất ưu đãi có hạn trong ngày</p>
               </div>
 

@@ -86,6 +86,9 @@ async function BlogPage() {
           <form className="max-w-md mx-auto flex gap-2">
             <input
               type="email"
+              name="email"
+              autoComplete="email"
+              aria-label="Email"
               placeholder="Nhập email của bạn"
               className="flex-grow px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 outline-none focus:border-gold-500"
             />
