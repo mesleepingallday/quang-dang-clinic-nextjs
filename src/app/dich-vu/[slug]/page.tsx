@@ -47,9 +47,9 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
       category: 'THẨM MỸ QUỐC TẾ',
       heroImage: getStrapiMediaUrl(strapiService.image?.url || ''),
       shortDesc: strapiService.description,
-      introTitle: `${strapiService.name} - Dịch Vụ Đẳng Cấp Tại Quang Đăng`,
+      introTitle: `${strapiService.name} - Dịch Vụ Đẳng Cấp Tại Viện Thẩm Mỹ Quang Đăng`,
       introDesc: [
-        `${strapiService.name} tại Thẩm Mỹ Viện Quốc Tế Quang Đăng là giải pháp tối ưu giúp khách hàng lấy lại vẻ đẹp tự nhiên và sự tự tin.`,
+        `${strapiService.name} tại Viện Thẩm Mỹ Quang Đăng là giải pháp tối ưu giúp khách hàng lấy lại vẻ đẹp tự nhiên và sự tự tin.`,
         `Chúng tôi sử dụng trang thiết bị hiện đại nhất kết hợp với đội ngũ chuyên gia giàu kinh nghiệm để đảm bảo kết quả hoàn mỹ cho từng khách hàng.`
       ],
       benefits: [
@@ -67,7 +67,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
         { name: strapiService.name, price: 'Liên hệ', duration: '60-90 phút', description: 'Gói tiêu chuẩn' }
       ],
       faqs: [
-        { q: 'Dịch vụ này có đau không?', a: 'Quy trình tại Quang Đăng luôn được thiết kế để khách hàng cảm thấy thoải mái nhất, sử dụng kỹ thuật hiện đại giảm thiểu xâm lấn.' },
+        { q: 'Dịch vụ này có đau không?', a: 'Quy trình tại Viện Thẩm Mỹ Quang Đăng luôn được thiết kế để khách hàng cảm thấy thoải mái nhất, sử dụng kỹ thuật hiện đại giảm thiểu xâm lấn.' },
         { q: 'Cần nghỉ dưỡng bao lâu?', a: 'Hầu hết các dịch vụ của chúng tôi không cần nghỉ dưỡng, bạn có thể quay lại sinh hoạt bình thường ngay lập tức.' }
       ],
       promotion: { discount: '20%', note: 'Ưu đãi cho khách hàng đặt lịch online' }
@@ -86,7 +86,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
     "description": serviceData.shortDesc,
     "provider": {
       "@type": "BeautySalon",
-      "name": "Thẩm Mỹ Viện Quốc Tế Quang Đăng"
+      "name": "Viện Thẩm Mỹ Quang Đăng"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

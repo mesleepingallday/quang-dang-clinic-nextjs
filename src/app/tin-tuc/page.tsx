@@ -81,7 +81,7 @@ async function BlogPage() {
           <Mail size={48} className="mx-auto text-green-400 mb-6" />
           <h2 className="font-serif text-3xl font-bold mb-4">Đăng Ký Nhận Bản Tin Làm Đẹp</h2>
           <p className="text-nude-200 mb-8 max-w-xl mx-auto">
-            Nhận ngay mẹo chăm sóc da, xu hướng thẩm mỹ và ưu đãi độc quyền từ Quang Đăng gửi trực tiếp vào email của bạn mỗi tuần.
+            Nhận ngay mẹo chăm sóc da, xu hướng thẩm mỹ và ưu đãi độc quyền từ Viện Thẩm Mỹ Quang Đăng gửi trực tiếp vào email của bạn mỗi tuần.
           </p>
           <form className="max-w-md mx-auto flex gap-2">
             <input

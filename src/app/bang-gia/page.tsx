@@ -4,7 +4,7 @@ import Button from '@/components/Button';
 import { getPriceCategories } from '@/lib/strapi';
 
 export const metadata = {
-  title: "Bảng Giá Dịch Vụ Thẩm Mỹ 2024 - Quang Đăng Aesthetic Clinic"
+  title: "Bảng Giá Dịch Vụ Thẩm Mỹ 2024 - Viện Thẩm Mỹ Quang Đăng"
 };
 
 const Pricing = async () => {
@@ -115,7 +115,7 @@ const Pricing = async () => {
             Bảng Giá <span className="text-green-600 italic">Dịch Vụ</span>
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-            Cam kết minh bạch, không phát sinh chi phí ẩn. Quang Đăng Aesthetic Clinic mang lại giá trị thật cho vẻ đẹp của bạn.
+            Cam kết minh bạch, không phát sinh chi phí ẩn. Viện Thẩm Mỹ Quang Đăng mang lại giá trị thật cho vẻ đẹp của bạn.
           </p>
         </div>
       </section>

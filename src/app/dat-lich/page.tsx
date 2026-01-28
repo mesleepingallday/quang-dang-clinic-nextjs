@@ -8,7 +8,7 @@ export default function BookingPage() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
-    "name": "Thẩm Mỹ Viện Quốc Tế Quang Đăng",
+    "name": "Viện Thẩm Mỹ Quang Đăng",
     "image": "https://images.unsplash.com/photo-1600334129128-685c5582fd35",
     "description": "Thẩm mỹ viện uy tín tại Nghệ An chuyên điều trị da, trị mụn nám, trẻ hóa công nghệ cao.",
     "address": {
@@ -94,7 +94,7 @@ export default function BookingPage() {
             {/* Why Choose Us */}
             <div>
               <h2 className="font-serif text-3xl font-bold text-gray-900 mb-6">
-                Tại Sao 10.000+ Khách Hàng Chọn Quang Đăng?
+                Tại Sao 10.000+ Khách Hàng Chọn Viện Thẩm Mỹ Quang Đăng?
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
@@ -184,7 +184,7 @@ export default function BookingPage() {
                     <span className="text-green-500 group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <div className="p-4 pt-0 text-gray-600 text-sm leading-relaxed border-t border-transparent group-open:border-gray-100">
-                    Tại Quang Đăng, chúng tôi ưu tiên các công nghệ cao không xâm lấn, êm ái và thư giãn. Đối với các dịch vụ tiêm, bác sĩ sẽ ủ tê kỹ lưỡng, đảm bảo bạn không cảm thấy khó chịu.
+                    Tại Viện Thẩm Mỹ Quang Đăng, chúng tôi ưu tiên các công nghệ cao không xâm lấn, êm ái và thư giãn. Đối với các dịch vụ tiêm, bác sĩ sẽ ủ tê kỹ lưỡng, đảm bảo bạn không cảm thấy khó chịu.
                   </div>
                 </details>
                 <details className="group bg-white rounded-lg border border-green-100 overflow-hidden">
@@ -221,7 +221,7 @@ export default function BookingPage() {
             <div>
               <h2 className="font-serif text-3xl font-bold text-gray-900 mb-6">Liên Hệ Với Chúng Tôi</h2>
               <p className="text-gray-600 mb-8">
-                Thẩm Mỹ Viện Quang Đăng hân hạnh được đón tiếp quý khách. Hãy ghé thăm để trải nghiệm không gian sang trọng và dịch vụ đẳng cấp.
+                Viện Thẩm Mỹ Quang Đăng hân hạnh được đón tiếp quý khách. Hãy ghé thăm để trải nghiệm không gian sang trọng và dịch vụ đẳng cấp.
               </p>
 
               <ul className="space-y-6">
@@ -262,7 +262,7 @@ export default function BookingPage() {
             {/* Map Placeholder with Iframe */}
             <div className="h-[400px] bg-gray-100 rounded-2xl overflow-hidden relative shadow-inner">
               <iframe
-                src="https://maps.google.com/maps?q=TTTM%20%C4%90%E1%BB%A9c%20T%C3%A0i%20Qu%E1%BB%B3nh%20L%C6%A1u&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.178907766313!2d105.6284122!3d19.1436444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313771bb3ccf30bb%3A0x5a05af3f0112da74!2zVHJ1bmcgdMOibSB0aMawxqFuZyBt4bqhaSDEkOG7qWMgVMOgaSAtIFTDom0gxJDhuqF0!5e0!3m2!1svi!2s!4v1769625563616!5m2!1svi!2s"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

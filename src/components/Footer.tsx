@@ -14,14 +14,14 @@ const Footer: React.FC = () => {
               <div className="relative h-12 w-12 md:h-14 md:w-14 bg-white rounded-xl p-1.5 shadow-lg">
                 <Image
                   src="/quang-dang-logo.png"
-                  alt="Quang Đăng Aesthetic Logo"
+                  alt="Viện Thẩm Mỹ Quang Đăng Logo"
                   fill
                   className="object-contain"
                 />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg md:text-xl font-serif font-bold text-white tracking-wide">QUANG ĐĂNG</span>
-                <span className="text-[9px] md:text-[10px] uppercase tracking-[0.12em] text-green-300 font-medium -mt-0.5">Thẩm Mỹ Viện Quốc Tế</span>
+                <span className="text-[9px] md:text-[10px] uppercase tracking-[0.12em] text-green-300 font-medium -mt-0.5">Viện Thẩm Mỹ</span>
               </div>
             </Link>
             <p className="text-nude-200 mb-8 leading-loose text-sm opacity-90">
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 text-center text-xs text-nude-300">
-          <p>© {new Date().getFullYear()} Thẩm Mỹ Viện Quốc Tế Quang Đăng. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Viện Thẩm Mỹ Quang Đăng. All rights reserved.</p>
         </div>
       </div>
     </footer>

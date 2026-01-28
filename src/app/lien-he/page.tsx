@@ -182,7 +182,7 @@ export default function ContactPage() {
             </ScrollReveal>
             <ScrollReveal animation="fade-in-up" duration={0.8} delay={200}>
               <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-                Hãy liên hệ với Quang Đăng để được tư vấn miễn phí về các dịch vụ làm đẹp phù hợp nhất với bạn.
+                Hãy liên hệ với Viện Thẩm Mỹ Quang Đăng để được tư vấn miễn phí về các dịch vụ làm đẹp phù hợp nhất với bạn.
               </p>
             </ScrollReveal>
           </div>
@@ -252,14 +252,14 @@ export default function ContactPage() {
             <ScrollReveal animation="slide-right">
               <div className="rounded-2xl overflow-hidden shadow-xl border border-green-100/50 h-[500px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.5!2d105.62!3d19.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEwJzEyLjAiTiAxMDXCsDM3JzEyLjAiRQ!5e0!3m2!1svi!2s!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.178907766313!2d105.6284122!3d19.1436444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313771bb3ccf30bb%3A0x5a05af3f0112da74!2zVHJ1bmcgdMOibSB0aMawxqFuZyBt4bqhaSDEkOG7qWMgVMOgaSAtIFTDom0gxJDhuqF0!5e0!3m2!1svi!2s!4v1769625563616!5m2!1svi!2s"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Quang Đăng Clinic Location"
+                  title="Viện Thẩm Mỹ Quang Đăng Location"
                   className="grayscale-[30%] hover:grayscale-0 transition-all duration-500"
                 />
               </div>
@@ -332,7 +332,7 @@ export default function ContactPage() {
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-green-100/50 h-full flex flex-col">
                 <h2 className="font-serif text-2xl font-bold text-green-700 mb-4">Kết Nối Với Chúng Tôi</h2>
                 <p className="text-gray-600 mb-8">
-                  Theo dõi Quang Đăng trên mạng xã hội để cập nhật những ưu đãi mới nhất và tips làm đẹp hàng ngày.
+                  Theo dõi Viện Thẩm Mỹ Quang Đăng trên mạng xã hội để cập nhật những ưu đãi mới nhất và tips làm đẹp hàng ngày.
                 </p>
 
                 <div className="flex gap-4 mb-8">

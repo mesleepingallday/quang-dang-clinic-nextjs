@@ -66,15 +66,15 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
     "image": getStrapiMediaUrl(post.coverImage?.url),
     "author": {
       "@type": "Person",
-      "name": post.author?.name || "Quang Đăng Clinic",
+      "name": post.author?.name || "Viện Thẩm Mỹ Quang Đăng",
       "jobTitle": post.author?.role
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Thẩm Mỹ Viện Quốc Tế Quang Đăng",
+      "name": "Viện Thẩm Mỹ Quang Đăng",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://quangdang.vn/logo.png"
+        "url": "https://quangdang.vn/quang-dang-logo.png"
       }
     },
     "datePublished": post.publishedAt,
@@ -110,7 +110,7 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
                 />
               )}
               <span className="font-medium text-gray-900">
-                {post.author?.name || "Quang Đăng Clinic"}
+                {post.author?.name || "Viện Thẩm Mỹ Quang Đăng"}
               </span>
             </div>
             <span className="flex items-center gap-1">

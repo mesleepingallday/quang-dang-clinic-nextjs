@@ -26,6 +26,14 @@ export default {
           300: "#DFD8C8",
           800: "#5C5548",
         },
+        gold: {
+          300: "#E8D5A3",
+          400: "#D4AF37",
+          500: "#C5A028",
+          600: "#B08D1F",
+        },
+        cream: "#FAF7F2",
+        charcoal: "#2C2C2C",
         primary: "#0D7351",
       },
       fontFamily: {

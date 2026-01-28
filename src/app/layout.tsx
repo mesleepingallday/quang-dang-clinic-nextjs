@@ -19,16 +19,16 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: "Thẩm Mỹ Viện Quốc Tế Quang Đăng - Đánh Thức Vẻ Đẹp Tiềm Ẩn",
-    template: "%s | Quang Đăng Aesthetic",
+    default: "Viện Thẩm Mỹ Quang Đăng - Đánh Thức Vẻ Đẹp Tiềm Ẩn",
+    template: "%s | Viện Thẩm Mỹ Quang Đăng",
   },
   description: "Hệ thống thẩm mỹ viện chuẩn quốc tế hàng đầu tại Nghệ An. Chuyên điều trị da, trị mụn nám, trẻ hóa công nghệ cao.",
   keywords: ["thẩm mỹ viện", "chăm sóc da", "triệt lông", "trị mụn", "Nghệ An", "Quang Đăng"],
-  authors: [{ name: "Quang Đăng Aesthetic" }],
+  authors: [{ name: "Viện Thẩm Mỹ Quang Đăng" }],
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    siteName: "Thẩm Mỹ Viện Quốc Tế Quang Đăng",
+    siteName: "Viện Thẩm Mỹ Quang Đăng",
   },
 };
 

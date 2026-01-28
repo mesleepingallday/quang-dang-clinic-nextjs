@@ -190,9 +190,9 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = SERVICES.
     category: 'THẨM MỸ QUỐC TẾ',
     heroImage: s.image,
     shortDesc: s.shortDescription,
-    introTitle: 'Dịch Vụ Đẳng Cấp Tại Quang Đăng',
+    introTitle: 'Dịch Vụ Đẳng Cấp Tại Viện Thẩm Mỹ Quang Đăng',
     introDesc: [
-      `${s.title} tại Thẩm Mỹ Viện Quốc Tế Quang Đăng là giải pháp tối ưu giúp khách hàng lấy lại vẻ đẹp tự nhiên và sự tự tin.`,
+      `${s.title} tại Viện Thẩm Mỹ Quang Đăng là giải pháp tối ưu giúp khách hàng lấy lại vẻ đẹp tự nhiên và sự tự tin.`,
       `Chúng tôi sử dụng trang thiết bị hiện đại nhất kết hợp với đội ngũ chuyên gia giàu kinh nghiệm để đảm bảo kết quả hoàn mỹ cho từng khách hàng.`
     ],
     benefits: s.benefits || [],
@@ -206,7 +206,7 @@ export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = SERVICES.
       { name: s.title, price: 'Liên hệ', duration: '60-90 phút', description: 'Gói tiêu chuẩn' }
     ],
     faqs: [
-      { q: 'Dịch vụ này có đau không?', a: 'Quy trình tại Quang Đăng luôn được thiết kế để khách hàng cảm thấy thoải mái nhất, sử dụng kỹ thuật hiện đại giảm thiểu xâm lấn.' },
+      { q: 'Dịch vụ này có đau không?', a: 'Quy trình tại Viện Thẩm Mỹ Quang Đăng luôn được thiết kế để khách hàng cảm thấy thoải mái nhất, sử dụng kỹ thuật hiện đại giảm thiểu xâm lấn.' },
       { q: 'Cần nghỉ dưỡng bao lâu?', a: 'Hầu hết các dịch vụ của chúng tôi không cần nghỉ dưỡng, bạn có thể quay lại sinh hoạt bình thường ngay lập tức.' }
     ],
     promotion: { discount: '20%', note: 'Ưu đãi cho khách hàng đặt lịch online' }
@@ -219,7 +219,7 @@ SERVICE_DETAILS_DATA['tam-trang'] = {
   ...SERVICE_DETAILS_DATA['tam-trang'],
   introTitle: 'Tắm Trắng Phi Thuyền – Da Trắng Bật Tone, Mịn Màng Toàn Thân',
   introDesc: [
-    'Dịch vụ tắm trắng tại Quang Đăng ứng dụng công nghệ phi thuyền hồng ngoại giúp đưa dưỡng chất trắng da vào sâu trong lớp hạ bì, ức chế hắc sắc tố melanin và kích thích sản sinh collagen mới.',
+    'Dịch vụ tắm trắng tại Viện Thẩm Mỹ Quang Đăng ứng dụng công nghệ phi thuyền hồng ngoại giúp đưa dưỡng chất trắng da vào sâu trong lớp hạ bì, ức chế hắc sắc tố melanin và kích thích sản sinh collagen mới.',
     'Chỉ sau 1 liệu trình trọn gói, làn da của bạn sẽ bật từ 2-3 tone, trở nên đều màu, mịn màng và khỏe mạnh từ bên trong. Đặc biệt, chúng tôi kết hợp liệu pháp tẩy tế bào chết chuyên sâu giúp loại bỏ lớp sừng già cỗi, cho da dễ dàng hấp thụ dưỡng chất.'
   ],
   pricing: [
@@ -233,7 +233,7 @@ SERVICE_DETAILS_DATA['cham-soc-da-co-ban'] = {
   ...SERVICE_DETAILS_DATA['cham-soc-da-co-ban'],
   introTitle: 'Liệu Trình Chăm Sóc Da Chuẩn Y Khoa',
   introDesc: [
-    'Dịch vụ Chăm sóc da cơ bản tại Quang Đăng giúp duy trì nền da sạch khỏe, ngăn ngừa mụn và lão hóa sớm.',
+    'Dịch vụ Chăm sóc da cơ bản tại Viện Thẩm Mỹ Quang Đăng giúp duy trì nền da sạch khỏe, ngăn ngừa mụn và lão hóa sớm.',
     'Chúng tôi cung cấp 3 giải pháp chuyên biệt phù hợp with từng tình trạng da cụ thể của khách hàng.'
   ],
   pricing: [
@@ -248,7 +248,7 @@ SERVICE_DETAILS_DATA['cham-soc-da-chuyen-sau'] = {
   ...SERVICE_DETAILS_DATA['cham-soc-da-chuyen-sau'],
   introTitle: 'Trẻ Hóa & Phục Hồi Da Đa Tầng',
   introDesc: [
-    'Liệu trình Chăm sóc da chuyên sâu tại Quang Đăng ứng dụng các công nghệ tân tiến như Oxy tươi, Laser Toning giúp giải quyết triệt để các vấn hóa và thương tổn da.',
+    'Liệu trình Chăm sóc da chuyên sâu tại Viện Thẩm Mỹ Quang Đăng ứng dụng các công nghệ tân tiến như Oxy tươi, Laser Toning giúp giải quyết triệt để các vấn hóa và thương tổn da.',
     'Mỗi bước trong quy trình 60 phút được thiết kế tối ưu để mang lại làn da căng bóng, rạng rỡ ngay sau lần đầu thực hiện.'
   ],
   pricing: [
@@ -266,7 +266,7 @@ SERVICE_DETAILS_DATA['triet-long-laser-maxlight'] = {
   introTitle: 'Công Nghệ Triệt Lông Laser Maxlight Từ Đức',
   introDesc: [
     'Laser Maxlight là công nghệ triệt lông tiên tiến nhất hiện nay, giúp loại bỏ gốc lông tận gốc mà không gây đau rát, đồng thời làm sáng vùng da điều trị và se khít lỗ chân lông.',
-    'Tại Quang Đăng, chúng tôi cung cấp các gói liệu trình 8 buổi cam kết hiệu quả và bảo hành dài hạn cho từng vùng cơ thể.'
+    'Tại Viện Thẩm Mỹ Quang Đăng, chúng tôi cung cấp các gói liệu trình 8 buổi cam kết hiệu quả và bảo hành dài hạn cho từng vùng cơ thể.'
   ],
   pricing: [
     { name: 'Triệt mép', price: '800.000đ', duration: '8 buổi', description: 'Làm sạch vùng mép, sáng da.' },
@@ -283,7 +283,7 @@ SERVICE_DETAILS_DATA['giam-beo-cong-nghe-cao'] = {
   ...SERVICE_DETAILS_DATA['giam-beo-cong-nghe-cao'],
   introTitle: 'Giảm Béo Công Nghệ Cao – Đốt Mỡ Đa Tầng Không Xâm Lấn',
   introDesc: [
-    'Công nghệ giảm béo tại Quang Đăng sử dụng sóng siêu âm hội tụ và năng lượng Laser cường độ thấp để phá vỡ cấu trúc mô mỡ thừa mà không cần can thiệp dao kéo.',
+    'Công nghệ giảm béo tại Viện Thẩm Mỹ Quang Đăng sử dụng sóng siêu âm hội tụ và năng lượng Laser cường độ thấp để phá vỡ cấu trúc mô mỡ thừa mà không cần can thiệp dao kéo.',
     'Liệu trình 10 buổi được thiết kế cá nhân hóa cho từng phân vùng cơ thể như Bụng, Đùi, Bắp tay, giúp hóa lỏng mỡ lâu năm và đào thải tự nhiên qua hệ bài tiết, đồng thời làm săn chắc vùng da sau giảm size.'
   ],
   pricing: [
@@ -298,7 +298,7 @@ SERVICE_DETAILS_DATA['dich-vu-vung-mat'] = {
   ...SERVICE_DETAILS_DATA['dich-vu-vung-mat'],
   introTitle: 'Thẩm Mỹ Mắt Chuyên Sâu & Điều Trị Mí Lỗi',
   introDesc: [
-    'Vùng mắt là "cửa sổ tâm hồn" và cũng là nơi thể hiện dấu hiệu tuổi tác rõ nhất. Thẩm Mỹ Viện Quang Đăng cung cấp giải pháp toàn diện giúp kiến tạo đôi mắt tinh anh, rạng rỡ.',
+    'Vùng mắt là "cửa sổ tâm hồn" và cũng là nơi thể hiện dấu hiệu tuổi tác rõ nhất. Viện Thẩm Mỹ Quang Đăng cung cấp giải pháp toàn diện giúp kiến tạo đôi mắt tinh anh, rạng rỡ.',
     'Chúng tôi tự hào là đơn vị uy tín trong việc xử lý các ca mí lỗi, hỏng nặng, mang lại kết quả tự nhiên và bền vững cho khách hàng.'
   ],
   pricing: [
@@ -318,7 +318,7 @@ SERVICE_DETAILS_DATA['tri-lieu-da-dau'] = {
   ...SERVICE_DETAILS_DATA['tri-lieu-da-dau'],
   introTitle: 'Trị Liệu Da Đầu Chuyên Sâu - Giải Pháp Từ Italia',
   introDesc: [
-    'Dịch vụ Trị liệu da đầu tại Quang Đăng kết hợp kỹ thuật massage bấm huyệt dưỡng sinh cùng các dòng sản phẩm đặc trị nhập khẩu trực tiếp từ Italia.',
+    'Dịch vụ Trị liệu da đầu tại Viện Thẩm Mỹ Quang Đăng kết hợp kỹ thuật massage bấm huyệt dưỡng sinh cùng các dòng sản phẩm đặc trị nhập khẩu trực tiếp từ Italia.',
     'Chúng tôi không chỉ làm sạch mà còn detox thải độc, phục hồi nền da đầu và nang tóc, giải quyết dứt điểm các tình trạng gàu, nấm, nhờn và rụng tóc.'
   ],
   pricing: [
@@ -337,7 +337,7 @@ SERVICE_DETAILS_DATA['bap'] = {
   introTitle: 'Kỹ Thuật BAP - Trẻ Hóa Tối Ưu Với Tinh Chất Cao Cấp',
   introDesc: [
     'Kỹ thuật tiêm BAP (Bio Aesthetic Points) là phương pháp trẻ hóa hiện đại nhất hiện nay, chỉ sử dụng 5-10 điểm tiêm để khuếch tán tinh chất toàn diện khuôn mặt.',
-    'Tại Quang Đăng, chúng tôi sử dụng các dòng tinh chất hàng đầu thế giới như Profhilo và Jalupro Super Hydro để mang lại hiệu quả nâng cơ, xóa nhăn và căng bóng da tức thì.'
+    'Tại Viện Thẩm Mỹ Quang Đăng, chúng tôi sử dụng các dòng tinh chất hàng đầu thế giới như Profhilo và Jalupro Super Hydro để mang lại hiệu quả nâng cơ, xóa nhăn và căng bóng da tức thì.'
   ],
   pricing: [
     { name: 'Trẻ hóa vùng mặt Jalupro Super Hydro', price: '8.500.000đ', duration: '1 lần', description: 'Tái tạo cấu trúc, cấp ẩm tầng sâu.' },
@@ -352,7 +352,7 @@ SERVICE_DETAILS_DATA['tiem-giam-beo'] = {
   ...SERVICE_DETAILS_DATA['tiem-giam-beo'],
   introTitle: 'Tiêm Hóa Lỏng Mỡ Thừa - Giải Pháp Thon Gọn Cấp Tốc',
   introDesc: [
-    'Tiêm giảm béo tại Quang Đăng sử dụng các dòng tinh chất hóa lỏng mỡ nhập khẩu, tác động trúng đích vào các mô mỡ chuyên sâu ở bụng, eo, lưng và bắp tay.',
+    'Tiêm giảm béo tại Viện Thẩm Mỹ Quang Đăng sử dụng các dòng tinh chất hóa lỏng mỡ nhập khẩu, tác động trúng đích vào các mô mỡ chuyên sâu ở bụng, eo, lưng và bắp tay.',
     'Quy trình diễn ra nhẹ nhàng, không phẫu thuật, mỡ thừa sau khi hóa lỏng sẽ được đào thải tự nhiên qua hệ bài tiết, mang lại vóc dáng thon gọn chỉ sau 1 liệu trình 3 buổi.'
   ],
   pricing: [
@@ -369,7 +369,7 @@ SERVICE_DETAILS_DATA['cang-chi-vung-mat'] = {
   ...SERVICE_DETAILS_DATA['cang-chi-vung-mat'],
   introTitle: 'Căng Chỉ Collagen & Nâng Cơ Công Nghệ Cao',
   introDesc: [
-    'Căng chỉ collagen tại Quang Đăng là giải pháp "cải lão hoàn đồng" không phẫu thuật, sử dụng các dòng chỉ sinh học cao cấp (Mono, Cog, Hiko) để nâng đỡ các vùng da chảy xệ và kích thích tăng sinh collagen tự nhiên.',
+    'Căng chỉ collagen tại Viện Thẩm Mỹ Quang Đăng là giải pháp "cải lão hoàn đồng" không phẫu thuật, sử dụng các dòng chỉ sinh học cao cấp (Mono, Cog, Hiko) để nâng đỡ các vùng da chảy xệ và kích thích tăng sinh collagen tự nhiên.',
     'Chỉ với 60 phút thực hiện, bạn sẽ thấy gương mặt trẻ lại 10 tuổi, các nếp nhăn rãnh cười biến mất, nọng cằm được xiết gọn, kiến tạo gương mặt V-line thanh tú.'
   ],
   pricing: [
@@ -387,7 +387,7 @@ SERVICE_DETAILS_DATA['botox'] = {
   ...SERVICE_DETAILS_DATA['botox'],
   introTitle: 'Thẩm Mỹ Nội Khoa Botox – Xóa Nhăn & Thon Gọn Tức Thì',
   introDesc: [
-    'Botox (Botulinum Toxin) tại Quang Đăng là giải pháp vàng trong thẩm mỹ nội khoa, giúp thư giãn các nhóm cơ gây nếp nhăn và thu gọn các vùng cơ phì đại (như cơ hàm, bắp tay).',
+    'Botox (Botulinum Toxin) tại Viện Thẩm Mỹ Quang Đăng là giải pháp vàng trong thẩm mỹ nội khoa, giúp thư giãn các nhóm cơ gây nếp nhăn và thu gọn các vùng cơ phì đại (như cơ hàm, bắp tay).',
     'Chúng tôi cam kết sử dụng tinh chất Botulax chính hãng, được thực hiện trực tiếp bởi bác sĩ chuyên khoa với liều lượng chuẩn xác, đảm bảo mang lại vẻ đẹp tự nhiên, không gây đơ cứng gương mặt.'
   ],
   pricing: [
@@ -408,7 +408,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 1,
     name: 'Chị Lan Anh',
     service: 'Điều Trị Da Liễu',
-    content: 'Mình đã điều trị ở nhiều nơi không khỏi, nhưng đến Quang Đăng sau 3 buổi đã thấy nám mờ hẳn. Bác sĩ tư vấn rất có tâm.',
+    content: 'Mình đã điều trị ở nhiều nơi không khỏi, nhưng đến Viện Thẩm Mỹ Quang Đăng sau 3 buổi đã thấy nám mờ hẳn. Bác sĩ tư vấn rất có tâm.',
     avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=200',
     rating: 5
   },

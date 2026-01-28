@@ -5,7 +5,7 @@ import { Shield, Users, Heart, Star, CheckCircle, MapPin, Clock } from 'lucide-r
 import Button from '@/components/Button';
 
 export const metadata = {
-  title: "Về Chúng Tôi - Thẩm Mỹ Viện Quốc Tế Quang Đăng"
+  title: "Về Chúng Tôi - Viện Thẩm Mỹ Quang Đăng"
 };
 
 export default function About() {
@@ -13,7 +13,7 @@ export default function About() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
-    "name": "Thẩm Mỹ Viện Quốc Tế Quang Đăng",
+    "name": "Viện Thẩm Mỹ Quang Đăng",
     "image": "https://images.unsplash.com/photo-1519823551278-64ac927ac4ac",
     "description": "Thẩm mỹ viện chuẩn quốc tế hàng đầu tại Quỳnh Lưu, Nghệ An. Chuyên điều trị da, trẻ hóa và spa cao cấp.",
     "address": {
@@ -43,7 +43,7 @@ export default function About() {
             Nâng Tầm Nhan Sắc Việt <br /> <span className="text-green-600 italic">Chuẩn Quốc Tế</span>
           </h1>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8 font-light leading-relaxed">
-            Tọa lạc tại vị trí đắc địa nhất Quỳnh Lưu, Thẩm Mỹ Viện Quốc Tế Quang Đăng là điểm đến tin cậy cho hàng ngàn phụ nữ Nghệ An trên hành trình tìm lại vẻ đẹp hoàn mỹ.
+            Tọa lạc tại vị trí đắc địa nhất Quỳnh Lưu, Viện Thẩm Mỹ Quang Đăng là điểm đến tin cậy cho hàng ngàn phụ nữ Nghệ An trên hành trình tìm lại vẻ đẹp hoàn mỹ.
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function About() {
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                 <Image
                   src="https://images.unsplash.com/photo-1519823551278-64ac927ac4ac?auto=format&fit=crop&q=80&w=800"
-                  alt="Không gian Quang Đăng Spa"
+                  alt="Không gian Viện Thẩm Mỹ Quang Đăng"
                   width={800}
                   height={600}
                   className="w-full h-auto"
@@ -71,10 +71,10 @@ export default function About() {
                 Khởi Nguồn Từ Tâm – Vươn Tầm Quốc Tế
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed text-justify">
-                Thẩm Mỹ Viện Quốc Tế Quang Đăng được thành lập với sứ mệnh mang các công nghệ làm đẹp tiên tiến nhất thế giới về với Nghệ An. Chúng tôi hiểu rằng, phụ nữ hiện đại xứng đáng được tận hưởng những dịch vụ đẳng cấp 5 sao ngay tại quê hương mình mà không cần đi xa.
+                Viện Thẩm Mỹ Quang Đăng được thành lập với sứ mệnh mang các công nghệ làm đẹp tiên tiến nhất thế giới về với Nghệ An. Chúng tôi hiểu rằng, phụ nữ hiện đại xứng đáng được tận hưởng những dịch vụ đẳng cấp 5 sao ngay tại quê hương mình mà không cần đi xa.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed text-justify">
-                Tại Quang Đăng, chữ <strong>&quot;TÍN&quot;</strong> và chữ <strong>&quot;TÂM&quot;</strong> luôn được đặt lên hàng đầu. Mỗi khách hàng đến với chúng tôi không chỉ là khách hàng, mà là một người thân cần được chăm sóc và trân trọng.
+                Tại Viện Thẩm Mỹ Quang Đăng, chữ <strong>&quot;TÍN&quot;</strong> và chữ <strong>&quot;TÂM&quot;</strong> luôn được đặt lên hàng đầu. Mỗi khách hàng đến với chúng tôi không chỉ là khách hàng, mà là một người thân cần được chăm sóc và trân trọng.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -214,7 +214,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
             <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-              <h2 className="font-serif text-3xl font-bold text-gray-900 mb-6">Ghé Thăm Quang Đăng</h2>
+              <h2 className="font-serif text-3xl font-bold text-gray-900 mb-6">Ghé Thăm Viện Thẩm Mỹ Quang Đăng</h2>
               <ul className="space-y-6 mb-8">
                 <li className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 shrink-0">
@@ -242,7 +242,7 @@ export default function About() {
             <div className="md:w-1/2 min-h-[300px] bg-gray-200 relative">
               {/* Map Placeholder */}
               <iframe
-                src="https://maps.google.com/maps?q=TTTM%20%C4%90%E1%BB%A9c%20T%C3%A0i%20Qu%E1%BB%B3nh%20L%C6%A1u&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.178907766313!2d105.6284122!3d19.1436444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313771bb3ccf30bb%3A0x5a05af3f0112da74!2zVHJ1bmcgdMOibSB0aMawxqFuZyBt4bqhaSDEkOG7qWMgVMOgaSAtIFTDom0gxJDhuqF0!5e0!3m2!1svi!2s!4v1769625563616!5m2!1svi!2s"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

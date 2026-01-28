@@ -85,7 +85,7 @@ const Header: React.FC = () => {
               <div className="relative h-10 w-10 md:h-14 md:w-14">
                 <Image
                   src="/quang-dang-logo.png"
-                  alt="Quang Đăng Aesthetic Logo"
+                  alt="Viện Thẩm Mỹ Quang Đăng Logo"
                   fill
                   className="object-contain"
                   priority
@@ -96,7 +96,7 @@ const Header: React.FC = () => {
                   QUANG ĐĂNG
                 </span>
                 <span className={`text-[9px] md:text-[11px] tracking-[0.12em] uppercase font-medium -mt-0.5 ${shouldShowWhiteBg ? 'text-gray-500' : 'text-white/70'}`}>
-                  Thẩm Mỹ Viện Quốc Tế
+                  Viện Thẩm Mỹ
                 </span>
               </div>
             </Link>

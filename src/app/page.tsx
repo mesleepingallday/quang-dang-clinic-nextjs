@@ -7,6 +7,13 @@ import BookingForm from '@/components/BookingForm';
 import ScrollReveal from '@/components/ScrollReveal';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import { getServices, getTestimonials, getStrapiMediaUrl } from '@/lib/strapi';
+import {
+  BeforeAfterGallery,
+  TeamSection,
+  FAQSection,
+  LocationContact,
+  BlogPreview,
+} from '@/components/sections';
 
 export default async function Home() {
   // Fetch services and testimonials from Strapi
@@ -43,7 +50,7 @@ export default async function Home() {
           <div className="max-w-4xl text-white">
             <ScrollReveal animation="fade-in-up" duration={0.8} delay={0}>
               <span className="inline-block py-1 px-3 border border-white/30 bg-white/10 rounded-full text-sm uppercase tracking-[0.2em] mb-6 backdrop-blur-md shadow-lg animate-pulse-glow">
-                Thẩm Mỹ Viện Quốc Tế Quang Đăng
+                Viện Thẩm Mỹ Quang Đăng
               </span>
             </ScrollReveal>
 
@@ -119,7 +126,6 @@ export default async function Home() {
       </section>
 
       {/* 3. SERVICE HIGHLIGHT */}
-      {/* 3. SERVICE HIGHLIGHT */}
       <section className="py-24 bg-white relative">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-nude-50/50 -z-10"></div>
         <div className="container mx-auto px-4">
@@ -173,7 +179,10 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 4. WHY US & PROCESS */}
+      {/* 4. NEW: Before/After Gallery */}
+      <BeforeAfterGallery />
+
+      {/* 5. WHY US & PROCESS */}
       <section className="py-24 bg-nude-100 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -181,10 +190,10 @@ export default async function Home() {
             <div className="lg:w-1/2">
               <ScrollReveal animation="slide-right">
                 <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-700 mb-6 leading-tight">
-                  Tại Sao Chọn <br /> Quang Đăng Aesthetic?
+                  Tại Sao Chọn <br /> Viện Thẩm Mỹ Quang Đăng?
                 </h2>
                 <p className="text-gray-600 mb-10 leading-relaxed text-lg">
-                  Chúng tôi hiểu rằng, mỗi người phụ nữ đều có vẻ đẹp riêng. Sứ mệnh của Quang Đăng là tôn vinh vẻ đẹp đó bằng sự tận tâm, chuyên nghiệp và công nghệ hiện đại nhất.
+                  Chúng tôi hiểu rằng, mỗi người phụ nữ đều có vẻ đẹp riêng. Sứ mệnh của Viện Thẩm Mỹ Quang Đăng là tôn vinh vẻ đẹp đó bằng sự tận tâm, chuyên nghiệp và công nghệ hiện đại nhất.
                 </p>
               </ScrollReveal>
 
@@ -234,8 +243,10 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 5. TESTIMONIALS */}
-      {/* 5. TESTIMONIALS */}
+      {/* 6. NEW: Meet Our Experts */}
+      <TeamSection />
+
+      {/* 7. TESTIMONIALS */}
       <section className="py-24 bg-white relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-20 left-10 text-green-100 opacity-30 select-none pointer-events-none">
@@ -295,8 +306,13 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 6. PROMOTION & BOOKING */}
-      {/* 6. PROMOTION & BOOKING */}
+      {/* 8. NEW: Blog Preview */}
+      <BlogPreview />
+
+      {/* 9. NEW: FAQ Section */}
+      <FAQSection />
+
+      {/* 10. PROMOTION & BOOKING */}
       <section id="booking" className="py-24 bg-green-600 relative overflow-hidden">
         {/* Animated Background Shapes */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse-glow"></div>
@@ -342,6 +358,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* 11. NEW: Location & Contact */}
+      <LocationContact />
     </div>
   );
 }

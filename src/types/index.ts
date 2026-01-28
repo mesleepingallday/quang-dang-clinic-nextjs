@@ -100,6 +100,49 @@ export interface BlogPost {
   relatedServices?: string[]; // references Service IDs for cross-selling
 }
 
+// --- HOMEPAGE NEW SECTIONS ---
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  title: string;
+  image: string;
+  specialization: string;
+  experience: string;
+  bio: string;
+  certifications: string[];
+}
+
+export interface BeforeAfterCase {
+  id: string;
+  treatmentType: string;
+  beforeImage: string;
+  afterImage: string;
+  description: string;
+  duration: string;
+}
+
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface StatItem {
+  id: string;
+  value: number;
+  suffix: string;
+  label: string;
+  icon: string;
+}
+
+export interface TrustLogo {
+  id: string;
+  name: string;
+  logo: string;
+  description?: string;
+}
+
 // --- STRAPI RESPONSE TYPES ---
 
 // Strapi Response Types

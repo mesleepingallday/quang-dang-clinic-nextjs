@@ -6,7 +6,7 @@ import Button from '@/components/Button';
 import { getServices, getStrapiMediaUrl, Service } from '@/lib/strapi';
 
 export const metadata = {
-  title: "Dịch Vụ Thẩm Mỹ Quốc Tế - Quang Đăng Aesthetic Clinic"
+  title: "Dịch Vụ Thẩm Mỹ Quốc Tế - Viện Thẩm Mỹ Quang Đăng"
 };
 
 // Map of service slugs to category IDs
@@ -91,7 +91,7 @@ const Services: React.FC = async () => {
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] opacity-50 z-0"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <span className="text-green-600 text-sm font-bold tracking-[0.2em] uppercase mb-4 inline-block">
-            Quang Đăng Aesthetic Menu 2024
+            Viện Thẩm Mỹ Quang Đăng - Menu 2024
           </span>
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Nâng Tầm Nhan Sắc <br /> <span className="italic text-green-600">Với 17 Dịch Vụ Đẳng Cấp</span>
@@ -197,7 +197,7 @@ const Services: React.FC = async () => {
             Khởi Đầu Hành Trình Tỏa Sáng
           </h2>
           <p className="max-w-2xl mx-auto text-nude-100 mb-10 text-lg font-light">
-            Hãy để Quang Đăng Aesthetic đồng hành cùng bạn trên hành trình chinh phục vẻ đẹp hoàn mỹ nhất của chính mình.
+            Hãy để Viện Thẩm Mỹ Quang Đăng đồng hành cùng bạn trên hành trình chinh phục vẻ đẹp hoàn mỹ nhất của chính mình.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild className="px-10 py-4 text-lg bg-green-500 hover:bg-green-600 text-white border-none shadow-2xl">
