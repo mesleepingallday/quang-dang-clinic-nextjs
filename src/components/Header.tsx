@@ -5,7 +5,7 @@ import type { NavItem } from '@/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, Calendar, ChevronDown, ChevronRight, Sparkles, Shield, Zap, Scissors, type LucideIcon } from 'lucide-react';
+import { Menu, X, Phone, Calendar, ChevronDown, ChevronRight, Sparkles, Shield, Zap, Scissors, Search, type LucideIcon } from 'lucide-react';
 import { NAV_ITEMS } from '@/lib/data';
 import Button from './Button';
 import { SearchButton, SearchModal } from './search';
@@ -176,16 +176,32 @@ const Header: React.FC = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              type="button"
-              className={`lg:hidden p-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 ${shouldShowWhiteBg ? 'text-green-700' : 'text-white'
-                }`}
-              onClick={() => setIsMobileMenuOpen(true)}
-              aria-label="Open menu"
-            >
-              <Menu size={28} aria-hidden="true" />
-            </button>
+            {/* Mobile/Tablet Search + Menu Buttons */}
+            <div className="flex lg:hidden items-center gap-2">
+              {/* Mobile Search Button - Icon only */}
+              <button
+                type="button"
+                onClick={openSearch}
+                className={`p-2 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 ${shouldShowWhiteBg
+                  ? 'text-gray-600 hover:text-green-600 hover:bg-green-50'
+                  : 'text-white hover:bg-white/10'
+                  }`}
+                aria-label="Tìm kiếm"
+              >
+                <Search size={22} />
+              </button>
+
+              {/* Mobile Menu Button */}
+              <button
+                type="button"
+                className={`p-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 ${shouldShowWhiteBg ? 'text-green-700' : 'text-white'
+                  }`}
+                onClick={() => setIsMobileMenuOpen(true)}
+                aria-label="Open menu"
+              >
+                <Menu size={28} aria-hidden="true" />
+              </button>
+            </div>
           </div>
         </div>
       </header>

@@ -82,8 +82,12 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
             className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh] px-4"
             onClick={handleBackdropClick}
         >
-            {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fade-in" />
+            {/* Backdrop - Click to close */}
+            <div
+                className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fade-in"
+                onClick={onClose}
+                aria-hidden="true"
+            />
 
             {/* Modal */}
             <div
