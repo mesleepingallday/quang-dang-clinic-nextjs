@@ -36,11 +36,11 @@ export default function About() {
       <section className="relative pt-32 pb-20 bg-nude-50 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <span className="text-gold-600 text-sm font-bold tracking-[0.2em] uppercase mb-4 inline-block animate-fade-in">
+          <span className="text-green-600 text-sm font-bold tracking-[0.2em] uppercase mb-4 inline-block animate-fade-in">
             Câu Chuyện Thương Hiệu
           </span>
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Nâng Tầm Nhan Sắc Việt <br /> <span className="text-gold-600 italic">Chuẩn Quốc Tế</span>
+            Nâng Tầm Nhan Sắc Việt <br /> <span className="text-green-600 italic">Chuẩn Quốc Tế</span>
           </h1>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8 font-light leading-relaxed">
             Tọa lạc tại vị trí đắc địa nhất Quỳnh Lưu, Thẩm Mỹ Viện Quốc Tế Quang Đăng là điểm đến tin cậy cho hàng ngàn phụ nữ Nghệ An trên hành trình tìm lại vẻ đẹp hoàn mỹ.
@@ -62,7 +62,7 @@ export default function About() {
                   className="w-full h-auto"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gold-100 rounded-full -z-0"></div>
+              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-green-100 rounded-full -z-0"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-nude-200 rounded-full -z-0"></div>
             </div>
 
@@ -74,12 +74,12 @@ export default function About() {
                 Thẩm Mỹ Viện Quốc Tế Quang Đăng được thành lập với sứ mệnh mang các công nghệ làm đẹp tiên tiến nhất thế giới về với Nghệ An. Chúng tôi hiểu rằng, phụ nữ hiện đại xứng đáng được tận hưởng những dịch vụ đẳng cấp 5 sao ngay tại quê hương mình mà không cần đi xa.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed text-justify">
-                 Tại Quang Đăng, chữ <strong>&quot;TÍN&quot;</strong> và chữ <strong>&quot;TÂM&quot;</strong> luôn được đặt lên hàng đầu. Mỗi khách hàng đến với chúng tôi không chỉ là khách hàng, mà là một người thân cần được chăm sóc và trân trọng.
+                Tại Quang Đăng, chữ <strong>&quot;TÍN&quot;</strong> và chữ <strong>&quot;TÂM&quot;</strong> luôn được đặt lên hàng đầu. Mỗi khách hàng đến với chúng tôi không chỉ là khách hàng, mà là một người thân cần được chăm sóc và trân trọng.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-gold-50 flex items-center justify-center text-gold-600">
+                  <div className="shrink-0 w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
                     <Shield size={20} />
                   </div>
                   <div>
@@ -88,7 +88,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-gold-50 flex items-center justify-center text-gold-600">
+                  <div className="shrink-0 w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
                     <Users size={20} />
                   </div>
                   <div>
@@ -97,7 +97,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-gold-50 flex items-center justify-center text-gold-600">
+                  <div className="shrink-0 w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
                     <Heart size={20} />
                   </div>
                   <div>
@@ -106,7 +106,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-gold-50 flex items-center justify-center text-gold-600">
+                  <div className="shrink-0 w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
                     <Star size={20} />
                   </div>
                   <div>
@@ -123,7 +123,7 @@ export default function About() {
       {/* 3. FACILITIES / TECH */}
       <section className="py-20 bg-nude-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-gold-300">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-green-300">
             Cơ Sở Vật Chất & Công Nghệ
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto mb-12">
@@ -181,7 +181,7 @@ export default function About() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Đội Ngũ Chuyên Gia
             </h2>
-            <div className="w-24 h-1 bg-gold-500 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -192,17 +192,17 @@ export default function About() {
               { name: "KTV Mai Lan", role: "Chuyên viên Laser", img: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=80&w=400" }
             ].map((member, idx) => (
               <div key={idx} className="text-center group">
-                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gold-100 mb-6 shadow-lg relative">
-                   <Image
-                     src={member.img}
-                     alt={member.name}
-                     fill
-                     sizes="192px"
-                     className="object-cover transition-transform duration-500 group-hover:scale-110"
-                   />
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-green-100 mb-6 shadow-lg relative">
+                  <Image
+                    src={member.img}
+                    alt={member.name}
+                    fill
+                    sizes="192px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
                 <h3 className="font-serif text-xl font-bold text-gray-900">{member.name}</h3>
-                <p className="text-gold-600 text-sm uppercase tracking-wide font-medium">{member.role}</p>
+                <p className="text-green-600 text-sm uppercase tracking-wide font-medium">{member.role}</p>
               </div>
             ))}
           </div>
@@ -210,14 +210,14 @@ export default function About() {
       </section>
 
       {/* 5. LOCATION & CTA */}
-      <section className="py-20 bg-gold-50">
+      <section className="py-20 bg-green-50">
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
             <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
               <h2 className="font-serif text-3xl font-bold text-gray-900 mb-6">Ghé Thăm Quang Đăng</h2>
               <ul className="space-y-6 mb-8">
                 <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center text-gold-600 shrink-0">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 shrink-0">
                     <MapPin size={20} />
                   </div>
                   <div>
@@ -226,7 +226,7 @@ export default function About() {
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center text-gold-600 shrink-0">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 shrink-0">
                     <Clock size={20} />
                   </div>
                   <div>
@@ -240,12 +240,12 @@ export default function About() {
               </Button>
             </div>
             <div className="md:w-1/2 min-h-[300px] bg-gray-200 relative">
-               {/* Map Placeholder */}
-               <iframe
+              {/* Map Placeholder */}
+              <iframe
                 src="https://maps.google.com/maps?q=TTTM%20%C4%90%E1%BB%A9c%20T%C3%A0i%20Qu%E1%BB%B3nh%20L%C6%A1u&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
-                style={{border:0}}
+                style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

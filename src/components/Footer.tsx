@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +10,20 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Info */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0ms' }}>
-            <h3 className="font-serif text-3xl font-bold mb-6 text-gold-400 tracking-wide">QUANG ĐĂNG</h3>
+            <Link href="/" className="flex items-center gap-3 mb-6">
+              <div className="relative h-12 w-12 md:h-14 md:w-14 bg-white rounded-xl p-1.5 shadow-lg">
+                <Image
+                  src="/quang-dang-logo.png"
+                  alt="Quang Đăng Aesthetic Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg md:text-xl font-serif font-bold text-white tracking-wide">QUANG ĐĂNG</span>
+                <span className="text-[9px] md:text-[10px] uppercase tracking-[0.12em] text-green-300 font-medium -mt-0.5">Thẩm Mỹ Viện Quốc Tế</span>
+              </div>
+            </Link>
             <p className="text-nude-200 mb-8 leading-loose text-sm opacity-90">
               Hệ thống thẩm mỹ viện chuẩn quốc tế hàng đầu tại Nghệ An. Chúng tôi cam kết mang lại vẻ đẹp an toàn, tự nhiên và bền vững cho phụ nữ Việt.
             </p>
@@ -19,7 +33,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="p-3 bg-white/5 rounded-full hover:bg-gold-500 hover:text-white text-gold-400 transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+                className="p-3 bg-white/5 rounded-full hover:bg-green-500 hover:text-white text-green-400 transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
               >
                 <Facebook size={20} aria-hidden="true" />
               </a>
@@ -28,7 +42,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="p-3 bg-white/5 rounded-full hover:bg-gold-500 hover:text-white text-gold-400 transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+                className="p-3 bg-white/5 rounded-full hover:bg-green-500 hover:text-white text-green-400 transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
               >
                 <Instagram size={20} aria-hidden="true" />
               </a>
@@ -37,7 +51,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="p-3 bg-white/5 rounded-full hover:bg-gold-500 hover:text-white text-gold-400 transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+                className="p-3 bg-white/5 rounded-full hover:bg-green-500 hover:text-white text-green-400 transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
               >
                 <Youtube size={20} aria-hidden="true" />
               </a>
@@ -46,32 +60,32 @@ const Footer: React.FC = () => {
 
           {/* Services */}
           <div className="animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-            <h4 className="font-serif text-lg font-bold mb-6 text-gold-200 uppercase tracking-widest text-xs">Dịch Vụ Nổi Bật</h4>
+            <h4 className="font-serif text-lg font-bold mb-6 text-green-200 uppercase tracking-widest text-xs">Dịch Vụ Nổi Bật</h4>
             <ul className="space-y-4 text-sm text-nude-200/80">
-              <li><Link href="/dich-vu/cham-soc-da-chuyen-sau" className="hover:text-gold-400 transition-colors hover:translate-x-1 inline-block duration-300">Chăm sóc da chuyên sâu</Link></li>
-              <li><Link href="/dich-vu/tri-mun-nam" className="hover:text-gold-400 transition-colors hover:translate-x-1 inline-block duration-300">Điều trị Mụn - Nám - Tàn nhang</Link></li>
-              <li><Link href="/dich-vu/tre-hoa" className="hover:text-gold-400 transition-colors hover:translate-x-1 inline-block duration-300">Trẻ hóa da công nghệ cao</Link></li>
-              <li><Link href="/dich-vu/triet-long" className="hover:text-gold-400 transition-colors hover:translate-x-1 inline-block duration-300">Triệt lông vĩnh viễn</Link></li>
-              <li><Link href="/dich-vu/tam-trang" className="hover:text-gold-400 transition-colors hover:translate-x-1 inline-block duration-300">Tắm trắng phi thuyền</Link></li>
+              <li><Link href="/dich-vu/cham-soc-da-chuyen-sau" className="hover:text-green-400 transition-colors hover:translate-x-1 inline-block duration-300">Chăm sóc da chuyên sâu</Link></li>
+              <li><Link href="/dich-vu/tri-mun-nam" className="hover:text-green-400 transition-colors hover:translate-x-1 inline-block duration-300">Điều trị Mụn - Nám - Tàn nhang</Link></li>
+              <li><Link href="/dich-vu/tre-hoa" className="hover:text-green-400 transition-colors hover:translate-x-1 inline-block duration-300">Trẻ hóa da công nghệ cao</Link></li>
+              <li><Link href="/dich-vu/triet-long" className="hover:text-green-400 transition-colors hover:translate-x-1 inline-block duration-300">Triệt lông vĩnh viễn</Link></li>
+              <li><Link href="/dich-vu/tam-trang" className="hover:text-green-400 transition-colors hover:translate-x-1 inline-block duration-300">Tắm trắng phi thuyền</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div className="animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-            <h4 className="font-serif text-lg font-bold mb-6 text-gold-200 uppercase tracking-widest text-xs">Liên Hệ</h4>
+            <h4 className="font-serif text-lg font-bold mb-6 text-green-200 uppercase tracking-widest text-xs">Liên Hệ</h4>
             <ul className="space-y-5 text-sm text-nude-200/80">
               <li className="flex items-start gap-4">
-                <MapPin className="shrink-0 text-gold-500 mt-1" size={18} />
+                <MapPin className="shrink-0 text-green-500 mt-1" size={18} />
                 <span className="leading-relaxed">Tầng 5 - TTTM Đức Tài — Tâm Đạt, Khối 5, Quỳnh Lưu, Nghệ An</span>
               </li>
               <li className="flex items-center gap-4">
-                <Phone className="shrink-0 text-gold-500" size={18} />
-                <a href="tel:0988834446" className="flex items-center gap-2 font-semibold text-white hover:text-gold-400 transition-colors">
+                <Phone className="shrink-0 text-green-500" size={18} />
+                <a href="tel:0988834446" className="flex items-center gap-2 font-semibold text-white hover:text-green-400 transition-colors">
                   <span>0988.834.446</span>
                 </a>
               </li>
               <li className="flex items-center gap-4">
-                <Mail className="shrink-0 text-gold-500" size={18} />
+                <Mail className="shrink-0 text-green-500" size={18} />
                 <span className="font-sans">cskh@quangdang.vn</span>
               </li>
             </ul>
@@ -79,15 +93,15 @@ const Footer: React.FC = () => {
 
           {/* Hours */}
           <div className="animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-            <h4 className="font-serif text-lg font-bold mb-6 text-gold-200 uppercase tracking-widest text-xs">Giờ Làm Việc</h4>
+            <h4 className="font-serif text-lg font-bold mb-6 text-green-200 uppercase tracking-widest text-xs">Giờ Làm Việc</h4>
             <ul className="space-y-4 text-sm text-nude-200/80">
               <li className="flex justify-between items-center border-b border-white/5 pb-3">
                 <span className="font-medium">Thứ 2 - Thứ 6</span>
-                <span className="text-gold-400 font-bold">08:30 - 20:00</span>
+                <span className="text-green-400 font-bold">08:30 - 20:00</span>
               </li>
               <li className="flex justify-between items-center border-b border-white/5 pb-3">
                 <span className="font-medium">Thứ 7 - Chủ Nhật</span>
-                <span className="text-gold-400 font-bold">08:00 - 21:00</span>
+                <span className="text-green-400 font-bold">08:00 - 21:00</span>
               </li>
             </ul>
             <div className="mt-8 p-4 bg-white/5 rounded-lg border border-white/10 backdrop-blur-sm">

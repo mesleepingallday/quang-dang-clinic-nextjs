@@ -105,14 +105,14 @@ const Pricing = async () => {
   return (
     <div className="min-h-screen bg-white">
       {/* HERO SECTION */}
-      <section className="pt-32 pb-16 bg-nude-50 relative overflow-hidden text-center">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gold-100/30 skew-x-12 transform translate-x-20"></div>
+      <section className="pt-32 pb-16 bg-green-50 relative overflow-hidden text-center">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-green-100/30 skew-x-12 transform translate-x-20"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <span className="text-gold-600 font-bold uppercase tracking-[0.2em] text-sm mb-4 inline-block">
+          <span className="text-green-600 font-bold uppercase tracking-[0.2em] text-sm mb-4 inline-block">
             Báo Giá Niêm Yết 2024
           </span>
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Bảng Giá <span className="text-gold-600 italic">Dịch Vụ</span>
+            Bảng Giá <span className="text-green-600 italic">Dịch Vụ</span>
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto font-light leading-relaxed">
             Cam kết minh bạch, không phát sinh chi phí ẩn. Quang Đăng Aesthetic Clinic mang lại giá trị thật cho vẻ đẹp của bạn.
@@ -128,15 +128,15 @@ const Pricing = async () => {
             priceCategories.map((category, categoryIdx) => (
               <div key={category.id} className="mb-24">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold font-serif text-xl">
+                  <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl">
                     {categoryIdx + 1}
                   </div>
                   <h2 className="font-serif text-3xl font-bold text-gray-900">{category.name}</h2>
                 </div>
                 {category.pricingItems && category.pricingItems.length > 0 ? (
-                  <div className="border border-gold-200 rounded-3xl overflow-hidden shadow-lg">
+                  <div className="border border-green-200 rounded-3xl overflow-hidden shadow-lg">
                     <table className="w-full text-left border-collapse">
-                      <thead className="bg-gold-600 text-white">
+                      <thead className="bg-green-600 text-white">
                         <tr>
                           <th className="p-6 font-bold uppercase tracking-wider">Dịch Vụ</th>
                           <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Niêm Yết</th>
@@ -144,14 +144,14 @@ const Pricing = async () => {
                       </thead>
                       <tbody className="divide-y divide-gray-100 bg-white">
                         {category.pricingItems.map((item) => (
-                          <tr key={item.id} className="hover:bg-gold-50 transition-colors">
+                          <tr key={item.id} className="hover:bg-green-50 transition-colors">
                             <td className="p-6">
                               <div className="font-bold text-gray-900 text-lg">{item.name}</div>
                               {item.description && (
                                 <div className="text-sm text-gray-500">{item.description}</div>
                               )}
                             </td>
-                            <td className="p-6 text-right font-bold text-gold-600 text-xl">
+                            <td className="p-6 text-right font-bold text-green-600 text-xl">
                               {typeof item.price === 'number'
                                 ? `${item.price.toLocaleString('vi-VN')}đ`
                                 : `${item.price}đ`}
@@ -162,7 +162,7 @@ const Pricing = async () => {
                     </table>
                   </div>
                 ) : (
-                  <div className="text-center py-12 bg-nude-50 rounded-2xl text-gray-500">
+                  <div className="text-center py-12 bg-green-50 rounded-2xl text-gray-500">
                     <p>Chưa có dịch vụ trong danh mục này.</p>
                   </div>
                 )}
@@ -174,18 +174,18 @@ const Pricing = async () => {
               {/* SECTION 1: EYE AESTHETIC */}
               <div className="mb-24">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold font-serif text-xl">1</div>
+                  <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl">1</div>
                   <h2 className="font-serif text-3xl font-bold text-gray-900">Thẩm Mỹ Mắt Chuyên Sâu</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-white rounded-3xl border border-gold-100 overflow-hidden shadow-sm">
-                    <div className="bg-gold-500 text-white p-4 font-bold text-center uppercase tracking-wider text-sm">Nâng Cung Mày / Mí Trên</div>
+                  <div className="bg-white rounded-3xl border border-green-100 overflow-hidden shadow-sm">
+                    <div className="bg-green-500 text-white p-4 font-bold text-center uppercase tracking-wider text-sm">Nâng Cung Mày / Mí Trên</div>
                     <table className="w-full text-left">
                       <tbody className="divide-y divide-gray-50">
                         {eyeLifting.map((item, idx) => (
-                          <tr key={idx} className="hover:bg-nude-50">
+                          <tr key={idx} className="hover:bg-green-50">
                             <td className="p-4 text-sm text-gray-800 font-medium">{item.name}</td>
-                            <td className="p-4 text-right font-bold text-gold-600 text-sm">{item.price}</td>
+                            <td className="p-4 text-right font-bold text-green-600 text-sm">{item.price}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -207,230 +207,230 @@ const Pricing = async () => {
                 </div>
               </div>
 
-          {/* SECTION 2: BOTOX */}
-          <div className="mb-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold font-serif text-xl">2</div>
-              <h2 className="font-serif text-3xl font-bold text-gray-900">Botox Thẩm Mỹ Nội Khoa</h2>
-            </div>
-            <div className="border border-gold-200 rounded-3xl overflow-hidden shadow-lg">
-              <table className="w-full text-left border-collapse">
-                <thead className="bg-gray-800 text-white">
-                  <tr>
-                    <th className="p-6 font-bold uppercase tracking-wider">Vùng Điều Trị</th>
-                    <th className="p-6 font-bold text-center uppercase tracking-wider">Sản Phẩm</th>
-                    <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Niêm Yết</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100 bg-white">
-                  {botoxPricing.map((item, idx) => (
-                    <tr key={idx} className="hover:bg-gold-50 transition-colors">
-                      <td className="p-6">
-                        <div className="font-bold text-gray-900 text-lg">{item.name}</div>
-                        <div className="text-sm text-gray-500">{item.note}</div>
-                      </td>
-                      <td className="p-6 text-center text-gray-600 font-medium">
-                        <span className="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold text-gray-700">
-                           {item.product}
-                        </span>
-                      </td>
-                      <td className="p-6 text-right font-bold text-gold-600 text-xl">{item.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+              {/* SECTION 2: BOTOX */}
+              <div className="mb-24">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl">2</div>
+                  <h2 className="font-serif text-3xl font-bold text-gray-900">Botox Thẩm Mỹ Nội Khoa</h2>
+                </div>
+                <div className="border border-green-200 rounded-3xl overflow-hidden shadow-lg">
+                  <table className="w-full text-left border-collapse">
+                    <thead className="bg-gray-800 text-white">
+                      <tr>
+                        <th className="p-6 font-bold uppercase tracking-wider">Vùng Điều Trị</th>
+                        <th className="p-6 font-bold text-center uppercase tracking-wider">Sản Phẩm</th>
+                        <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Niêm Yết</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100 bg-white">
+                      {botoxPricing.map((item, idx) => (
+                        <tr key={idx} className="hover:bg-green-50 transition-colors">
+                          <td className="p-6">
+                            <div className="font-bold text-gray-900 text-lg">{item.name}</div>
+                            <div className="text-sm text-gray-500">{item.note}</div>
+                          </td>
+                          <td className="p-6 text-center text-gray-600 font-medium">
+                            <span className="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold text-gray-700">
+                              {item.product}
+                            </span>
+                          </td>
+                          <td className="p-6 text-right font-bold text-green-600 text-xl">{item.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
 
-          {/* SECTION 3: CĂNG CHỈ COLLAGEN */}
-          <div className="mb-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold font-serif text-xl">3</div>
-              <h2 className="font-serif text-3xl font-bold text-gray-900">Căng Chỉ Collagen & Nâng Cơ</h2>
-            </div>
-            <div className="border border-gold-300 rounded-3xl overflow-hidden shadow-xl ring-4 ring-gold-50">
-              <table className="w-full text-left border-collapse">
-                <thead className="bg-gold-600 text-white">
-                  <tr>
-                    <th className="p-6 font-bold uppercase tracking-wider">Liệu Trình Căng Chỉ</th>
-                    <th className="p-6 font-bold text-center uppercase tracking-wider">Loại Chỉ</th>
-                    <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Niêm Yết</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gold-100 bg-white">
-                  {threadLiftPricing.map((item, idx) => (
-                    <tr key={idx} className="hover:bg-gold-50 transition-colors">
-                      <td className="p-6">
-                        <div className="font-bold text-gray-900 text-lg">{item.name}</div>
-                        <div className="text-sm text-gray-500">{item.note}</div>
-                      </td>
-                      <td className="p-6 text-center text-gray-600 font-medium">
-                        {item.name.includes('Mono') ? 'Mono' : item.name.includes('Cog') ? 'Cog' : 'Medi White'}
-                      </td>
-                      <td className="p-6 text-right font-bold text-gold-600 text-xl">{item.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+              {/* SECTION 3: CĂNG CHỈ COLLAGEN */}
+              <div className="mb-24">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl">3</div>
+                  <h2 className="font-serif text-3xl font-bold text-gray-900">Căng Chỉ Collagen & Nâng Cơ</h2>
+                </div>
+                <div className="border border-green-300 rounded-3xl overflow-hidden shadow-xl ring-4 ring-green-50">
+                  <table className="w-full text-left border-collapse">
+                    <thead className="bg-green-600 text-white">
+                      <tr>
+                        <th className="p-6 font-bold uppercase tracking-wider">Liệu Trình Căng Chỉ</th>
+                        <th className="p-6 font-bold text-center uppercase tracking-wider">Loại Chỉ</th>
+                        <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Niêm Yết</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-green-100 bg-white">
+                      {threadLiftPricing.map((item, idx) => (
+                        <tr key={idx} className="hover:bg-green-50 transition-colors">
+                          <td className="p-6">
+                            <div className="font-bold text-gray-900 text-lg">{item.name}</div>
+                            <div className="text-sm text-gray-500">{item.note}</div>
+                          </td>
+                          <td className="p-6 text-center text-gray-600 font-medium">
+                            {item.name.includes('Mono') ? 'Mono' : item.name.includes('Cog') ? 'Cog' : 'Medi White'}
+                          </td>
+                          <td className="p-6 text-right font-bold text-green-600 text-xl">{item.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
 
-          {/* SECTION 4: GIẢM BÉO CÔNG NGHỆ CAO */}
-          <div className="mb-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold font-serif text-xl">4</div>
-              <h2 className="font-serif text-3xl font-bold text-gray-900">Giảm Béo Công Nghệ Cao (Máy)</h2>
-            </div>
-            <div className="border border-gold-400 rounded-3xl overflow-hidden shadow-xl">
-              <table className="w-full text-left border-collapse">
-                <thead className="bg-gold-600 text-white">
-                  <tr>
-                    <th className="p-6 font-bold uppercase tracking-wider">Vùng Điều Trị</th>
-                    <th className="p-6 font-bold text-center uppercase tracking-wider">Liệu Trình</th>
-                    <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Trọn Gói</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100 bg-white">
-                  {highTechWeightLoss.map((item, idx) => (
-                    <tr key={idx} className="hover:bg-gold-50 transition-colors">
-                      <td className="p-6">
-                        <div className="font-bold text-gray-900 text-lg">{item.name}</div>
-                        <div className="text-sm text-gray-500">{item.note}</div>
-                      </td>
-                      <td className="p-6 text-center text-gray-600 font-medium">
-                        <span className="bg-nude-100 px-3 py-1 rounded-full text-xs font-bold text-gold-700">
-                          {item.sessions}
-                        </span>
-                      </td>
-                      <td className="p-6 text-right font-bold text-gold-600 text-xl">{item.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+              {/* SECTION 4: GIẢM BÉO CÔNG NGHỆ CAO */}
+              <div className="mb-24">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl">4</div>
+                  <h2 className="font-serif text-3xl font-bold text-gray-900">Giảm Béo Công Nghệ Cao (Máy)</h2>
+                </div>
+                <div className="border border-green-400 rounded-3xl overflow-hidden shadow-xl">
+                  <table className="w-full text-left border-collapse">
+                    <thead className="bg-green-600 text-white">
+                      <tr>
+                        <th className="p-6 font-bold uppercase tracking-wider">Vùng Điều Trị</th>
+                        <th className="p-6 font-bold text-center uppercase tracking-wider">Liệu Trình</th>
+                        <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Trọn Gói</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100 bg-white">
+                      {highTechWeightLoss.map((item, idx) => (
+                        <tr key={idx} className="hover:bg-green-50 transition-colors">
+                          <td className="p-6">
+                            <div className="font-bold text-gray-900 text-lg">{item.name}</div>
+                            <div className="text-sm text-gray-500">{item.note}</div>
+                          </td>
+                          <td className="p-6 text-center text-gray-600 font-medium">
+                            <span className="bg-green-50 px-3 py-1 rounded-full text-xs font-bold text-green-700">
+                              {item.sessions}
+                            </span>
+                          </td>
+                          <td className="p-6 text-right font-bold text-green-600 text-xl">{item.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
 
-          {/* SECTION 5: TẮM TRẮNG & DƯỠNG THỂ - NEW SECTION */}
-          <div className="mb-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold font-serif text-xl">5</div>
-              <h2 className="font-serif text-3xl font-bold text-gray-900">Tắm Trắng & Chăm Sóc Toàn Thân</h2>
-            </div>
-            <div className="border border-gold-200 rounded-3xl overflow-hidden shadow-xl">
-              <table className="w-full text-left border-collapse">
-                <thead className="bg-gray-800 text-white">
-                  <tr>
-                    <th className="p-6 font-bold uppercase tracking-wider">Dịch Vụ Tắm Trắng</th>
-                    <th className="p-6 font-bold text-center uppercase tracking-wider">Liệu Trình</th>
-                    <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Trọn Gói</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100 bg-white">
-                  {whiteningPricing.map((item, idx) => (
-                    <tr key={idx} className="hover:bg-gold-50 transition-colors">
-                      <td className="p-6">
-                        <div className="font-bold text-gray-900 text-lg">{item.name}</div>
-                        <div className="text-sm text-gray-500">{item.note}</div>
-                      </td>
-                      <td className="p-6 text-center text-gray-600 font-medium">
-                        <span className="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold text-gray-700">
-                          {item.sessions}
-                        </span>
-                      </td>
-                      <td className="p-6 text-right font-bold text-gold-600 text-xl">{item.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-4 p-4 bg-gold-50 rounded-2xl flex items-start gap-3 border border-gold-200">
-              <Droplets className="text-gold-600 shrink-0 mt-0.5" size={18} />
-              <p className="text-xs text-gray-700 leading-relaxed italic">
-                * Công nghệ phi thuyền hồng ngoại giúp bật tone trắng hồng tự nhiên. <br/>
-                * <strong>Hiệu quả:</strong> Da mịn màng, đều màu và mờ thâm sạm chỉ sau 10 buổi chuyên sâu.
-              </p>
-            </div>
-          </div>
+              {/* SECTION 5: TẮM TRẮNG & DƯỠNG THỂ - NEW SECTION */}
+              <div className="mb-24">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl">5</div>
+                  <h2 className="font-serif text-3xl font-bold text-gray-900">Tắm Trắng & Chăm Sóc Toàn Thân</h2>
+                </div>
+                <div className="border border-green-200 rounded-3xl overflow-hidden shadow-xl">
+                  <table className="w-full text-left border-collapse">
+                    <thead className="bg-gray-800 text-white">
+                      <tr>
+                        <th className="p-6 font-bold uppercase tracking-wider">Dịch Vụ Tắm Trắng</th>
+                        <th className="p-6 font-bold text-center uppercase tracking-wider">Liệu Trình</th>
+                        <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Trọn Gói</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100 bg-white">
+                      {whiteningPricing.map((item, idx) => (
+                        <tr key={idx} className="hover:bg-green-50 transition-colors">
+                          <td className="p-6">
+                            <div className="font-bold text-gray-900 text-lg">{item.name}</div>
+                            <div className="text-sm text-gray-500">{item.note}</div>
+                          </td>
+                          <td className="p-6 text-center text-gray-600 font-medium">
+                            <span className="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold text-gray-700">
+                              {item.sessions}
+                            </span>
+                          </td>
+                          <td className="p-6 text-right font-bold text-green-600 text-xl">{item.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="mt-4 p-4 bg-green-50 rounded-2xl flex items-start gap-3 border border-green-200">
+                  <Droplets className="text-green-600 shrink-0 mt-0.5" size={18} />
+                  <p className="text-xs text-gray-700 leading-relaxed italic">
+                    * Công nghệ phi thuyền hồng ngoại giúp bật tone trắng hồng tự nhiên. <br />
+                    * <strong>Hiệu quả:</strong> Da mịn màng, đều màu và mờ thâm sạm chỉ sau 10 buổi chuyên sâu.
+                  </p>
+                </div>
+              </div>
 
-          {/* SECTION 6: TIÊM GIẢM BÉO */}
-          <div className="mb-24">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold font-serif text-xl">6</div>
-              <h2 className="font-serif text-3xl font-bold text-gray-900">Tiêm Giảm Béo Hóa Lỏng Mỡ</h2>
-            </div>
-            <div className="border border-gray-200 rounded-3xl overflow-hidden shadow-lg">
-              <table className="w-full text-left border-collapse">
-                <thead className="bg-gray-700 text-white">
-                  <tr>
-                    <th className="p-6 font-bold uppercase tracking-wider">Vùng Điều Trị</th>
-                    <th className="p-6 font-bold text-center uppercase tracking-wider">Liệu Trình</th>
-                    <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Trọn Gói</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100 bg-white">
-                  {injectionWeightLoss.map((item, idx) => (
-                    <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                      <td className="p-6">
-                        <div className="font-bold text-gray-900 text-lg">{item.name}</div>
-                        <div className="text-sm text-gray-500">{item.note}</div>
-                      </td>
-                      <td className="p-6 text-center text-gray-600 font-medium">{item.sessions}</td>
-                      <td className="p-6 text-right font-bold text-gold-600 text-xl">{item.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+              {/* SECTION 6: TIÊM GIẢM BÉO */}
+              <div className="mb-24">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl">6</div>
+                  <h2 className="font-serif text-3xl font-bold text-gray-900">Tiêm Giảm Béo Hóa Lỏng Mỡ</h2>
+                </div>
+                <div className="border border-gray-200 rounded-3xl overflow-hidden shadow-lg">
+                  <table className="w-full text-left border-collapse">
+                    <thead className="bg-gray-700 text-white">
+                      <tr>
+                        <th className="p-6 font-bold uppercase tracking-wider">Vùng Điều Trị</th>
+                        <th className="p-6 font-bold text-center uppercase tracking-wider">Liệu Trình</th>
+                        <th className="p-6 font-bold text-right uppercase tracking-wider">Giá Trọn Gói</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100 bg-white">
+                      {injectionWeightLoss.map((item, idx) => (
+                        <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                          <td className="p-6">
+                            <div className="font-bold text-gray-900 text-lg">{item.name}</div>
+                            <div className="text-sm text-gray-500">{item.note}</div>
+                          </td>
+                          <td className="p-6 text-center text-gray-600 font-medium">{item.sessions}</td>
+                          <td className="p-6 text-right font-bold text-green-600 text-xl">{item.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
 
-          {/* SECTION 7: SKINCARE */}
-          <div className="mb-20">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold font-serif text-xl">7</div>
-              <h2 className="font-serif text-3xl font-bold text-gray-900">Chăm Sóc & Điều Trị Da</h2>
-            </div>
-            <div className="border border-gray-200 rounded-3xl overflow-hidden shadow-sm">
-              <table className="w-full text-left border-collapse">
-                <thead className="bg-nude-100">
-                  <tr>
-                    <th className="p-6 font-bold text-gray-800">Liệu Trình</th>
-                    <th className="p-6 font-bold text-gray-800 text-right">Giá Niêm Yết</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {[...skincareBasic, ...skincareAdvanced].map((item, idx) => (
-                    <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                      <td className="p-6">
-                        <div className="font-bold text-gray-900">{item.name}</div>
-                        <div className="text-xs text-gray-500">{item.desc}</div>
-                      </td>
-                      <td className="p-6 text-right font-bold text-gold-600">{item.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+              {/* SECTION 7: SKINCARE */}
+              <div className="mb-20">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl">7</div>
+                  <h2 className="font-serif text-3xl font-bold text-gray-900">Chăm Sóc & Điều Trị Da</h2>
+                </div>
+                <div className="border border-gray-200 rounded-3xl overflow-hidden shadow-sm">
+                  <table className="w-full text-left border-collapse">
+                    <thead className="bg-green-50">
+                      <tr>
+                        <th className="p-6 font-bold text-gray-800">Liệu Trình</th>
+                        <th className="p-6 font-bold text-gray-800 text-right">Giá Niêm Yết</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      {[...skincareBasic, ...skincareAdvanced].map((item, idx) => (
+                        <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                          <td className="p-6">
+                            <div className="font-bold text-gray-900">{item.name}</div>
+                            <div className="text-xs text-gray-500">{item.desc}</div>
+                          </td>
+                          <td className="p-6 text-right font-bold text-green-600">{item.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </>
           )}
         </div>
       </section>
 
       {/* BENEFITS & FAQ */}
-      <section className="py-20 bg-nude-50">
+      <section className="py-20 bg-green-50">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h2 className="font-serif text-3xl font-bold text-gray-900 mb-8">Ưu đãi thẻ liệu trình</h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 bg-gold-500 text-white rounded-full flex items-center justify-center">
+                  <div className="shrink-0 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center">
                     <ShieldCheck size={20} />
                   </div>
                   <p className="text-gray-600"><strong>Tiết kiệm 20-30%:</strong> Khi mua thẻ liệu trình cho các dịch vụ trọn gói.</p>
                 </div>
                 <div className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 bg-gold-500 text-white rounded-full flex items-center justify-center">
+                  <div className="shrink-0 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center">
                     <Gift size={20} />
                   </div>
                   <p className="text-gray-600"><strong>Bảo hành kết quả:</strong> Cam kết hiệu quả bằng văn bản đối với các gói thẩm mỹ và điều trị.</p>
@@ -440,10 +440,10 @@ const Pricing = async () => {
             <div className="bg-white p-8 rounded-3xl shadow-sm">
               <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">Liên hệ trực tiếp</h2>
               <div className="space-y-4">
-                 <a href="tel:0988834446" className="block text-center py-4 bg-gold-500 text-white font-bold rounded-full hover:bg-gold-600 transition-colors shadow-lg shadow-gold-500/30">
-                   Hotline: 0988.834.446
-                 </a>
-                 <p className="text-center text-xs text-gray-400">Tầng 5 - TTTM Đức Tài — Tâm Đạt, Khối 5, Quỳnh Lưu, Nghệ An</p>
+                <a href="tel:0988834446" className="block text-center py-4 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-colors shadow-lg shadow-green-500/30">
+                  Hotline: 0988.834.446
+                </a>
+                <p className="text-center text-xs text-gray-400">Tầng 5 - TTTM Đức Tài — Tâm Đạt, Khối 5, Quỳnh Lưu, Nghệ An</p>
               </div>
             </div>
           </div>

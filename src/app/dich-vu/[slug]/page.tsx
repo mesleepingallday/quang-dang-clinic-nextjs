@@ -105,12 +105,12 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
       {/* 1. HERO HEADER */}
-      <div className="pt-32 pb-12 bg-nude-50 border-b border-gold-100">
+      <div className="pt-32 pb-12 bg-green-50 border-b border-green-100">
         <div className="container mx-auto px-4 text-center">
           <div className="text-sm text-gray-400 mb-3 uppercase tracking-widest flex justify-center items-center gap-2">
-            <Link href="/" className="hover:text-gold-600">Trang chủ</Link> /
-            <Link href="/dich-vu" className="hover:text-gold-600">Dịch Vụ</Link> /
-            <span className="text-gold-600 font-bold">{serviceData.category}</span>
+            <Link href="/" className="hover:text-green-600">Trang chủ</Link> /
+            <Link href="/dich-vu" className="hover:text-green-600">Dịch Vụ</Link> /
+            <span className="text-green-600 font-bold">{serviceData.category}</span>
           </div>
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">{serviceData.title}</h1>
           <p className="max-w-3xl mx-auto text-gray-500 text-lg font-light leading-relaxed">
@@ -133,7 +133,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
                 className="object-cover transform transition-transform duration-1000 group-hover:scale-110"
               />
               {serviceData.promotion && (
-                 <div className="absolute top-6 right-6 bg-gold-500 text-white font-bold px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 motion-safe:animate-bounce motion-reduce:animate-none">
+                <div className="absolute top-6 right-6 bg-green-500 text-white font-bold px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 motion-safe:animate-bounce motion-reduce:animate-none">
                   <Sparkles size={20} />
                   ƯU ĐÃI {serviceData.promotion.discount}
                 </div>
@@ -151,17 +151,17 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
                 ))}
               </div>
 
-              <div className="bg-nude-50 p-8 rounded-[2rem] border border-gold-100 shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-10 text-gold-500">
+              <div className="bg-green-50 p-8 rounded-[2rem] border border-green-100 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-10 text-green-500">
                   <Shield size={80} />
                 </div>
-                <h3 className="font-bold text-gold-700 mb-6 flex items-center gap-2 text-xl">
+                <h3 className="font-bold text-green-700 mb-6 flex items-center gap-2 text-xl">
                   <Shield size={24} /> Lợi ích vượt trội:
                 </h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {serviceData.benefits.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-700">
-                      <div className="shrink-0 w-6 h-6 rounded-full bg-gold-500 text-white flex items-center justify-center mt-0.5">
+                      <div className="shrink-0 w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center mt-0.5">
                         <Check size={14} strokeWidth={3} />
                       </div>
                       <span className="font-medium">{item}</span>
@@ -174,13 +174,13 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
             {/* PRICING SECTION - MOVED UP TO PREVENT SLIPPAGE */}
             <div className="mb-16 scroll-mt-32" id="pricing">
               <div className="flex items-center justify-between mb-8">
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 border-l-8 border-gold-500 pl-6">Bảng Giá Niêm Yết</h2>
-                <div className="hidden sm:flex items-center gap-2 text-gold-600 font-bold text-sm bg-gold-50 px-4 py-2 rounded-full">
-                   <TrendingDown size={18} /> Cam kết giá tốt nhất
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 border-l-8 border-green-500 pl-6">Bảng Giá Niêm Yết</h2>
+                <div className="hidden sm:flex items-center gap-2 text-green-600 font-bold text-sm bg-green-50 px-4 py-2 rounded-full">
+                  <TrendingDown size={18} /> Cam kết giá tốt nhất
                 </div>
               </div>
 
-              <div className="overflow-hidden border border-gold-100 rounded-[2rem] shadow-xl bg-white">
+              <div className="overflow-hidden border border-green-100 rounded-[2rem] shadow-xl bg-white">
                 <table className="min-w-full divide-y divide-gray-100">
                   <thead className="bg-gray-900 text-white">
                     <tr>
@@ -191,16 +191,16 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
                   </thead>
                   <tbody className="divide-y divide-gray-50">
                     {serviceData.pricing.map((item, idx) => (
-                      <tr key={idx} className="hover:bg-gold-50/50 transition-colors duration-300">
+                      <tr key={idx} className="hover:bg-green-50/50 transition-colors duration-300">
                         <td className="px-8 py-6">
                           <div className="text-lg font-bold text-gray-900">{item.name}</div>
                           <div className="text-sm text-gray-500 mt-1">{item.description}</div>
                         </td>
                         <td className="px-8 py-6 whitespace-nowrap text-center text-sm font-bold text-gray-600 hidden sm:table-cell">
-                          <span className="bg-nude-100 px-3 py-1 rounded-full">{item.duration}</span>
+                          <span className="bg-green-50 px-3 py-1 rounded-full">{item.duration}</span>
                         </td>
                         <td className="px-8 py-6 whitespace-nowrap text-right">
-                          <div className="text-xl font-bold text-gold-600">{item.price}</div>
+                          <div className="text-xl font-bold text-green-600">{item.price}</div>
                         </td>
                       </tr>
                     ))}
@@ -209,19 +209,19 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
               </div>
               <div className="mt-6 flex items-center justify-center gap-4 text-xs text-gray-400 italic">
                 <span>* Giá niêm yết đã bao gồm mọi chi phí</span>
-                <span className="w-1.5 h-1.5 bg-gold-200 rounded-full"></span>
+                <span className="w-1.5 h-1.5 bg-green-200 rounded-full"></span>
                 <span>{serviceData.promotion.note}</span>
               </div>
             </div>
 
             {/* Process Steps */}
             <div className="mb-16">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-10 border-l-8 border-gold-500 pl-6">Quy Trình Chuẩn Y Khoa</h2>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-10 border-l-8 border-green-500 pl-6">Quy Trình Chuẩn Y Khoa</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {serviceData.process.map((step, idx) => (
-                  <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gold-300 hover:shadow-lg transition-[box-shadow,border-color] group">
+                  <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-green-300 hover:shadow-lg transition-[box-shadow,border-color] group">
                     <div className="flex gap-4 items-start">
-                      <div className="shrink-0 w-10 h-10 rounded-xl bg-gold-100 text-gold-600 flex items-center justify-center font-serif text-xl font-bold group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                      <div className="shrink-0 w-10 h-10 rounded-xl bg-green-100 text-green-600 flex items-center justify-center font-serif text-xl font-bold group-hover:bg-green-500 group-hover:text-white transition-colors">
                         {idx + 1}
                       </div>
                       <div>
@@ -243,9 +243,9 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
             <div className="sticky top-28 space-y-8">
               {/* Promotion Widget */}
               <div className="bg-gray-900 text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden text-center group">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-green-500"></div>
                 <h3 className="font-serif text-2xl font-bold mb-4">Món Quà Nhan Sắc</h3>
-                <div className="text-6xl font-extrabold text-gold-500 mb-4 tracking-tighter group-hover:scale-110 transition-transform">
+                <div className="text-6xl font-extrabold text-green-500 mb-4 tracking-tighter group-hover:scale-110 transition-transform">
                   {serviceData.promotion.discount}
                 </div>
                 <p className="text-gray-400 mb-8 px-4">{serviceData.promotion.note}</p>
@@ -268,10 +268,10 @@ const ServiceDetail: React.FC<ServiceDetailProps> = async ({ params }) => {
               </div>
 
               {/* Support Widget */}
-              <div className="bg-gold-50 p-8 rounded-[2rem] border border-gold-100 text-center">
+              <div className="bg-green-50 p-8 rounded-[2rem] border border-green-100 text-center">
                 <p className="text-gray-500 text-sm mb-4">Bạn cần hỗ trợ gấp?</p>
-                <a href="tel:0988834446" className="flex items-center justify-center gap-3 text-gold-700 font-bold text-2xl hover:scale-105 transition-transform">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-gold-600">
+                <a href="tel:0988834446" className="flex items-center justify-center gap-3 text-green-700 font-bold text-2xl hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-green-600">
                     <Calendar size={20} />
                   </div>
                   0988.834.446

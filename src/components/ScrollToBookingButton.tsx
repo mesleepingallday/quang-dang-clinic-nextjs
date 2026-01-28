@@ -9,7 +9,7 @@ export default function ScrollToBookingButton() {
   };
 
   return (
-    <Button onClick={handleClick} className="shadow-lg shadow-gold-500/40">
+    <Button onClick={handleClick} className="shadow-lg shadow-green-500/40">
       Đặt Lịch Ngay
     </Button>
   );

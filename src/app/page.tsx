@@ -29,13 +29,13 @@ export default async function Home() {
           <div className="absolute inset-0 bg-black/30 md:bg-black/20"></div>
           {/* Gradient Mesh Effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent mix-blend-multiply"></div>
-          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold-500/40 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-500/40 via-transparent to-transparent"></div>
         </div>
 
         {/* Floating Particles (Conceptual CSS-only) */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full animate-float delay-100"></div>
-          <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-gold-400/20 rounded-full animate-float delay-500"></div>
+          <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-green-400/20 rounded-full animate-float delay-500"></div>
           <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-white/10 rounded-full animate-float delay-700"></div>
         </div>
 
@@ -49,7 +49,7 @@ export default async function Home() {
 
             <ScrollReveal animation="fade-in-up" duration={0.8} delay={200}>
               <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight text-white drop-shadow-sm">
-                Đánh Thức <br /> <span className="text-gold-200 italic">Vẻ Đẹp Tiềm Ẩn</span>
+                Đánh Thức <br /> <span className="text-green-200 italic">Vẻ Đẹp Tiềm Ẩn</span>
               </h1>
             </ScrollReveal>
 
@@ -62,7 +62,7 @@ export default async function Home() {
             <ScrollReveal animation="fade-in-up" duration={0.8} delay={600}>
               <div className="flex flex-col sm:flex-row gap-6">
                 <ScrollToBookingButton />
-                <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-gold-700 transition-all duration-300">
+                <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-green-700 transition-all duration-300">
                   <Link href="/dich-vu">Khám Phá Dịch Vụ</Link>
                 </Button>
               </div>
@@ -78,11 +78,11 @@ export default async function Home() {
 
       {/* 2. TRUST SECTION */}
       {/* 2. TRUST SECTION */}
-      <section className="py-16 bg-nude-50 border-b border-gold-100/50">
+      <section className="py-16 bg-nude-50 border-b border-green-100/50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             <ScrollReveal animation="scale-up" delay={0} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 mb-4 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 shadow-sm border border-gold-200">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
                 <Award size={32} strokeWidth={1.5} />
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-1">Top 10 Uy Tín</h4>
@@ -90,7 +90,7 @@ export default async function Home() {
             </ScrollReveal>
 
             <ScrollReveal animation="scale-up" delay={100} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 mb-4 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 shadow-sm border border-gold-200">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
                 <ShieldCheck size={32} strokeWidth={1.5} />
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-1">Chuẩn Y Khoa</h4>
@@ -98,7 +98,7 @@ export default async function Home() {
             </ScrollReveal>
 
             <ScrollReveal animation="scale-up" delay={200} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 mb-4 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 shadow-sm border border-gold-200">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
                 <Sparkles size={32} strokeWidth={1.5} />
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-1">Công Nghệ Mới</h4>
@@ -106,7 +106,7 @@ export default async function Home() {
             </ScrollReveal>
 
             <ScrollReveal animation="scale-up" delay={300} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 mb-4 group-hover:bg-gold-500 group-hover:text-white transition-all duration-500 shadow-sm border border-gold-200">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
                 <Heart size={32} strokeWidth={1.5} />
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-1 flex items-center gap-1">
@@ -125,8 +125,8 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <ScrollReveal animation="fade-in-up">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-gold-700 mb-4">Dịch Vụ Nổi Bật</h2>
-              <div className="w-24 h-1 bg-gold-500 mx-auto rounded-full mb-6"></div>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-700 mb-4">Dịch Vụ Nổi Bật</h2>
+              <div className="w-24 h-1 bg-green-500 mx-auto rounded-full mb-6"></div>
               <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
                 Giải pháp toàn diện cho làn da và vóc dáng, được thiết kế cá nhân hóa cho từng khách hàng.
               </p>
@@ -149,14 +149,14 @@ export default async function Home() {
 
                     {/* Content Overlay */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                      <div className="w-12 h-0.5 bg-gold-400 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></div>
+                      <div className="w-12 h-0.5 bg-green-400 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></div>
                       <h3 className="font-serif text-2xl font-bold mb-2 leading-tight">{service.name}</h3>
                       <p className="text-sm text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 line-clamp-3 mb-4 transform translate-y-4 group-hover:translate-y-0">
                         {service.description || service.details}
                       </p>
                       <Link
                         href={`/dich-vu/${service.slug}`}
-                        className="inline-flex items-center text-gold-300 font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors opacity-0 group-hover:opacity-100 delay-200"
+                        className="inline-flex items-center text-green-300 font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors opacity-0 group-hover:opacity-100 delay-200"
                       >
                         Xem chi tiết <ArrowRight size={14} className="ml-2" />
                       </Link>
@@ -180,7 +180,7 @@ export default async function Home() {
             {/* Why Us */}
             <div className="lg:w-1/2">
               <ScrollReveal animation="slide-right">
-                <h2 className="font-serif text-4xl md:text-5xl font-bold text-gold-700 mb-6 leading-tight">
+                <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-700 mb-6 leading-tight">
                   Tại Sao Chọn <br /> Quang Đăng Aesthetic?
                 </h2>
                 <p className="text-gray-600 mb-10 leading-relaxed text-lg">
@@ -196,11 +196,11 @@ export default async function Home() {
                   { title: 'Cam kết hiệu quả', desc: 'Văn bản cam kết hiệu quả điều trị rõ ràng.' }
                 ].map((item, idx) => (
                   <ScrollReveal key={idx} animation="fade-in-up" delay={idx * 100} className="flex gap-5 group">
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold font-serif text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                       {idx + 1}
                     </div>
                     <div>
-                      <h4 className="font-bold text-xl text-gray-800 mb-2 group-hover:text-gold-600 transition-colors">{item.title}</h4>
+                      <h4 className="font-bold text-xl text-gray-800 mb-2 group-hover:text-green-600 transition-colors">{item.title}</h4>
                       <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                     </div>
                   </ScrollReveal>
@@ -219,13 +219,13 @@ export default async function Home() {
                     height={600}
                     className="w-full h-auto object-cover"
                   />
-                  <div className="absolute inset-0 bg-gold-500/10 mix-blend-overlay"></div>
+                  <div className="absolute inset-0 bg-green-500/10 mix-blend-overlay"></div>
                 </div>
               </ScrollReveal>
 
               {/* Floating Badge */}
-              <ScrollReveal animation="fade-in-up" delay={400} className="absolute -bottom-8 -left-8 bg-white p-8 rounded-tr-3xl rounded-bl-3xl shadow-xl max-w-xs hidden md:block border-l-4 border-gold-500 animate-float">
-                <p className="font-serif text-xl italic text-gold-600 leading-relaxed">
+              <ScrollReveal animation="fade-in-up" delay={400} className="absolute -bottom-8 -left-8 bg-white p-8 rounded-tr-3xl rounded-bl-3xl shadow-xl max-w-xs hidden md:block border-l-4 border-green-500 animate-float">
+                <p className="font-serif text-xl italic text-green-600 leading-relaxed">
                   &quot;Vẻ đẹp của bạn là niềm hạnh phúc của chúng tôi.&quot;
                 </p>
               </ScrollReveal>
@@ -238,23 +238,23 @@ export default async function Home() {
       {/* 5. TESTIMONIALS */}
       <section className="py-24 bg-white relative overflow-hidden">
         {/* Decorative Background Elements */}
-        <div className="absolute top-20 left-10 text-gold-100 opacity-30 select-none pointer-events-none">
+        <div className="absolute top-20 left-10 text-green-100 opacity-30 select-none pointer-events-none">
           <span className="font-serif text-[200px] leading-none">&ldquo;</span>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <ScrollReveal animation="fade-in-up">
-              <span className="text-gold-500 font-bold tracking-widest uppercase text-sm mb-2 block">Feedback</span>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-gold-700">Khách Hàng Nói Gì?</h2>
+              <span className="text-green-500 font-bold tracking-widest uppercase text-sm mb-2 block">Feedback</span>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-700">Khách Hàng Nói Gì?</h2>
             </ScrollReveal>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.length > 0 ? (
               testimonials.map((t, i) => (
-                <ScrollReveal key={t.id} animation="fade-in-up" delay={i * 150} className="bg-nude-50 p-8 rounded-3xl relative hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-xl border border-transparent hover:border-gold-100">
-                  <div className="flex text-gold-500 mb-6">
+                <ScrollReveal key={t.id} animation="fade-in-up" delay={i * 150} className="bg-green-50 p-8 rounded-3xl relative hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-xl border border-transparent hover:border-green-100">
+                  <div className="flex text-green-500 mb-6">
                     {[...Array(t.rating)].map((_, i) => (
                       <ScrollReveal key={i} animation="scale-up" delay={500 + (i * 100)} duration={0.4}>
                         <Star size={18} fill="currentColor" strokeWidth={0} />
@@ -276,12 +276,12 @@ export default async function Home() {
                     </div>
                     <div>
                       <h5 className="font-bold text-gray-900 text-lg font-serif">{t.clientName}</h5>
-                      <p className="text-xs text-gold-600 uppercase tracking-wide font-semibold">{t.service || 'Khách hàng'}</p>
+                      <p className="text-xs text-green-600 uppercase tracking-wide font-semibold">{t.service || 'Khách hàng'}</p>
                     </div>
                   </div>
 
                   {/* Decorative Quote Mark */}
-                  <div className="absolute top-6 right-8 text-gold-200 opacity-20 transform scale-[3]">
+                  <div className="absolute top-6 right-8 text-green-200 opacity-20 transform scale-[3]">
                     <span className="font-serif text-6xl leading-none">&rdquo;</span>
                   </div>
                 </ScrollReveal>
@@ -297,10 +297,10 @@ export default async function Home() {
 
       {/* 6. PROMOTION & BOOKING */}
       {/* 6. PROMOTION & BOOKING */}
-      <section id="booking" className="py-24 bg-gold-600 relative overflow-hidden">
+      <section id="booking" className="py-24 bg-green-600 relative overflow-hidden">
         {/* Animated Background Shapes */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse-glow"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-gold-400/20 rounded-full blur-3xl animate-pulse-glow delay-700"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-green-400/20 rounded-full blur-3xl animate-pulse-glow delay-700"></div>
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -320,13 +320,13 @@ export default async function Home() {
 
               <ul className="space-y-4 mb-10">
                 <ScrollReveal animation="slide-right" delay={200} className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-white text-gold-600 flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 rounded-full bg-white text-green-600 flex items-center justify-center font-bold">
                     <CheckCircle size={18} strokeWidth={3} />
                   </div>
                   <span className="text-lg">Miễn phí soi da & tư vấn 1:1</span>
                 </ScrollReveal>
                 <ScrollReveal animation="slide-right" delay={300} className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-white text-gold-600 flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 rounded-full bg-white text-green-600 flex items-center justify-center font-bold">
                     <CheckCircle size={18} strokeWidth={3} />
                   </div>
                   <span className="text-lg">Tặng set quà tặng mỹ phẩm cao cấp</span>

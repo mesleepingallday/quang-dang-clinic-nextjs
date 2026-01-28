@@ -9,14 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: {
-          100: "#F9F1D8",
-          200: "#F0E3B6",
-          300: "#E6D094",
-          400: "#DCC376",
-          500: "#CBA135",
-          600: "#A68226",
-          700: "#83651C",
+        green: {
+          50: "#E8F5EF",
+          100: "#C5E8D5",
+          200: "#9DD9BB",
+          300: "#5CB88F",
+          400: "#2F9A6C",
+          500: "#0D7351", // Primary brand color from logo
+          600: "#0A5C41",
+          700: "#074530",
         },
         nude: {
           50: "#FDFCF8",
@@ -25,7 +26,7 @@ export default {
           300: "#DFD8C8",
           800: "#5C5548",
         },
-        primary: "#CBA135",
+        primary: "#0D7351",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "serif"],

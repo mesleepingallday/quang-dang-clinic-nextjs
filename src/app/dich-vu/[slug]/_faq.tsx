@@ -17,7 +17,7 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
 
   return (
     <div className="mb-12">
-      <h2 className="font-serif text-3xl font-bold text-gray-900 mb-8 border-l-8 border-gold-500 pl-6">Câu Hỏi Thường Gặp</h2>
+      <h2 className="font-serif text-3xl font-bold text-gray-900 mb-8 border-l-8 border-green-500 pl-6">Câu Hỏi Thường Gặp</h2>
       <div className="space-y-4">
         {faqs.map((faq, idx) => (
           <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden transition-shadow bg-white hover:shadow-md">
@@ -26,16 +26,16 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
               onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
             >
               <span className="flex items-center gap-4">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs transition-colors ${activeFaq === idx ? 'bg-gold-500 text-white' : 'bg-gold-50 text-gold-600'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs transition-colors ${activeFaq === idx ? 'bg-green-500 text-white' : 'bg-green-50 text-green-600'}`}>
                   ?
                 </div>
                 {faq.q}
               </span>
-              {activeFaq === idx ? <ChevronUp size={20} className="text-gold-500" /> : <ChevronDown size={20} className="text-gray-300" />}
+              {activeFaq === idx ? <ChevronUp size={20} className="text-green-500" /> : <ChevronDown size={20} className="text-gray-300" />}
             </button>
             {activeFaq === idx && (
               <div className="p-6 pt-0 text-gray-500 text-sm leading-relaxed animate-fade-in">
-                <div className="pl-12 border-l border-gold-100 ml-4">
+                <div className="pl-12 border-l border-green-100 ml-4">
                   {faq.a}
                 </div>
               </div>

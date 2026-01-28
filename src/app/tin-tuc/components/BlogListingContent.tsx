@@ -47,7 +47,7 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
   const filteredPosts = blogPosts.filter(post => {
     const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -66,12 +66,12 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
     <>
       {/* 1. HERO SECTION */}
       <section className="pt-32 pb-16 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gold-50 skew-x-12 transform translate-x-32 opacity-50 z-0"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-green-50 skew-x-12 transform translate-x-32 opacity-50 z-0"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-gold-600 font-bold uppercase tracking-widest text-sm mb-3 inline-block">Quang Dang Blog</span>
+            <span className="text-green-600 font-bold uppercase tracking-widest text-sm mb-3 inline-block">Quang Dang Blog</span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Kiến Thức & Xu Hướng <br/> <span className="italic text-gold-600">Thẩm Mỹ Hiện Đại</span>
+              Kiến Thức & Xu Hướng <br /> <span className="italic text-green-600">Thẩm Mỹ Hiện Đại</span>
             </h1>
             <p className="text-gray-600 mb-8">
               Nơi chia sẻ những bí quyết chăm sóc sắc đẹp chuẩn y khoa và cập nhật những công nghệ làm đẹp mới nhất.
@@ -84,7 +84,7 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
                 name="q"
                 aria-label="Tìm kiếm bài viết"
                 placeholder="Tìm kiếm bài viết…"
-                className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none shadow-sm"
+                className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none shadow-sm"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -109,17 +109,17 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full md:w-2/3 text-white">
                 <div className="flex items-center gap-4 mb-4 text-sm font-medium">
-                  <span className="bg-gold-500 px-3 py-1 rounded-full uppercase text-xs tracking-wider">Nổi Bật</span>
+                  <span className="bg-green-500 px-3 py-1 rounded-full uppercase text-xs tracking-wider">Nổi Bật</span>
                   <span className="flex items-center gap-1 opacity-80"><Calendar size={14} /> {featuredPost.publishedAt}</span>
                   <span className="flex items-center gap-1 opacity-80">By {featuredPost.author.name}</span>
                 </div>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 group-hover:text-gold-300 transition-colors">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 group-hover:text-green-300 transition-colors">
                   {featuredPost.title}
                 </h2>
                 <p className="text-white/80 line-clamp-2 mb-6 text-lg">
                   {featuredPost.excerpt}
                 </p>
-                <span className="inline-flex items-center text-gold-300 font-bold uppercase tracking-wide group-hover:gap-2 transition-[gap]">
+                <span className="inline-flex items-center text-green-300 font-bold uppercase tracking-wide group-hover:gap-2 transition-[gap]">
                   Đọc ngay <ArrowRight size={18} className="ml-2" />
                 </span>
               </div>
@@ -133,19 +133,19 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
-            className={`px-6 py-2 rounded-full text-sm font-semibold transition-[background-color,color,box-shadow] ${activeCategory === 'all' ? 'bg-gold-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-gold-50'}`}
+            className={`px-6 py-2 rounded-full text-sm font-semibold transition-[background-color,color,box-shadow] ${activeCategory === 'all' ? 'bg-green-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-green-50'}`}
             onClick={() => setActiveCategory('all')}
           >
             Tất cả
           </button>
           {blogCategories.map(cat => (
-             <button
-               key={cat.id}
-               className={`px-6 py-2 rounded-full text-sm font-semibold transition-[background-color,color,box-shadow] ${activeCategory === cat.slug ? 'bg-gold-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-gold-50'}`}
-               onClick={() => setActiveCategory(cat.slug)}
-             >
-               {cat.name}
-             </button>
+            <button
+              key={cat.id}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-[background-color,color,box-shadow] ${activeCategory === cat.slug ? 'bg-green-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-green-50'}`}
+              onClick={() => setActiveCategory(cat.slug)}
+            >
+              {cat.name}
+            </button>
           ))}
         </div>
 
@@ -163,7 +163,7 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gold-600 uppercase">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-green-600 uppercase">
                     {categoryName}
                   </div>
                 </div>
@@ -173,7 +173,7 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
                     <span>•</span>
                     <span>{post.readingTime}</span>
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-gold-600 transition-colors">
+                  <h3 className="font-serif text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-green-600 transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">
@@ -201,9 +201,9 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
         </div>
 
         {filteredPosts.length === 0 && (
-           <div className="text-center py-20">
-             <p className="text-gray-500 text-lg">Không tìm thấy bài viết nào phù hợp.</p>
-           </div>
+          <div className="text-center py-20">
+            <p className="text-gray-500 text-lg">Không tìm thấy bài viết nào phù hợp.</p>
+          </div>
         )}
       </section>
     </>

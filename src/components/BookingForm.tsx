@@ -61,16 +61,16 @@ const BookingForm: React.FC<BookingFormProps> = ({
   };
 
   return (
-    <div className={`bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gold-100 relative overflow-hidden ${className}`}>
+    <div className={`bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-green-100 relative overflow-hidden ${className}`}>
       {/* Loading Overlay */}
       {isLoading && (
         <div className="absolute inset-0 bg-white/80 z-10 flex items-center justify-center backdrop-blur-sm">
-          <div className="w-10 h-10 border-4 border-gold-200 border-t-gold-600 rounded-full animate-spin"></div>
+          <div className="w-10 h-10 border-4 border-green-200 border-t-green-600 rounded-full animate-spin"></div>
         </div>
       )}
 
       <div className="text-center mb-6">
-        <h3 className="font-serif text-2xl md:text-3xl font-bold text-gold-700 mb-2">{title}</h3>
+        <h3 className="font-serif text-2xl md:text-3xl font-bold text-green-700 mb-2">{title}</h3>
         <p className="text-gray-500 text-sm">{subtitle}</p>
       </div>
 
@@ -91,7 +91,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
             required
             name="name"
             autoComplete="name"
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all duration-300 ${errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-200 bg-red-50' : 'border-gray-200 focus:border-gold-500 focus:ring-gold-500 bg-gray-50 focus:bg-white'}`}
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all duration-300 ${errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-200 bg-red-50' : 'border-gray-200 focus:border-green-500 focus:ring-green-500 bg-gray-50 focus:bg-white'}`}
             placeholder="Nhập họ tên của bạn"
             value={formData.name}
             onChange={(e) => {
@@ -112,7 +112,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
             name="phone"
             autoComplete="tel"
             inputMode="tel"
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all duration-300 ${errors.phone ? 'border-red-300 focus:border-red-500 focus:ring-red-200 bg-red-50' : 'border-gold-300 focus:border-gold-500 focus:ring-gold-500 bg-white'}`}
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all duration-300 ${errors.phone ? 'border-red-300 focus:border-red-500 focus:ring-red-200 bg-red-50' : 'border-green-300 focus:border-green-500 focus:ring-green-500 bg-white'}`}
             placeholder="0988 xxx xxx (Dùng Zalo)"
             value={formData.phone}
             onChange={(e) => {
@@ -130,7 +130,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
             <select
               id="booking-service"
               name="service"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all duration-300 bg-gray-50 focus:bg-white appearance-none cursor-pointer hover:border-gold-300"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none transition-all duration-300 bg-gray-50 focus:bg-white appearance-none cursor-pointer hover:border-green-300"
               value={formData.service}
               onChange={(e) => setFormData({ ...formData, service: e.target.value })}
             >
@@ -139,7 +139,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                 <option key={s.id} value={s.title}>{s.title}</option>
               ))}
             </select>
-            <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gold-500">
+            <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-green-600">
               <ChevronDown size={16} />
             </div>
           </div>
@@ -152,7 +152,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
             id="booking-note"
             rows={2}
             name="note"
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all duration-300 bg-gray-50 focus:bg-white resize-none"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none transition-all duration-300 bg-gray-50 focus:bg-white resize-none"
             placeholder="Bạn đang gặp vấn đề gì về da?"
             value={formData.note}
             onChange={(e) => setFormData({ ...formData, note: e.target.value })}
@@ -163,7 +163,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
         <Button
           type="submit"
           fullWidth
-          className="mt-6 py-4 text-base shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed group relative overflow-hidden"
+          className="mt-6 py-4 text-base shadow-lg shadow-green-500/30 hover:shadow-green-500/50 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed group relative overflow-hidden"
           disabled={isLoading}
         >
           <span className={`relative z-10 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>

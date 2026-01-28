@@ -66,7 +66,7 @@ async function BlogPage() {
   };
 
   return (
-    <div className="min-h-screen bg-nude-50">
+    <div className="min-h-screen bg-green-50">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
       {/* Pass data to client component for interactive filtering and search */}
@@ -78,7 +78,7 @@ async function BlogPage() {
       {/* 4. NEWSLETTER SIGNUP */}
       <section className="bg-nude-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <Mail size={48} className="mx-auto text-gold-400 mb-6" />
+          <Mail size={48} className="mx-auto text-green-400 mb-6" />
           <h2 className="font-serif text-3xl font-bold mb-4">Đăng Ký Nhận Bản Tin Làm Đẹp</h2>
           <p className="text-nude-200 mb-8 max-w-xl mx-auto">
             Nhận ngay mẹo chăm sóc da, xu hướng thẩm mỹ và ưu đãi độc quyền từ Quang Đăng gửi trực tiếp vào email của bạn mỗi tuần.
@@ -90,7 +90,7 @@ async function BlogPage() {
               autoComplete="email"
               aria-label="Email"
               placeholder="Nhập email của bạn"
-              className="flex-grow px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 outline-none focus:border-gold-500"
+              className="flex-grow px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 outline-none focus:border-green-500"
             />
             <Button variant="primary" className="whitespace-nowrap">Đăng Ký</Button>
           </form>

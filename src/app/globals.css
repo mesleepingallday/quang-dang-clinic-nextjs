@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Gold colors */
-  --color-gold-100: #F9F1D8;
-  --color-gold-200: #F0E3B6;
-  --color-gold-300: #E6D094;
-  --color-gold-400: #DCC376;
-  --color-gold-500: #CBA135;
-  --color-gold-600: #A68226;
-  --color-gold-700: #83651C;
+  /* Green colors */
+  --color-green-50: #E8F5EF;
+  --color-green-100: #C5E8D5;
+  --color-green-200: #9DD9BB;
+  --color-green-300: #5CB88F;
+  --color-green-400: #2F9A6C;
+  --color-green-500: #0D7351;
+  --color-green-600: #0A5C41;
+  --color-green-700: #074530;
 
   /* Nude colors */
   --color-nude-50: #FDFCF8;
@@ -18,7 +19,7 @@
   --color-nude-800: #5C5548;
 
   /* Primary alias */
-  --color-primary: #CBA135;
+  --color-primary: #0D7351;
 
   /* Fonts */
   --font-serif: var(--font-cormorant), serif;
@@ -31,7 +32,12 @@ body {
   color: #44403C;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
 }
 
@@ -45,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: translate3d(0, 40px, 0);
   }
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -52,23 +59,51 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 rgba(203, 161, 53, 0); }
-  50% { opacity: 0.8; transform: scale(1.05); box-shadow: 0 0 20px rgba(203, 161, 53, 0.3); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(13, 115, 81, 0);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(13, 115, 81, 0.3);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-fade-in-up {
@@ -80,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   background-size: 200% 100%;
   animation: shimmer 2s infinite linear;
 }
@@ -93,11 +128,25 @@ h1, h2, h3, h4, h5, h6 {
   animation: float 6s ease-in-out infinite;
 }
 
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-700 { animation-delay: 700ms; }
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
 
 /* Effects */
 .glass-panel {
@@ -113,7 +162,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
+
+  *,
+  ::before,
+  ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
