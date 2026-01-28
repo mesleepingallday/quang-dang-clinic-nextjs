@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import type { NavItem } from '@/types';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Calendar, ChevronDown, ChevronRight, Sparkles, Shield, Zap, Scissors, type LucideIcon } from 'lucide-react';
 import { NAV_ITEMS } from '@/lib/data';
 import Button from './Button';
+import { SearchButton, SearchModal } from './search';
 
 // Icon Map for dynamic icons
 const IconMap: Record<string, LucideIcon> = {
@@ -21,7 +22,12 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileExpandedItem, setMobileExpandedItem] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
+
+  // Search modal handlers
+  const openSearch = useCallback(() => setIsSearchOpen(true), []);
+  const closeSearch = useCallback(() => setIsSearchOpen(false), []);
 
   const isHomePage = pathname === '/';
   const shouldShowWhiteBg = isScrolled || !isHomePage;
@@ -43,6 +49,18 @@ const Header: React.FC = () => {
 
     return () => window.clearTimeout(t);
   }, [pathname]);
+
+  // Keyboard shortcut for search (Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const toggleMobileSubmenu = (label: string) => {
     if (mobileExpandedItem === label) {
@@ -138,6 +156,9 @@ const Header: React.FC = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center space-x-4">
+              {/* Search Button */}
+              <SearchButton onClick={openSearch} isScrolled={shouldShowWhiteBg} />
+
               <a href="tel:0988834446" className={`flex items-center gap-2 font-semibold ${shouldShowWhiteBg ? 'text-green-700' : 'text-white'}`}>
                 <Phone size={18} />
                 <span>0988.834.446</span>
@@ -269,6 +290,9 @@ const Header: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={closeSearch} />
     </>
   );
 };
