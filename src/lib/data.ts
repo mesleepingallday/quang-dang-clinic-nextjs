@@ -1,5 +1,366 @@
 
-import { NavItem, Service, Testimonial, PriceItem, ServiceDetailData, BlogCategory, BlogPost } from '@/types';
+import { NavItem, Service, ServiceCategory, Testimonial, PriceItem, ServiceDetailData, BlogCategory, BlogPost } from '@/types';
+
+// ============================================
+// SERVICES DATA FROM EXCEL - HARDCODED
+// ============================================
+
+export const SERVICE_CATEGORIES: ServiceCategory[] = [
+  {
+    id: 'skin-care',
+    title: 'Chăm Sóc Da',
+    description: 'Hệ sinh thái chăm sóc da chuyên sâu, phục hồi và điều trị dứt điểm mọi khiếm khuyết.',
+    icon: 'Sparkles',
+  },
+  {
+    id: 'treatment',
+    title: 'Điều Trị Da Liễu',
+    description: 'Phác đồ y khoa điều trị dứt điểm Mụn, Nám, Tàn nhang, Sẹo rỗ.',
+    icon: 'Stethoscope',
+  },
+  {
+    id: 'high-tech',
+    title: 'Công Nghệ Cao',
+    description: 'Triệt lông Laser, tắm trắng phi thuyền, giảm béo không phẫu thuật.',
+    icon: 'Zap',
+  },
+  {
+    id: 'medical-aesthetic',
+    title: 'Thẩm Mỹ Nội Khoa',
+    description: 'Filler, Botox, căng chỉ - kiến tạo đường nét không phẫu thuật.',
+    icon: 'Syringe',
+  },
+  {
+    id: 'special',
+    title: 'Dịch Vụ Chuyên Biệt',
+    description: 'Trị liệu da đầu, phun xăm, thẩm mỹ vùng mắt.',
+    icon: 'Scissors',
+  },
+];
+
+// Services data extracted from Excel file
+export const SERVICES: Service[] = [
+  // === CHĂM SÓC DA CƠ BẢN ===
+  {
+    id: 'cham-soc-da-co-ban',
+    title: 'Chăm Sóc Da Cơ Bản',
+    category: 'skin-care',
+    shortDescription: 'Làm sạch sâu, cấp ẩm và duy trì nền da khỏe mạnh với 3 liệu trình chuyên biệt.',
+    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/cham-soc-da-co-ban',
+    featured: false,
+    priceFrom: 300000,
+    duration: '60 phút',
+    benefits: ['Cấp ẩm detox', 'Chăm sóc da nhạy cảm', 'Da dầu chuyên biệt'],
+    subServices: [
+      { name: 'Chăm sóc cấp ẩm, detox', price: 300000, duration: "60'" },
+      { name: 'Chăm sóc da nhạy cảm', price: 300000, duration: "60'" },
+      { name: 'Chăm sóc da dầu chuyên biệt', price: 300000, duration: "60'" },
+    ]
+  },
+  // === CHĂM SÓC DA CHUYÊN SÂU ===
+  {
+    id: 'cham-soc-da-chuyen-sau',
+    title: 'Chăm Sóc Da Chuyên Sâu',
+    category: 'skin-care',
+    shortDescription: 'Phục hồi đa tầng, trẻ hóa da công nghệ cao với 5 liệu trình Luxury.',
+    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/cham-soc-da-chuyen-sau',
+    featured: true,
+    priceFrom: 500000,
+    duration: '60 phút',
+    benefits: ['Trẻ hóa Oxy tươi', 'Phục hồi tái sinh', 'Nâng cơ trẻ hóa'],
+    subServices: [
+      { name: 'Trẻ hóa cấp ẩm Detox đa tầng CN Oxy tươi', price: 500000, duration: "60'" },
+      { name: 'Chăm sóc phục hồi tái sinh da mỏng yếu', price: 500000, duration: "60'" },
+      { name: 'Chăm sóc da Nâng cơ trẻ hóa toàn diện', price: 500000, duration: "60'" },
+      { name: 'Tăng sinh collagen trắng sáng da', price: 500000, duration: "60'" },
+      { name: 'Chăm sóc trẻ hóa da bằng CN Laser Toning', price: 500000, duration: "60'" },
+    ]
+  },
+  // === ĐIỀU TRỊ DA LIỄU ===
+  {
+    id: 'dieu-tri-da-lieu',
+    title: 'Điều Trị Da Liễu',
+    category: 'treatment',
+    shortDescription: 'Peel, điều trị mụn, nám, tàn nhang, sẹo rỗ bằng công nghệ Laser hiện đại.',
+    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/dieu-tri-da-lieu',
+    featured: true,
+    priceFrom: 500000,
+    duration: '60-90 phút',
+    benefits: ['Bác sĩ trực tiếp thăm khám', 'Cam kết hiệu quả', 'Chuẩn y khoa'],
+    subServices: [
+      { name: 'Peel Mụn ẩn, mụn đầu đen CN Châu Âu', price: 600000, duration: '1 buổi' },
+      { name: 'Peel căng bóng trẻ hóa CN Châu Âu', price: 1200000, duration: '1 buổi' },
+      { name: 'Điều trị mụn Cấp độ 1 (nhẹ)', price: 500000, duration: '90 phút' },
+      { name: 'Điều trị mụn Cấp độ 2 (vừa)', price: 700000, duration: '90 phút' },
+      { name: 'Điều trị mụn Cấp độ 3 (nặng)', price: 800000, duration: '90 phút' },
+      { name: 'Điều trị Nám Laser CĐ1', price: 10000000, duration: '1 liệu trình' },
+      { name: 'Điều trị Nám Laser CĐ2', price: 18000000, duration: '1 liệu trình' },
+      { name: 'Điều trị tàn nhang Laser CĐ1', price: 6000000, duration: '1 liệu trình' },
+      { name: 'Lăn kim điều trị sẹo rỗ + PRP', price: 1000000, duration: '90 phút' },
+      { name: 'Điều trị sẹo lõm toàn mặt CO2 Laser', price: 15000000, duration: '5 buổi' },
+    ]
+  },
+  // === TRIỆT LÔNG LASER MAXLIGHT ===
+  {
+    id: 'triet-long-laser-maxlight',
+    title: 'Triệt Lông Laser Maxlight Đức',
+    category: 'high-tech',
+    shortDescription: 'Công nghệ triệt lông tiên tiến từ Đức, êm ái, bảo hành trọn đời.',
+    image: 'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/triet-long-laser-maxlight',
+    featured: true,
+    priceFrom: 800000,
+    duration: '8 buổi',
+    benefits: ['Triệt lông vĩnh viễn', 'Sáng vùng da triệt', 'Không đau rát'],
+    subServices: [
+      { name: 'Triệt mép', price: 800000, duration: '8 buổi' },
+      { name: 'Triệt nách', price: 800000, duration: '8 buổi' },
+      { name: 'Triệt mặt', price: 3000000, duration: '8 buổi' },
+      { name: 'Triệt 1/2 tay', price: 2000000, duration: '8 buổi' },
+      { name: 'Triệt cả tay', price: 3000000, duration: '8 buổi' },
+      { name: 'Triệt 1/2 chân', price: 3000000, duration: '8 buổi' },
+      { name: 'Triệt cả chân', price: 4000000, duration: '8 buổi' },
+      { name: 'Triệt bikini', price: 3000000, duration: '8 buổi' },
+      { name: 'Triệt toàn thân', price: 18000000, duration: '8 buổi' },
+    ]
+  },
+  // === TẮM TRẮNG ===
+  {
+    id: 'tam-trang',
+    title: 'Tắm Trắng Phi Thuyền',
+    category: 'high-tech',
+    shortDescription: 'Bật tone trắng hồng tự nhiên, an toàn, không bào mòn da.',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/tam-trang',
+    featured: false,
+    priceFrom: 5000000,
+    duration: '10 buổi',
+    benefits: ['Bật 2-3 tone', 'Mịn màng da toàn thân', 'Không hồi tone'],
+    subServices: [
+      { name: 'Tẩy da chết body + dưỡng', price: 5000000, duration: '10 buổi' },
+      { name: 'Tắm trắng phi thuyền', price: 15000000, duration: '10 buổi' },
+    ]
+  },
+  // === GIẢM BÉO CÔNG NGHỆ CAO ===
+  {
+    id: 'giam-beo-cong-nghe-cao',
+    title: 'Giảm Béo Công Nghệ Cao',
+    category: 'high-tech',
+    shortDescription: 'Đánh tan mỡ thừa vùng bụng, đùi, bắp tay không phẫu thuật.',
+    image: 'https://images.unsplash.com/photo-1519823551278-64ac927ac4ac?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/giam-beo-cong-nghe-cao',
+    featured: false,
+    priceFrom: 8000000,
+    duration: '10 buổi',
+    benefits: ['Giảm size tức thì', 'Săn chắc vùng da', 'Không nghỉ dưỡng'],
+    subServices: [
+      { name: 'Giảm béo bắp tay', price: 8000000, duration: '10 buổi' },
+      { name: 'Giảm béo bắp đùi', price: 10000000, duration: '10 buổi' },
+      { name: 'Giảm béo bụng', price: 12000000, duration: '10 buổi' },
+    ]
+  },
+  // === FILLER ===
+  {
+    id: 'filler',
+    title: 'Filler',
+    category: 'medical-aesthetic',
+    shortDescription: 'Tạo hình cằm V-line, môi trái tim, làm đầy thái dương lõm.',
+    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/filler',
+    featured: true,
+    priceFrom: 2500000,
+    duration: '15-30 phút',
+    benefits: ['Đẹp ngay sau khi làm', 'Sản phẩm chính hãng', 'Bác sĩ thực hiện'],
+    subServices: [
+      { name: 'Filler nâng mũi', price: 2500000, duration: '1cc' },
+      { name: 'Tạo cằm V-line', price: 3000000, duration: '1-2cc' },
+      { name: 'Tạo môi trái tim', price: 4000000, duration: '1cc' },
+      { name: 'Làm đầy rãnh cười', price: 5000000, duration: '1-2cc/2 bên' },
+      { name: 'Tạo má Baby', price: 8000000, duration: '2-3cc/1 bên' },
+      { name: 'Làm đầy thái dương', price: 5000000, duration: '1-2cc/1 bên' },
+      { name: 'Trẻ hóa bàn tay', price: 8000000, duration: '2-3cc/2 bên' },
+    ]
+  },
+  // === BOTOX ===
+  {
+    id: 'botox',
+    title: 'Botox',
+    category: 'medical-aesthetic',
+    shortDescription: 'Xóa nhăn đuôi mắt, trán và thon gọn hàm không dao kéo.',
+    image: 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/botox',
+    featured: false,
+    priceFrom: 3000000,
+    duration: '15-30 phút',
+    benefits: ['Gương mặt thanh thoát', 'Hiệu quả lâu dài', 'Tự nhiên, không đơ'],
+    subServices: [
+      { name: 'Thon gọn hàm V-line', price: 3000000, duration: 'Botulax 100' },
+      { name: 'Xóa nhăn vùng khóe mắt', price: 3000000, duration: 'Botulax 100' },
+      { name: 'Xóa nhăn vùng trán và cau mày', price: 3000000, duration: 'Botulax 100' },
+      { name: 'Điều trị cười hở lợi', price: 3000000, duration: 'Botulax 100' },
+      { name: 'Triệt tuyến mồ hôi nách', price: 6000000, duration: 'Botulax 200' },
+      { name: 'Giảm cơ bắp tay', price: 6000000, duration: 'Botulax 200' },
+    ]
+  },
+  // === CĂNG CHỈ ===
+  {
+    id: 'cang-chi-vung-mat',
+    title: 'Căng Chỉ Vùng Mặt',
+    category: 'medical-aesthetic',
+    shortDescription: 'Trẻ hóa da tầng sâu, nâng cơ mặt chảy xệ chỉ sau 60 phút.',
+    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/cang-chi-vung-mat',
+    featured: true,
+    priceFrom: 10000000,
+    duration: '45-90 phút',
+    benefits: ['Trẻ ra 10 tuổi', 'Tăng sinh collagen', 'Duy trì 3-5 năm'],
+    subServices: [
+      { name: 'Tạo má Baby bằng chỉ Mono', price: 10000000, duration: '60 phút' },
+      { name: 'Trẻ hóa tăng sinh Collagen Full Face', price: 10000000, duration: '90 phút' },
+      { name: 'Làm đầy rãnh cười, xóa nhăn thái dương', price: 10000000, duration: '45 phút' },
+      { name: 'Nâng cao trụ, sống mũi', price: 15000000, duration: '45 phút' },
+      { name: 'Nâng cơ mặt (Chỉ Cog)', price: 15000000, duration: '60 phút' },
+      { name: 'Xiết nọng cằm, mặt V-line', price: 15000000, duration: '60 phút' },
+    ]
+  },
+  // === TIÊM GIẢM BÉO ===
+  {
+    id: 'tiem-giam-beo',
+    title: 'Tiêm Giảm Béo',
+    category: 'medical-aesthetic',
+    shortDescription: 'Hóa lỏng và đào thải mỡ thừa bằng tinh chất nhập khẩu.',
+    image: 'https://images.unsplash.com/photo-1556228720-1987df2856f7?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/tiem-giam-beo',
+    featured: false,
+    priceFrom: 6000000,
+    duration: '3 lần',
+    benefits: ['Tác động trúng đích', 'Đào thải mỡ tự nhiên', 'An toàn tuyệt đối'],
+    subServices: [
+      { name: 'Tiêm vùng eo', price: 6000000, duration: '3 lần' },
+      { name: 'Tiêm vùng lưng', price: 6000000, duration: '3 lần' },
+      { name: 'Tiêm mỡ bắp tay', price: 6000000, duration: '3 lần' },
+      { name: 'Tiêm mỡ đùi', price: 9000000, duration: '3 lần' },
+      { name: 'Tiêm mỡ bụng', price: 12000000, duration: '3 lần' },
+    ]
+  },
+  // === MESOTHERAPY ===
+  {
+    id: 'mesotherapy',
+    title: 'Mesotherapy',
+    category: 'treatment',
+    shortDescription: 'Đưa dưỡng chất vào sâu trong da để cấp ẩm, trị nám, trắng sáng.',
+    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/mesotherapy',
+    featured: false,
+    priceFrom: 3000000,
+    duration: '1 lần',
+    benefits: ['Da ngậm nước', 'Phục hồi da tổn thương', 'Bật tone da'],
+    subServices: [
+      { name: 'Mesotherapy căng bóng trắng sáng', price: 4000000, duration: '1 lần' },
+      { name: 'Mesotherapy căng bóng da', price: 3000000, duration: '1 lần' },
+      { name: 'Mesotherapy điều trị nám', price: 3000000, duration: '1 lần' },
+      { name: 'Mesotherapy điều trị mụn', price: 3000000, duration: '1 lần' },
+      { name: 'Mesotherapy điều trị rụng tóc', price: 3500000, duration: '1 lần' },
+    ]
+  },
+  // === CẤY HA ===
+  {
+    id: 'cay-ha',
+    title: 'Cấy HA',
+    category: 'treatment',
+    shortDescription: 'Siêu cấp nước đa tầng giúp da căng mọng, xóa mờ nếp nhăn li ti.',
+    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/cay-ha',
+    featured: false,
+    priceFrom: 5000000,
+    duration: '1 lần',
+    benefits: ['Hiệu quả tức thì', 'Da bóng khỏe', 'Se khít lỗ chân lông'],
+    subServices: [
+      { name: 'Điều trị mờ thâm cuồng mắt', price: 5000000, duration: '1 lần' },
+    ]
+  },
+  // === BAP ===
+  {
+    id: 'bap',
+    title: 'Kỹ thuật BAP',
+    category: 'medical-aesthetic',
+    shortDescription: 'Kỹ thuật tiêm 5 điểm tối ưu giúp nâng cơ và trẻ hóa toàn diện.',
+    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/bap',
+    featured: true,
+    priceFrom: 8500000,
+    duration: '1 lần',
+    benefits: ['Ít điểm tiêm, không đau', 'Nâng cơ mặt', 'Phục hồi cấu trúc'],
+    subServices: [
+      { name: 'Trẻ hóa vùng mặt Jalupro Super Hydro', price: 8500000, duration: '1 lần' },
+      { name: 'Trẻ hóa vùng mặt Profhilo', price: 11000000, duration: '1 lần' },
+      { name: 'Trẻ hóa vùng cổ', price: 10000000, duration: '1 lần' },
+      { name: 'Trẻ hóa bàn tay', price: 10000000, duration: '1 lần' },
+    ]
+  },
+  // === TRỊ LIỆU DA ĐẦU ===
+  {
+    id: 'tri-lieu-da-dau',
+    title: 'Trị Liệu Da Đầu',
+    category: 'special',
+    shortDescription: 'Gội đầu dưỡng sinh kết hợp trị liệu chuyên sâu cho da đầu khỏe mạnh.',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/tri-lieu-da-dau',
+    featured: false,
+    priceFrom: 400000,
+    duration: '60-150 phút',
+    benefits: ['Giảm rụng tóc', 'Sạch gàu, hết ngứa', 'Thư giãn giảm stress'],
+    subServices: [
+      { name: 'Gội đầu trị liệu chuyên sâu, dưỡng, phục hồi', price: 400000, duration: '60 phút' },
+      { name: 'Detox làm sạch sâu, thải độc da đầu', price: 800000, duration: '90 phút' },
+      { name: 'Điều trị hói đầu, rụng tóc (Italia)', price: 1000000, duration: '150 phút' },
+      { name: 'Điều trị da đầu nhờn (Italia)', price: 1000000, duration: '150 phút' },
+    ]
+  },
+  // === PHUN XĂM ===
+  {
+    id: 'dich-vu-phun-xam',
+    title: 'Dịch Vụ Phun Xăm',
+    category: 'special',
+    shortDescription: 'Phun môi Collagen, điêu khắc chân mày chuẩn phong thủy. (Triển khai giai đoạn 2)',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/dich-vu-phun-xam',
+    featured: false,
+    priceFrom: null,
+    duration: 'Sắp ra mắt',
+    benefits: ['Màu sắc tự nhiên', 'Dáng mày thời thượng', 'Không sưng, không đau'],
+    subServices: []
+  },
+  // === DỊCH VỤ VÙNG MẮT ===
+  {
+    id: 'dich-vu-vung-mat',
+    title: 'Dịch Vụ Vùng Mắt',
+    category: 'special',
+    shortDescription: 'Treo cung mày, cắt mí, xóa bọng mắt, trẻ hóa vùng da mắt.',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800',
+    link: '/dich-vu/dich-vu-vung-mat',
+    featured: true,
+    priceFrom: 8000000,
+    duration: 'Tiểu phẫu',
+    benefits: ['Đôi mắt tinh anh', 'Xóa nếp nhăn chân chim', 'Nâng cung mày'],
+    subServices: [
+      { name: 'Cắt bỏ mỡ mí dưới', price: 8000000, duration: 'Tiểu phẫu' },
+      { name: 'Cắt da thừa mí dưới', price: 10000000, duration: 'Tiểu phẫu' },
+      { name: 'Treo cung mày - đính màng xương trán', price: 20000000, duration: 'Tiểu phẫu' },
+      { name: 'Treo cung mày - cắt da chùng, da thừa', price: 20000000, duration: 'Tiểu phẫu' },
+      { name: 'Sửa mí lỗi / Mí hỏng nặng', price: 20000000, duration: 'Chuyên sâu' },
+    ]
+  },
+];
+
+// Helper function to format price
+export const formatPrice = (price: number | null): string => {
+  if (price === null) return 'Liên hệ';
+  return price.toLocaleString('vi-VN') + 'đ';
+};
 
 // 1. UPDATED NAVIGATION WITH ICONS & DESCRIPTIONS
 export const NAV_ITEMS: NavItem[] = [
@@ -40,148 +401,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Liên Hệ', path: '/lien-he' },
 ];
 
-export const SERVICES: Service[] = [
-  {
-    id: 'cham-soc-da-co-ban',
-    title: 'Chăm Sóc Da Cơ Bản',
-    shortDescription: 'Làm sạch sâu, cấp ẩm và duy trì nền da khỏe mạnh với 3 liệu trình chuyên biệt.',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/cham-soc-da-co-ban',
-    benefits: ['Cấp ẩm detox', 'Chăm sóc da nhạy cảm', 'Da dầu chuyên biệt']
-  },
-  {
-    id: 'cham-soc-da-chuyen-sau',
-    title: 'Chăm Sóc Da Chuyên Sâu',
-    shortDescription: 'Phục hồi đa tầng, trẻ hóa da công nghệ cao with 5 liệu trình Luxury.',
-    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/cham-soc-da-chuyen-sau',
-    featured: true,
-    benefits: ['Trẻ hóa Oxy tươi', 'Phục hồi tái sinh', 'Nâng cơ trẻ hóa']
-  },
-  {
-    id: 'dieu-tri-da-lieu',
-    title: 'Điều Trị Da Liễu',
-    shortDescription: 'Phác đồ y khoa điều trị dứt điểm Mụn, Nám, Tàn nhang, Sẹo rỗ.',
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/dieu-tri-da-lieu',
-    benefits: ['Bác sĩ trực tiếp thăm khám', 'Cam kết hiệu quả', 'Chuẩn y khoa']
-  },
-  {
-    id: 'triet-long-laser-maxlight',
-    title: 'Triệt Lông Laser Maxlight Đức',
-    shortDescription: 'Công nghệ triệt lông tiên tiến từ Đức, êm ái, bảo hành trọn đời.',
-    image: 'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/triet-long-laser-maxlight',
-    featured: true,
-    benefits: ['Triệt lông vĩnh viễn', 'Sáng vùng da triệt', 'Không đau rát']
-  },
-  {
-    id: 'tam-trang',
-    title: 'Tắm Trắng',
-    shortDescription: 'Bật tone trắng hồng tự nhiên, an toàn, không bào mòn da.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/tam-trang',
-    benefits: ['Bật 2-3 tone', 'Mịn màng da toàn thân', 'Không hồi tone']
-  },
-  {
-    id: 'giam-beo-cong-nghe-cao',
-    title: 'Giảm Béo Công Nghệ Cao',
-    shortDescription: 'Đánh tan mỡ thừa vùng bụng, đùi, bắp tay không phẫu thuật.',
-    image: 'https://images.unsplash.com/photo-1519823551278-64ac927ac4ac?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/giam-beo-cong-nghe-cao',
-    benefits: ['Giảm size tức thì', 'Săn chắc vùng da', 'Không nghỉ dưỡng']
-  },
-  {
-    id: 'filler',
-    title: 'Filler',
-    shortDescription: 'Tạo hình cằm V-line, môi trái tim, làm đầy thái dương lõm.',
-    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/filler',
-    benefits: ['Đẹp ngay sau khi làm', 'Sản phẩm chính hãng', 'Bác sĩ thực hiện']
-  },
-  {
-    id: 'botox',
-    title: 'Botox',
-    shortDescription: 'Xóa nhăn đuôi mắt, trán và thon gọn hàm không dao kéo.',
-    image: 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/botox',
-    benefits: ['Gương mặt thanh thoát', 'Hiệu quả lâu dài', 'Tự nhiên, không đơ']
-  },
-  {
-    id: 'cang-chi-vung-mat',
-    title: 'Căng Chỉ Vùng Mặt',
-    shortDescription: 'Trẻ hóa da tầng sâu, nâng cơ mặt chảy xệ chỉ sau 60 phút.',
-    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/cang-chi-vung-mat',
-    benefits: ['Trẻ ra 10 tuổi', 'Tăng sinh collagen', 'Duy trì 3-5 năm']
-  },
-  {
-    id: 'tiem-giam-beo',
-    title: 'Tiêm Giảm Béo',
-    shortDescription: 'Hóa lỏng và đào thải mỡ thừa bằng tinh chất nhập khẩu.',
-    image: 'https://images.unsplash.com/photo-1556228720-1987df2856f7?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/tiem-giam-beo',
-    benefits: ['Tác động trúng đích', 'Đào thải mỡ tự nhiên', 'An toàn tuyệt đối']
-  },
-  {
-    id: 'mesotherapy',
-    title: 'Mesotherapy',
-    shortDescription: 'Đưa dưỡng chất vào sâu trong da để cấp ẩm, trị nám, trắng sáng.',
-    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/mesotherapy',
-    benefits: ['Da ngậm nước', 'Phục hồi da tổn thương', 'Bật tone da']
-  },
-  {
-    id: 'cay-ha',
-    title: 'Cấy HA',
-    shortDescription: 'Siêu cấp nước đa tầng giúp da căng mọng, xóa mờ nếp nhăn li ti.',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/cay-ha',
-    benefits: ['Hiệu quả tức thì', 'Da bóng khỏe', 'Se khít lỗ chân lông']
-  },
-  {
-    id: 'bap',
-    title: 'Kỹ thuật BAP',
-    shortDescription: 'Kỹ thuật tiêm 5 điểm tối ưu giúp nâng cơ và trẻ hóa toàn diện.',
-    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/bap',
-    benefits: ['Ít điểm tiêm, không đau', 'Nâng cơ mặt', 'Phục hồi cấu trúc']
-  },
-  {
-    id: 'tri-lieu-da-dau',
-    title: 'Trị Liệu Da Đầu',
-    shortDescription: 'Gội đầu dưỡng sinh kết hợp trị liệu chuyên sâu cho da đầu khỏe mạnh.',
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/tri-lieu-da-dau',
-    benefits: ['Giảm rụng tóc', 'Sạch gàu, hết ngứa', 'Thư giãn giảm stress']
-  },
-  {
-    id: 'dich-vu-phun-xam',
-    title: 'Dịch Vụ Phun Xăm',
-    shortDescription: 'Phun môi Collagen, điêu khắc chân mày chuẩn phong thủy.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/dich-vu-phun-xam',
-    benefits: ['Màu sắc tự nhiên', 'Dáng mày thời thượng', 'Không sưng, không đau']
-  },
-  {
-    id: 'dich-vu-vung-mat',
-    title: 'Dịch Vụ Về Vùng Mắt',
-    shortDescription: 'Xóa quầng thâm, tan bọng mắt và trẻ hóa vùng da mắt nhạy cảm.',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800',
-    link: '/dich-vu/dich-vu-vung-mat',
-    benefits: ['Đôi mắt tinh anh', 'Xóa nếp nhăn chân chim', 'Nâng cung mày']
-  },
-  {
-    id: 'dich-vu-kham-mat',
-    title: 'Dịch Vụ Khám Mắt',
-    shortDescription: 'Thăm khám và tư vấn sức khỏe thị lực chuyên sâu cùng chuyên gia.',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400',
-    link: '/dich-vu/dich-vu-kham-mat',
-    benefits: ['Máy đo thị lực hiện đại', 'Chẩn đoán chính xác', 'Tư vấn bảo vệ mắt']
-  }
-];
-
-// Helper to get detail data
 export const SERVICE_DETAILS_DATA: Record<string, ServiceDetailData> = SERVICES.reduce((acc, s) => {
   acc[s.id] = {
     id: s.id,

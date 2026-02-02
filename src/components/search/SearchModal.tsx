@@ -149,10 +149,11 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
                             onClick={onClose}
                             className="
                 px-3 py-1.5 mr-3
-                text-xs font-medium text-gray-400
-                bg-gray-100 rounded-md
-                hover:bg-gray-200 hover:text-gray-600
+                text-xs font-semibold text-white
+                bg-green-600 rounded-md
+                hover:bg-green-700
                 transition-colors
+                shadow-sm
               "
                         >
                             ESC

@@ -1,4 +1,10 @@
 
+export interface SubService {
+  name: string;
+  price: number;
+  duration: string;
+}
+
 export interface Service {
   id: string;
   title: string;
@@ -7,6 +13,17 @@ export interface Service {
   link: string;
   featured?: boolean;
   benefits?: string[];
+  category?: string; // category ID for filtering
+  priceFrom?: number | null; // minimum price for display
+  duration?: string;
+  subServices?: SubService[]; // detailed pricing from Excel
+}
+
+export interface ServiceCategory {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
 }
 
 export interface Testimonial {
@@ -353,4 +370,125 @@ export interface StrapiSEO {
   metaRobots: string;
   structuredData: object;
   metaImage: StrapiMedia | null;
+}
+
+// ============================================================================
+// SERVICE DETAIL PAGE - NEW INTERFACES (Enhanced)
+// ============================================================================
+
+export interface ServicePricingTier {
+  id: string;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  currency: string;
+  duration: string;
+  description: string;
+  features: string[];
+  isPopular?: boolean;
+  isPremium?: boolean;
+}
+
+export interface ServiceProcessStep {
+  id: string;
+  stepNumber: number;
+  title: string;
+  description: string;
+  image?: string;
+  duration?: string;
+  icon?: string;
+}
+
+export interface ServiceFAQ {
+  id: string;
+  question: string;
+  answer: string;
+  order: number;
+  category?: string;
+}
+
+export interface ServiceTestimonial {
+  id: string;
+  customerName: string;
+  avatar?: string;
+  rating: number;
+  content: string;
+  serviceUsed: string;
+  date: string;
+  isVerified?: boolean;
+  age?: number;
+  skinType?: string;
+  resultDuration?: string;
+}
+
+export interface BeforeAfterImage {
+  id: string;
+  beforeImage: string;
+  afterImage: string;
+  caption: string;
+  treatmentDuration: string;
+  customerAge?: number;
+  results: string[];
+}
+
+export interface RelatedService {
+  id: string;
+  slug: string;
+  title: string;
+  shortDescription: string;
+  image: string;
+  priceFrom?: number;
+  duration?: string;
+  category: string;
+}
+
+export interface ServicePromotion {
+  id: string;
+  discountPercent?: number;
+  discountAmount?: number;
+  code: string;
+  title: string;
+  description: string;
+  validFrom: string;
+  validUntil: string;
+  termsConditions: string[];
+  isActive: boolean;
+}
+
+export interface ServiceBenefit {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface ServiceDetailComplete {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  categorySlug: string;
+  heroImage: string;
+  heroVideo?: string;
+  shortDescription: string;
+  longDescription: string;
+  introTitle: string;
+  introParagraphs: string[];
+  benefits: ServiceBenefit[];
+  pricingTiers: ServicePricingTier[];
+  pricingNote?: string;
+  processSteps: ServiceProcessStep[];
+  beforeAfterGallery: BeforeAfterImage[];
+  faqs: ServiceFAQ[];
+  testimonials: ServiceTestimonial[];
+  relatedServices: RelatedService[];
+  promotion?: ServicePromotion;
+  seo: {
+    metaTitle: string;
+    metaDescription: string;
+    keywords: string[];
+    structuredData: object;
+  };
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
 }

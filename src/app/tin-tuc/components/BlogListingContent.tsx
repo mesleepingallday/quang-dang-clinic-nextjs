@@ -109,7 +109,7 @@ const BlogListingContent: React.FC<BlogListingContentProps> = ({ blogPosts, blog
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full md:w-2/3 text-white">
                 <div className="flex items-center gap-4 mb-4 text-sm font-medium">
-                  <span className="bg-green-500 px-3 py-1 rounded-full uppercase text-xs tracking-wider">Nổi Bật</span>
+                  <span className="bg-green-600 px-3 py-1 rounded-full uppercase text-xs tracking-wider">Nổi Bật</span>
                   <span className="flex items-center gap-1 opacity-80"><Calendar size={14} /> {featuredPost.publishedAt}</span>
                   <span className="flex items-center gap-1 opacity-80">By {featuredPost.author.name}</span>
                 </div>

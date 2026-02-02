@@ -126,7 +126,7 @@ const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <span className="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                <span className="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                     {afterLabel}
                 </span>
             </div>
@@ -180,7 +180,7 @@ const BeforeAfterGallery: React.FC = () => {
         <section className="py-20 md:py-28 bg-nude-50">
             <div className="container mx-auto px-4">
                 <ScrollReveal animation="fade-in-up" className="text-center mb-12">
-                    <span className="inline-block py-1 px-4 bg-gold-300/30 text-gold-600 rounded-full text-sm font-semibold tracking-wider uppercase mb-4">
+                    <span className="inline-block py-1.5 px-4 bg-gold-100 text-gold-700 rounded-full text-sm font-semibold tracking-wider uppercase mb-4">
                         Kết Quả Thực Tế
                     </span>
                     <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-700 mb-4">
@@ -197,9 +197,9 @@ const BeforeAfterGallery: React.FC = () => {
                         <button
                             key={f}
                             onClick={() => setFilter(f)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${filter === f
-                                    ? 'bg-green-500 text-white shadow-lg'
-                                    : 'bg-white text-gray-600 hover:bg-green-50 border border-gray-200'
+                            className={`px-5 py-2.5 min-h-[44px] rounded-full text-sm font-medium cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 ${filter === f
+                                ? 'bg-green-500 text-white shadow-lg shadow-green-500/25'
+                                : 'bg-white text-gray-600 hover:bg-green-50 hover:text-green-600 hover:border-green-500 border border-gray-200'
                                 }`}
                         >
                             {f === 'all' ? 'Tất cả' : f}
@@ -230,10 +230,10 @@ const BeforeAfterGallery: React.FC = () => {
                                     </span>
                                     <p className="text-gray-700 text-sm mb-3 line-clamp-2">{item.description}</p>
                                     <div className="flex items-center justify-between">
-                                        <span className="text-gold-500 text-sm font-semibold">
-                                            Thờigian: {item.duration}
+                                        <span className="text-gold-600 text-sm font-semibold">
+                                            Thời gian: {item.duration}
                                         </span>
-                                        <span className="text-green-500 text-xs font-medium group-hover:underline">
+                                        <span className="text-green-600 text-sm font-medium group-hover:underline inline-flex items-center min-h-[44px]">
                                             Xem chi tiết →
                                         </span>
                                     </div>
@@ -251,7 +251,7 @@ const BeforeAfterGallery: React.FC = () => {
                     onClick={() => setSelectedCase(null)}
                 >
                     <button
-                        className="absolute top-6 right-6 text-white hover:text-green-400 transition-colors"
+                        className="absolute top-6 right-6 text-white hover:text-green-400 cursor-pointer transition-colors"
                         onClick={() => setSelectedCase(null)}
                     >
                         <X size={32} />
@@ -265,12 +265,12 @@ const BeforeAfterGallery: React.FC = () => {
                             afterImage={selectedCase.afterImage}
                         />
                         <div className="p-6">
-                            <span className="inline-block bg-green-500 text-white text-sm font-bold px-4 py-1 rounded-full mb-3">
+                            <span className="inline-block bg-green-600 text-white text-sm font-bold px-4 py-1 rounded-full mb-3">
                                 {selectedCase.treatmentType}
                             </span>
                             <p className="text-gray-700 mb-2">{selectedCase.description}</p>
-                            <p className="text-gold-600 font-semibold">
-                                Thờigian điều trị: {selectedCase.duration}
+                            <p className="text-gold-700 font-semibold">
+                                Thời gian điều trị: {selectedCase.duration}
                             </p>
                         </div>
                     </div>

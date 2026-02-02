@@ -6,21 +6,20 @@ import ScrollToBookingButton from '@/components/ScrollToBookingButton';
 import BookingForm from '@/components/BookingForm';
 import ScrollReveal from '@/components/ScrollReveal';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import { getServices, getTestimonials, getStrapiMediaUrl } from '@/lib/strapi';
+import { getTestimonials, getStrapiMediaUrl } from '@/lib/strapi';
 import {
   BeforeAfterGallery,
+  BrandStory,
   TeamSection,
   FAQSection,
   LocationContact,
   BlogPreview,
+  ServicesSection,
 } from '@/components/sections';
 
 export default async function Home() {
-  // Fetch services and testimonials from Strapi
-  const [services, testimonials] = await Promise.all([
-    getServices().catch(() => []),
-    getTestimonials().catch(() => []),
-  ]);
+  // Fetch testimonials from Strapi (services now use hardcoded data)
+  const testimonials = await getTestimonials().catch(() => []);
 
   return (
     <div className="flex flex-col w-full">
@@ -89,7 +88,7 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             <ScrollReveal animation="scale-up" delay={0} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
                 <Award size={32} strokeWidth={1.5} />
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-1">Top 10 Uy Tín</h4>
@@ -97,7 +96,7 @@ export default async function Home() {
             </ScrollReveal>
 
             <ScrollReveal animation="scale-up" delay={100} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
                 <ShieldCheck size={32} strokeWidth={1.5} />
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-1">Chuẩn Y Khoa</h4>
@@ -105,7 +104,7 @@ export default async function Home() {
             </ScrollReveal>
 
             <ScrollReveal animation="scale-up" delay={200} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
                 <Sparkles size={32} strokeWidth={1.5} />
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-1">Công Nghệ Mới</h4>
@@ -113,7 +112,7 @@ export default async function Home() {
             </ScrollReveal>
 
             <ScrollReveal animation="scale-up" delay={300} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
                 <Heart size={32} strokeWidth={1.5} />
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-1 flex items-center gap-1">
@@ -125,59 +124,8 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 3. SERVICE HIGHLIGHT */}
-      <section className="py-24 bg-white relative">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-nude-50/50 -z-10"></div>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <ScrollReveal animation="fade-in-up">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-700 mb-4">Dịch Vụ Nổi Bật</h2>
-              <div className="w-24 h-1 bg-green-500 mx-auto rounded-full mb-6"></div>
-              <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                Giải pháp toàn diện cho làn da và vóc dáng, được thiết kế cá nhân hóa cho từng khách hàng.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.length > 0 ? (
-              services.map((service, index) => (
-                <ScrollReveal key={service.id} animation="fade-in-up" delay={index * 100} className="group cursor-pointer h-full">
-                  <div className="relative overflow-hidden rounded-2xl mb-5 aspect-[3/4] shadow-md group-hover:shadow-xl transition-shadow duration-500">
-                    <Image
-                      src={service.image?.url ? getStrapiMediaUrl(service.image.url) : 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=800'}
-                      alt={service.name}
-                      fill
-                      sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-
-                    {/* Content Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                      <div className="w-12 h-0.5 bg-green-400 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></div>
-                      <h3 className="font-serif text-2xl font-bold mb-2 leading-tight">{service.name}</h3>
-                      <p className="text-sm text-white/90 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 line-clamp-3 mb-4 transform translate-y-4 group-hover:translate-y-0">
-                        {service.description || service.details}
-                      </p>
-                      <Link
-                        href={`/dich-vu/${service.slug}`}
-                        className="inline-flex items-center text-green-300 font-semibold text-xs uppercase tracking-widest hover:text-white transition-colors opacity-0 group-hover:opacity-100 delay-200"
-                      >
-                        Xem chi tiết <ArrowRight size={14} className="ml-2" />
-                      </Link>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))
-            ) : (
-              <div className="col-span-full text-center py-12 text-gray-500">
-                <p>Dịch vụ không có sẵn. Vui lòng thử lại sau.</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      {/* 3. SERVICES SECTION - Hardcoded from Excel */}
+      <ServicesSection />
 
       {/* 4. NEW: Before/After Gallery */}
       <BeforeAfterGallery />
@@ -205,7 +153,7 @@ export default async function Home() {
                   { title: 'Cam kết hiệu quả', desc: 'Văn bản cam kết hiệu quả điều trị rõ ràng.' }
                 ].map((item, idx) => (
                   <ScrollReveal key={idx} animation="fade-in-up" delay={idx * 100} className="flex gap-5 group">
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold font-serif text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center font-bold font-serif text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                       {idx + 1}
                     </div>
                     <div>
@@ -223,7 +171,7 @@ export default async function Home() {
                 <div className="relative rounded-t-[150px] rounded-b-[20px] overflow-hidden border-8 border-white shadow-2xl transform hover:scale-[1.02] transition-transform duration-700">
                   <Image
                     src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&q=80&w=800"
-                    alt="Spa Treatment"
+                    alt="Khách hàng đang được chăm sóc da chuyên sâu tại Viện Thẩm Mỹ Quang Đăng"
                     width={800}
                     height={600}
                     className="w-full h-auto object-cover"
@@ -243,7 +191,10 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 6. NEW: Meet Our Experts */}
+      {/* 6. NEW: Brand Story */}
+      <BrandStory />
+
+      {/* 7. NEW: Meet Our Experts */}
       <TeamSection />
 
       {/* 7. TESTIMONIALS */}
@@ -323,8 +274,8 @@ export default async function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 text-white">
               <ScrollReveal animation="fade-in-up">
-                <span className="bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-bold tracking-widest mb-6 inline-block backdrop-blur-sm shadow-sm">
-                  ✨ ƯU ĐÃI THÁNG NÀY
+                <span className="bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-bold tracking-widest mb-6 inline-flex items-center gap-2 backdrop-blur-sm shadow-sm">
+                  <Sparkles size={16} /> ƯU ĐÃI THÁNG NÀY
                 </span>
                 <h2 className="font-serif text-5xl md:text-6xl font-bold mb-6 leading-tight">
                   Giảm 50% <br /> Cho Lần Đầu Trải Nghiệm

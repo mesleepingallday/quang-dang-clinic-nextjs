@@ -177,7 +177,7 @@ const BlogPreview: React.FC = () => {
                         </h2>
                     </div>
                     <Link href="/tin-tuc">
-                        <Button variant="outline" className="mt-4 md:mt-0 border-green-200 text-green-600 hover:bg-green-500 hover:text-white hover:border-green-500">
+                        <Button variant="outline" className="mt-4 md:mt-0 border-green-600 text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600">
                             Xem tất cả bài viết
                             <ArrowRight size={18} className="ml-2" />
                         </Button>

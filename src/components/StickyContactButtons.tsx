@@ -19,8 +19,8 @@ export default function StickyContactButtons() {
                     <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
                 </svg>
             ),
-            bgColor: 'bg-gradient-to-br from-green-500 to-green-600',
-            hoverColor: 'hover:from-green-600 hover:to-green-700',
+            bgColor: 'bg-gradient-to-br from-green-600 to-green-700',
+            hoverColor: 'hover:from-green-700 hover:to-green-800',
             shadowColor: 'shadow-green-500/40',
         },
         {
@@ -59,12 +59,12 @@ export default function StickyContactButtons() {
                 aria-expanded={isExpanded}
                 className={`
           relative w-14 h-14 rounded-full 
-          bg-gradient-to-br from-green-600 to-green-700
-          shadow-lg shadow-green-500/30
+          bg-gradient-to-br from-green-700 to-green-800
+          shadow-lg shadow-green-600/30
           flex items-center justify-center
           transition-all duration-300 ease-out
-          hover:shadow-xl hover:shadow-green-500/40 hover:scale-105
-          focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2
+          hover:shadow-xl hover:shadow-green-600/40 hover:scale-105
+          focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
           ${isExpanded ? 'rotate-45' : 'rotate-0'}
         `}
             >

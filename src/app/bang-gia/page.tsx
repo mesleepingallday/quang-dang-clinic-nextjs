@@ -440,7 +440,7 @@ const Pricing = async () => {
             <div className="bg-white p-8 rounded-3xl shadow-sm">
               <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">Liên hệ trực tiếp</h2>
               <div className="space-y-4">
-                <a href="tel:0988834446" className="block text-center py-4 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-colors shadow-lg shadow-green-500/30">
+                <a href="tel:0988834446" className="block text-center py-4 bg-green-600 text-white font-bold rounded-full hover:bg-green-700 transition-colors shadow-lg shadow-green-600/30">
                   Hotline: 0988.834.446
                 </a>
                 <p className="text-center text-xs text-gray-400">Tầng 5 - TTTM Đức Tài — Tâm Đạt, Khối 5, Quỳnh Lưu, Nghệ An</p>

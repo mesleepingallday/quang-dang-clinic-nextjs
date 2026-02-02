@@ -85,7 +85,7 @@ const LocationContact: React.FC = () => {
                             {/* Map Overlay Card */}
                             <div className="absolute bottom-6 left-6 right-6 bg-white rounded-xl p-4 shadow-lg">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white shrink-0">
+                                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shrink-0">
                                         <MapPin size={24} />
                                     </div>
                                     <div className="flex-1 min-w-0">
@@ -96,7 +96,7 @@ const LocationContact: React.FC = () => {
                                         href="https://maps.app.goo.gl/axJtb2NmM1oiZCkJ6"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="shrink-0 px-4 py-2 bg-green-500 text-white text-sm font-medium rounded-lg hover:bg-green-600 transition-colors flex items-center gap-2"
+                                        className="btn btn-primary shrink-0 px-4 py-2 min-h-[44px] rounded-lg normal-case tracking-normal"
                                     >
                                         <Navigation size={16} />
                                         Chỉ đường
@@ -112,9 +112,9 @@ const LocationContact: React.FC = () => {
                             {contactInfo.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-start gap-4 p-5 bg-nude-50 rounded-xl hover:bg-green-50 transition-colors duration-300 group"
+                                    className="flex items-start gap-4 p-5 bg-nude-50 rounded-xl hover:bg-green-50 transition-colors duration-300 group cursor-pointer"
                                 >
-                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-green-600 shadow-sm group-hover:bg-green-500 group-hover:text-white transition-all duration-300 shrink-0">
+                                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-green-600 shadow-sm group-hover:bg-green-600 group-hover:text-white transition-all duration-300 shrink-0">
                                         {item.icon}
                                     </div>
                                     <div className="flex-1">
@@ -129,7 +129,7 @@ const LocationContact: React.FC = () => {
                                             href={item.action.href}
                                             target={item.action.href.startsWith('http') ? '_blank' : undefined}
                                             rel={item.action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                            className="shrink-0 px-4 py-2 border border-green-200 text-green-600 text-sm font-medium rounded-lg hover:bg-green-500 hover:text-white hover:border-green-500 transition-all"
+                                            className="btn btn-outline shrink-0 px-4 py-2 min-h-[44px] rounded-lg normal-case tracking-normal"
                                         >
                                             {item.action.label}
                                         </a>
@@ -148,7 +148,7 @@ const LocationContact: React.FC = () => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label={social.label}
-                                            className={`w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-white hover:scale-110 ${social.color}`}
+                                            className={`w-12 h-12 min-w-[44px] min-h-[44px] bg-gray-100 rounded-full flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-white hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 ${social.color}`}
                                         >
                                             {social.icon}
                                         </a>
@@ -162,7 +162,7 @@ const LocationContact: React.FC = () => {
                                 <p className="text-white/80 text-sm mb-4">
                                     Nhận tư vấn từ chuyên gia và ưu đãi đặc biệt cho lần đầu trải nghiệm.
                                 </p>
-                                <Button className="w-full bg-white text-green-600 hover:bg-gray-100 font-semibold">
+                                <Button variant="white" fullWidth>
                                     Đặt lịch ngay
                                 </Button>
                             </div>

@@ -26,7 +26,7 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
               onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
             >
               <span className="flex items-center gap-4">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs transition-colors ${activeFaq === idx ? 'bg-green-500 text-white' : 'bg-green-50 text-green-600'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs transition-colors ${activeFaq === idx ? 'bg-green-600 text-white' : 'bg-green-50 text-green-600'}`}>
                   ?
                 </div>
                 {faq.q}

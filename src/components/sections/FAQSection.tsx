@@ -52,7 +52,7 @@ const FAQAccordionItem: React.FC<FAQAccordionItemProps> = ({ item, isOpen, onTog
             <div className="border border-gray-200 rounded-xl overflow-hidden bg-white hover:border-green-200 transition-colors duration-300">
                 <button
                     onClick={onToggle}
-                    className="w-full flex items-center justify-between p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 rounded-xl"
+                    className="w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 rounded-xl"
                     aria-expanded={isOpen}
                 >
                     <div className="flex items-center gap-4 pr-4">
@@ -62,7 +62,7 @@ const FAQAccordionItem: React.FC<FAQAccordionItemProps> = ({ item, isOpen, onTog
                         <span className="font-semibold text-gray-800 text-lg">{item.question}</span>
                     </div>
                     <div
-                        className={`w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'bg-green-500 rotate-180' : ''
+                        className={`w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'bg-green-600 rotate-180' : ''
                             }`}
                     >
                         <ChevronDown size={18} className={`transition-colors ${isOpen ? 'text-white' : 'text-gray-600'}`} />
@@ -98,7 +98,7 @@ const FAQSection: React.FC = () => {
                     {/* Left Column - Header */}
                     <div className="lg:w-1/3">
                         <ScrollReveal animation="fade-in-up">
-                            <span className="inline-block py-1 px-4 bg-gold-300/30 text-gold-600 rounded-full text-sm font-semibold tracking-wider uppercase mb-4">
+                            <span className="inline-block py-1.5 px-4 bg-gold-100 text-gold-700 rounded-full text-sm font-semibold tracking-wider uppercase mb-4">
                                 Hỏi Đáp
                             </span>
                             <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-700 mb-6">
@@ -118,7 +118,7 @@ const FAQSection: React.FC = () => {
                                         <p className="text-sm text-gray-500">Chúng tôi sẵn sàng hỗ trợ</p>
                                     </div>
                                 </div>
-                                <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                                <Button className="w-full">
                                     Liên hệ tư vấn
                                 </Button>
                             </div>

@@ -68,12 +68,12 @@ interface TeamMemberCardProps {
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member, index }) => {
     return (
         <ScrollReveal animation="fade-in-up" delay={index * 150}>
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group h-full flex flex-col">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group h-full flex flex-col cursor-pointer">
                 {/* Image Container */}
                 <div className="relative h-80 overflow-hidden">
                     <Image
                         src={member.image}
-                        alt={member.name}
+                        alt={`${member.name} - ${member.title} tại Viện Thẩm Mỹ Quang Đăng`}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 25vw"
@@ -97,7 +97,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member, index }) => {
                 <div className="p-6 flex-1 flex flex-col">
                     <div className="mb-4">
                         <h3 className="font-serif text-xl font-bold text-green-700 mb-1">{member.name}</h3>
-                        <p className="text-gold-500 text-sm font-medium">{member.title}</p>
+                        <p className="text-gold-600 text-sm font-medium">{member.title}</p>
                     </div>
 
                     <div className="flex items-center gap-2 mb-4">
@@ -125,7 +125,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member, index }) => {
                     <div className="mt-auto">
                         <Button
                             variant="outline"
-                            className="w-full border-green-200 text-green-600 hover:bg-green-500 hover:text-white hover:border-green-500 group/btn"
+                            className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 group/btn"
                         >
                             Đặt lịch tư vấn
                             <ArrowRight size={16} className="ml-2 transition-transform group-hover/btn:translate-x-1" />
