@@ -106,7 +106,7 @@ export default function ServicesSection() {
           {heroService && (
             <ScrollReveal animation="fade-in-up" delay={200} className="lg:col-span-7">
               <Link href={heroService.link} className="group block h-full">
-                <div className="relative h-full bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                <div className="relative h-full bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-4 border-green-500 hover:border-green-600">
                   {/* Background gradient on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   

@@ -82,12 +82,17 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
-              <div className="relative h-10 w-10 md:h-14 md:w-14">
+              <div
+                className={`relative shrink-0 h-10 w-10 md:h-14 md:w-14 rounded-full transition-[background-color,box-shadow,ring-color] duration-300 ${shouldShowWhiteBg
+                  ? ''
+                  : 'bg-white/80 backdrop-blur-sm ring-1 ring-green-500/25 shadow-md shadow-green-500/10'
+                  }`}
+              >
                 <Image
                   src="/quang-dang-logo.png"
                   alt="Viện Thẩm Mỹ Quang Đăng Logo"
                   fill
-                  className="object-contain"
+                  className={`object-contain transition-[filter,transform] duration-300 ${shouldShowWhiteBg ? '' : 'p-1 drop-shadow-sm'}`}
                   priority
                 />
               </div>
@@ -314,4 +319,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
