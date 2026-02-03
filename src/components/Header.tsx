@@ -113,7 +113,7 @@ const Header: React.FC = () => {
                   {/* Main Link */}
                   <Link
                     href={item.path}
-                    className={`text-sm font-bold uppercase tracking-wide transition-colors hover:text-green-500 flex items-center gap-1.5 ${shouldShowWhiteBg ? 'text-gray-700' : 'text-white'
+                    className={`text-sm font-bold uppercase tracking-wide transition-colors hover:text-green-500 hover:underline underline-offset-4 flex items-center gap-1.5 ${shouldShowWhiteBg ? 'text-gray-700' : 'text-white'
                       }`}
                   >
                     {item.label}
@@ -164,7 +164,7 @@ const Header: React.FC = () => {
               {/* Search Button */}
               <SearchButton onClick={openSearch} isScrolled={shouldShowWhiteBg} />
 
-              <a href="tel:0988834446" className={`flex items-center gap-2 font-semibold ${shouldShowWhiteBg ? 'text-green-700' : 'text-white'}`}>
+              <a href="tel:0988834446" aria-label="Gọi hotline 0988.834.446" className={`flex items-center gap-2 font-semibold ${shouldShowWhiteBg ? 'text-green-700' : 'text-white'}`}>
                 <Phone size={18} />
                 <span>0988.834.446</span>
               </a>

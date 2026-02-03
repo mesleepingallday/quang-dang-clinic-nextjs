@@ -91,7 +91,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
             required
             name="name"
             autoComplete="name"
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all duration-300 ${errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-200 bg-red-50' : 'border-gray-200 focus:border-green-500 focus:ring-green-500 bg-gray-50 focus:bg-white'}`}
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-transparent transition-all duration-300 ${errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-200 bg-red-50' : 'border-gray-200 focus:border-green-500 focus:ring-green-500 bg-gray-50 focus:bg-white'}`}
             placeholder="Nhập họ tên của bạn"
             value={formData.name}
             onChange={(e) => {
@@ -112,7 +112,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
             name="phone"
             autoComplete="tel"
             inputMode="tel"
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-none transition-all duration-300 ${errors.phone ? 'border-red-300 focus:border-red-500 focus:ring-red-200 bg-red-50' : 'border-green-300 focus:border-green-500 focus:ring-green-500 bg-white'}`}
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-1 outline-transparent transition-all duration-300 ${errors.phone ? 'border-red-300 focus:border-red-500 focus:ring-red-200 bg-red-50' : 'border-green-300 focus:border-green-500 focus:ring-green-500 bg-white'}`}
             placeholder="0988 xxx xxx (Dùng Zalo)"
             value={formData.phone}
             onChange={(e) => {
@@ -130,7 +130,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
             <select
               id="booking-service"
               name="service"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none transition-all duration-300 bg-gray-50 focus:bg-white appearance-none cursor-pointer hover:border-green-300"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-transparent transition-all duration-300 bg-gray-50 focus:bg-white appearance-none cursor-pointer hover:border-green-300"
               value={formData.service}
               onChange={(e) => setFormData({ ...formData, service: e.target.value })}
             >
@@ -152,7 +152,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
             id="booking-note"
             rows={2}
             name="note"
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none transition-all duration-300 bg-gray-50 focus:bg-white resize-none"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-transparent transition-all duration-300 bg-gray-50 focus:bg-white resize-none"
             placeholder="Bạn đang gặp vấn đề gì về da?"
             value={formData.note}
             onChange={(e) => setFormData({ ...formData, note: e.target.value })}
