@@ -170,8 +170,7 @@ const Header: React.FC = () => {
               </a>
               <Button
                 asChild
-                variant={shouldShowWhiteBg ? 'primary' : 'outline'}
-                className={!shouldShowWhiteBg ? 'border-white text-white hover:bg-white hover:text-green-700' : ''}
+                variant={shouldShowWhiteBg ? 'primary' : 'outlineOnDark'}
               >
                 <Link href="/dat-lich">
                   <span className="flex items-center gap-2">

@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Star, ShieldCheck, Heart, Sparkles, Award, ArrowRight, CheckCircle } from 'lucide-react';
+import { Star, Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
 import Button from '@/components/Button';
 import ScrollToBookingButton from '@/components/ScrollToBookingButton';
 import BookingForm from '@/components/BookingForm';
 import ScrollReveal from '@/components/ScrollReveal';
-import AnimatedCounter from '@/components/AnimatedCounter';
 import { getTestimonials, getStrapiMediaUrl } from '@/lib/strapi';
 import {
   BeforeAfterGallery,
@@ -68,7 +67,7 @@ export default async function Home() {
             <ScrollReveal animation="fade-in-up" duration={0.8} delay={600}>
               <div className="flex flex-col sm:flex-row gap-6">
                 <ScrollToBookingButton />
-                <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-green-700 transition-all duration-300">
+                <Button asChild variant="outlineOnDark">
                   <Link href="/dich-vu">Khám Phá Dịch Vụ</Link>
                 </Button>
               </div>
@@ -79,48 +78,6 @@ export default async function Home() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
           <ArrowRight className="rotate-90 w-6 h-6" />
-        </div>
-      </section>
-
-      {/* 2. TRUST SECTION */}
-      {/* 2. TRUST SECTION */}
-      <section className="py-16 bg-nude-50 border-b border-green-100/50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
-            <ScrollReveal animation="scale-up" delay={0} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
-                <Award size={32} strokeWidth={1.5} />
-              </div>
-              <h4 className="font-bold text-lg text-gray-800 mb-1">Top 10 Uy Tín</h4>
-              <p className="text-sm text-gray-500">Tại Nghệ An</p>
-            </ScrollReveal>
-
-            <ScrollReveal animation="scale-up" delay={100} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
-                <ShieldCheck size={32} strokeWidth={1.5} />
-              </div>
-              <h4 className="font-bold text-lg text-gray-800 mb-1">Chuẩn Y Khoa</h4>
-              <p className="text-sm text-gray-500">An toàn tuyệt đối</p>
-            </ScrollReveal>
-
-            <ScrollReveal animation="scale-up" delay={200} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
-                <Sparkles size={32} strokeWidth={1.5} />
-              </div>
-              <h4 className="font-bold text-lg text-gray-800 mb-1">Công Nghệ Mới</h4>
-              <p className="text-sm text-gray-500">Nhập khẩu Châu Âu</p>
-            </ScrollReveal>
-
-            <ScrollReveal animation="scale-up" delay={300} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-sm border border-green-200">
-                <Heart size={32} strokeWidth={1.5} />
-              </div>
-              <h4 className="font-bold text-lg text-gray-800 mb-1 flex items-center gap-1">
-                <AnimatedCounter end={10000} suffix="+" />
-              </h4>
-              <p className="text-sm text-gray-500">Khách hàng hài lòng</p>
-            </ScrollReveal>
-          </div>
         </div>
       </section>
 

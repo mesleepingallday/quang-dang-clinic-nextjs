@@ -3,7 +3,7 @@
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'outline' | 'white';
+  variant?: 'primary' | 'outline' | 'outlineOnDark' | 'white';
   fullWidth?: boolean;
   asChild?: boolean;
 }
@@ -22,6 +22,7 @@ const Button: React.FC<ButtonProps> = ({
   const variants = {
     primary: "bg-green-500 text-white shadow-md shadow-green-600/20 hover:bg-green-600 hover:shadow-lg hover:shadow-green-500/30",
     outline: "border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white hover:border-green-500 hover:shadow-md hover:shadow-green-500/20",
+    outlineOnDark: "border-2 border-white text-white hover:bg-white hover:text-green-700 hover:border-white hover:shadow-md hover:shadow-black/10",
     white: "bg-white text-green-700 border border-green-100 shadow-sm hover:bg-green-50 hover:border-green-200 hover:shadow-md",
   };
 
