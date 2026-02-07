@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyContactButtons from "@/components/StickyContactButtons";
+import { getSiteUrl } from "@/lib/site";
 
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -18,6 +19,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "Viện Thẩm Mỹ Quang Đăng - Đánh Thức Vẻ Đẹp Tiềm Ẩn",
     template: "%s | Viện Thẩm Mỹ Quang Đăng",

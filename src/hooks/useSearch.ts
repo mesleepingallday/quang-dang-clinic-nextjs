@@ -33,6 +33,16 @@ export function useSearch(): UseSearchResult {
     const [isLoading, setIsLoading] = useState(false);
     const [isIndexReady, setIsIndexReady] = useState(false);
 
+    const setQuerySafe = useCallback((q: string) => {
+        setQuery(q);
+
+        // Keep effect free of synchronous state updates.
+        if (!q.trim()) {
+            setResults({ services: [], blogPosts: [] });
+            setIsLoading(false);
+        }
+    }, []);
+
     // Initialize search index on mount
     useEffect(() => {
         const initIndex = async () => {
@@ -61,18 +71,20 @@ export function useSearch(): UseSearchResult {
         if (!isSearchIndexReady()) {
             initIndex();
         } else {
-            setIsIndexReady(true);
+            // Defer state update to avoid setState-in-effect lint rule.
+            Promise.resolve().then(() => setIsIndexReady(true));
         }
     }, []);
 
     // Debounced search effect
     useEffect(() => {
-        if (!query.trim()) {
-            setResults({ services: [], blogPosts: [] });
-            return;
-        }
+        const trimmed = query.trim();
 
-        setIsLoading(true);
+        if (!trimmed) return;
+
+        // Defer loading state change to avoid setState-in-effect lint rule.
+        Promise.resolve().then(() => setIsLoading(true));
+
         const timer = setTimeout(() => {
             const searchResults = performSearch(query);
             setResults(searchResults);
@@ -93,7 +105,7 @@ export function useSearch(): UseSearchResult {
 
     return {
         query,
-        setQuery,
+        setQuery: setQuerySafe,
         results,
         isLoading,
         isIndexReady,

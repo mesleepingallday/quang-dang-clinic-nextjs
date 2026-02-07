@@ -5,6 +5,7 @@ import Button from '@/components/Button';
 import { getBlogPosts, getBlogCategories, getStrapiMediaUrl } from '@/lib/strapi';
 import { BLOG_CATEGORIES as FALLBACK_CATEGORIES, BLOG_POSTS as FALLBACK_POSTS } from '@/lib/data';
 import BlogListingContent from './components/BlogListingContent';
+import { getSiteUrl } from '@/lib/site';
 
 // Server component that fetches data at build time
 async function BlogPage() {
@@ -52,16 +53,17 @@ async function BlogPage() {
   }
 
   // Schema CollectionPage
+  const siteUrl = getSiteUrl();
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Tin Tức & Kiến Thức Làm Đẹp",
     "description": "Cập nhật kiến thức chăm sóc da, xu hướng thẩm mỹ mới nhất từ chuyên gia.",
-    "url": "https://quangdang.vn/tin-tuc",
+    "url": `${siteUrl}/tin-tuc`,
     "hasPart": blogPosts.map(post => ({
       "@type": "BlogPosting",
       "headline": post.title,
-      "url": `https://quangdang.vn/tin-tuc/${post.slug}`
+      "url": `${siteUrl}/tin-tuc/${post.slug}`
     }))
   };
 

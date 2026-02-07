@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { getSiteUrl } from '@/lib/site';
 
 interface RichTextBlock {
   type: string;
@@ -32,6 +34,27 @@ interface RichTextProps {
   className?: string;
 }
 
+const SITE_URL = getSiteUrl();
+
+function normalizeHref(rawHref: string): string {
+  return rawHref.trim();
+}
+
+function toInternalPathIfSameOrigin(href: string): string | null {
+  if (!href) return null;
+  if (href.startsWith('/')) return href;
+  if (/^(mailto:|tel:|sms:)/i.test(href)) return null;
+
+  try {
+    const base = new URL(SITE_URL);
+    const url = new URL(href, SITE_URL);
+    if (url.origin !== base.origin) return null;
+    return `${url.pathname}${url.search}${url.hash}`;
+  } catch {
+    return null;
+  }
+}
+
 const renderChild = (child: RichTextChild, index: number): React.ReactNode => {
   if (child.type === 'text') {
     let text: React.ReactNode = child.text || '';
@@ -46,10 +69,25 @@ const renderChild = (child: RichTextChild, index: number): React.ReactNode => {
   }
 
   if (child.type === 'link' && child.url) {
+    const normalized = normalizeHref(child.url);
+    const internalPath = toInternalPathIfSameOrigin(normalized);
+
+    if (internalPath) {
+      return (
+        <Link
+          key={index}
+          href={internalPath}
+          className="text-gold hover:underline"
+        >
+          {child.children?.map((c, i) => renderChild(c, i))}
+        </Link>
+      );
+    }
+
     return (
       <a
         key={index}
-        href={child.url}
+        href={normalized}
         className="text-gold hover:underline"
         target="_blank"
         rel="noopener noreferrer"

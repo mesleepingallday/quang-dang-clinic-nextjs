@@ -324,11 +324,11 @@ const schemaData = {
   "@type": "CollectionPage",
   "name": "Tin Tức & Kiến Thức Làm Đẹp",
   "description": "Cập nhật kiến thức chăm sóc da, xu hướng thẩm mỹ mới nhất từ chuyên gia.",
-  "url": "https://quangdang.vn/tin-tuc",
+  "url": "https://vienthammyquangdang.vn/tin-tuc",
   "hasPart": filteredPosts.map(post => ({  // ❌ Filtered list only
     "@type": "BlogPosting",
     "headline": post.title,
-    "url": `https://quangdang.vn/tin-tuc/${post.slug}`
+    "url": `https://vienthammyquangdang.vn/tin-tuc/${post.slug}`
   }))
 };
 ```
@@ -340,11 +340,11 @@ const schemaData = {
   "@type": "CollectionPage",
   "name": "Tin Tức & Kiến Thức Làm Đẹp",
   "description": "Cập nhật kiến thức chăm sóc da, xu hướng thẩm mỹ mới nhất từ chuyên gia.",
-  "url": "https://quangdang.vn/tin-tuc",
+  "url": "https://vienthammyquangdang.vn/tin-tuc",
   "hasPart": blogPosts.map(post => ({  // ✅ All posts for SEO
     "@type": "BlogPosting",
     "headline": post.title,
-    "url": `https://quangdang.vn/tin-tuc/${post.slug}`
+    "url": `https://vienthammyquangdang.vn/tin-tuc/${post.slug}`
   }))
 };
 ```

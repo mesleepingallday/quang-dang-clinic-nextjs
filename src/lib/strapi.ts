@@ -326,6 +326,19 @@ async function fetchFromStrapi<T>(
   endpoint: string,
   options?: QueryOptions
 ): Promise<T> {
+  if (!STRAPI_URL) {
+    if (!warnedStrapiDisabled) {
+      warnedStrapiDisabled = true;
+      console.warn(
+        'Strapi is disabled (missing/invalid NEXT_PUBLIC_STRAPI_URL). Returning empty data for:',
+        endpoint
+      );
+    }
+
+    // All call sites in this repo expect StrapiResponse<T>; provide a safe empty shape.
+    return { data: null } as T;
+  }
+
   const queryString = buildQueryString(options || {});
   const url = `${STRAPI_URL}/api${endpoint}${queryString}`;
 

@@ -9,6 +9,7 @@ import RichText from '@/components/RichText';
 import ScrollProgress from '@/components/ScrollProgress';
 import { getBlogPostBySlug, getBlogPosts, getStrapiMediaUrl } from '@/lib/strapi';
 import { BLOG_CATEGORIES, SERVICES } from '@/lib/data';
+import { getSiteUrl } from '@/lib/site';
 
 interface BlogPostDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -43,6 +44,8 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
     notFound();
   }
 
+  const siteUrl = getSiteUrl();
+
   // Fetch all posts for related posts
   let relatedPosts: typeof post[] = [];
   try {
@@ -74,7 +77,7 @@ export default async function BlogPostDetail({ params }: BlogPostDetailPageProps
       "name": "Viện Thẩm Mỹ Quang Đăng",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://quangdang.vn/quang-dang-logo.png"
+        "url": `${siteUrl}/quang-dang-logo.png`
       }
     },
     "datePublished": post.publishedAt,

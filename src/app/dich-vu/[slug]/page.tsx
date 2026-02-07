@@ -11,6 +11,7 @@ import { ServiceFAQ } from "./components/ServiceFAQ";
 import { TestimonialsSection } from "./components/TestimonialsSection";
 import { RelatedServices } from "./components/RelatedServices";
 import { ServiceSidebar } from "./components/ServiceSidebar";
+import { getSiteUrl } from "@/lib/site";
 
 // Generate static params for all services
 export async function generateStaticParams() {
@@ -62,6 +63,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     notFound();
   }
 
+  const siteUrl = getSiteUrl();
+
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -111,7 +114,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             name: `${service.title} - Quang Dang Clinic`,
             description: service.shortDescription,
             image: service.heroImage,
-            url: `https://quangdangclinic.vn/dich-vu/${service.slug}`,
+            url: `${siteUrl}/dich-vu/${service.slug}`,
             telephone: "+84-909-123-456",
             address: {
               "@type": "PostalAddress",

@@ -29,11 +29,11 @@ const LocationContact: React.FC = () => {
         {
             icon: <Mail size={24} />,
             title: 'Email',
-            content: 'cskh@quangdang.vn',
+            content: 'cskh@vienthammyquangdang.vn',
             subContent: 'Phản hồi trong 24h',
             action: {
                 label: 'Gửi email',
-                href: 'mailto:cskh@quangdang.vn',
+                href: 'mailto:cskh@vienthammyquangdang.vn',
             },
         },
         {

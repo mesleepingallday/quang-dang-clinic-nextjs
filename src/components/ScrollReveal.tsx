@@ -19,16 +19,14 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     threshold = 0.1,
     className = ''
 }) => {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    });
     const domRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Check if user prefers reduced motion
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (prefersReducedMotion) {
-            setIsVisible(true);
-            return;
-        }
+        if (isVisible) return;
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -50,8 +48,9 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
         return () => {
             if (currentRef) observer.unobserve(currentRef);
+            observer.disconnect();
         };
-    }, [threshold]);
+    }, [threshold, isVisible]);
 
     const getAnimationClass = () => {
         switch (animation) {
