@@ -24,6 +24,14 @@ export const metadata: Metadata = {
   },
   description: "Hệ thống thẩm mỹ viện chuẩn quốc tế hàng đầu tại Nghệ An. Chuyên điều trị da, trị mụn nám, trẻ hóa công nghệ cao.",
   keywords: ["thẩm mỹ viện", "chăm sóc da", "triệt lông", "trị mụn", "Nghệ An", "Quang Đăng"],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+  },
   authors: [{ name: "Viện Thẩm Mỹ Quang Đăng" }],
   openGraph: {
     type: "website",
