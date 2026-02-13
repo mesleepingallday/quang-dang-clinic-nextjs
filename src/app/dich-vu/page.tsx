@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { Suspense, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   Sparkles,
   Shield,
@@ -36,8 +37,41 @@ function getBentoSize(index: number, isFiltered: boolean): "large" | "medium" | 
   return "normal";
 }
 
-export default function ServicesPage() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+function ServicesPageContent() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [selectedCategory, setSelectedCategory] = useState<string | null | undefined>(undefined);
+
+  const validCategoryIds = useMemo(
+    () => new Set(SERVICE_CATEGORIES.map((cat) => cat.id)),
+    []
+  );
+
+  const queryCategory = searchParams.get("category");
+  const queryCategoryIsValid =
+    !!queryCategory && validCategoryIds.has(queryCategory);
+  const activeCategory =
+    selectedCategory !== undefined
+      ? selectedCategory
+      : queryCategoryIsValid
+      ? queryCategory
+      : null;
+
+  const handleCategoryChange = (nextCategory: string | null) => {
+    setSelectedCategory(nextCategory);
+
+    const params = new URLSearchParams(searchParams.toString());
+    if (nextCategory) {
+      params.set("category", nextCategory);
+    } else {
+      params.delete("category");
+    }
+
+    const query = params.toString();
+    const nextUrl = `${pathname}${query ? `?${query}` : ""}#services-grid`;
+    router.replace(nextUrl, { scroll: false });
+  };
 
   // Pre-compute category counts for performance
   const categoryCounts = useMemo(() => {
@@ -94,7 +128,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-2 md:pb-0">
             <button
-              onClick={() => setActiveCategory(null)}
+              onClick={() => handleCategoryChange(null)}
               aria-pressed={activeCategory === null}
               aria-label={`Hiển thị tất cả ${SERVICES.length} dịch vụ`}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
@@ -111,7 +145,7 @@ export default function ServicesPage() {
               return (
                 <button
                   key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
+                   onClick={() => handleCategoryChange(cat.id)}
                   aria-pressed={activeCategory === cat.id}
                   aria-label={`Lọc theo ${cat.title}, ${cat.count} dịch vụ`}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
@@ -199,7 +233,7 @@ export default function ServicesPage() {
       )}
 
       {/* 4. ALL SERVICES - BENTO GRID */}
-      <section className="py-16" id="services-grid">
+      <section className="py-16 scroll-mt-36" id="services-grid">
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -386,5 +420,13 @@ export default function ServicesPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-nude-50" />}>
+      <ServicesPageContent />
+    </Suspense>
   );
 }

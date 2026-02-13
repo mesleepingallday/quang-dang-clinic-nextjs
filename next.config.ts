@@ -28,6 +28,11 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'sciton.com',
+        pathname: '/wp-content/uploads/**',
+      },
     ],
   },
 };

@@ -14,6 +14,7 @@ import {
   LocationContact,
   BlogPreview,
   ServicesSection,
+  EquipmentShowcase,
 } from '@/components/sections';
 
 export default async function Home() {
@@ -83,6 +84,9 @@ export default async function Home() {
 
       {/* 3. SERVICES SECTION - Hardcoded from Excel */}
       <ServicesSection />
+
+      {/* 3.1. EQUIPMENT SHOWCASE */}
+      <EquipmentShowcase />
 
       {/* 4. NEW: Before/After Gallery */}
       <BeforeAfterGallery />
