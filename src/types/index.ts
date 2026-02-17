@@ -492,3 +492,23 @@ export interface ServiceDetailComplete {
   updatedAt: string;
   publishedAt: string;
 }
+
+// ============================================================================
+// BOOKING SYSTEM
+// ============================================================================
+
+export interface BookingFormData {
+  name: string;
+  phone: string;
+  service: string;
+  date?: string;
+  timeSlot?: string;
+  note?: string;
+}
+
+export interface BookingResponse {
+  success: boolean;
+  message: string;
+  bookingId?: string;
+  error?: string;
+}

@@ -42,22 +42,41 @@ const BookingForm: React.FC<BookingFormProps> = ({
     return Object.keys(newErrors).length === 0;
   };
 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatusMessage(null);
+    setErrorMessage(null);
 
     if (!validate()) return;
 
     setIsLoading(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch('/api/bookings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    setIsLoading(false);
-    setStatusMessage(
-      `Cảm ơn ${formData.name}! Chúng tôi đã nhận được yêu cầu đặt lịch vào ngày ${formData.date || 'sớm nhất'}. Chuyên viên sẽ gọi lại số ${formData.phone} trong vòng 3 phút để xác nhận.`
-    );
-    setFormData({ name: '', phone: '', service: '', date: '', timeSlot: '', note: '' });
+      const result = await res.json();
+
+      if (!result.success) {
+        throw new Error(result.error || 'Có lỗi xảy ra');
+      }
+
+      setStatusMessage(result.message);
+      setFormData({ name: '', phone: '', service: '', date: '', timeSlot: '', note: '' });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Có lỗi xảy ra';
+      setErrorMessage(message === 'Failed to fetch'
+        ? 'Không thể kết nối. Vui lòng thử lại hoặc gọi hotline 0988.834.446.'
+        : message
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -79,6 +98,12 @@ const BookingForm: React.FC<BookingFormProps> = ({
           <div className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700 flex items-start gap-2 animate-fade-in" aria-live="polite">
             <CheckCircle size={16} className="mt-0.5 shrink-0" />
             <span>{statusMessage}</span>
+          </div>
+        )}
+
+        {errorMessage && (
+          <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 flex items-start gap-2 animate-fade-in" aria-live="polite">
+            <span>{errorMessage}</span>
           </div>
         )}
 
