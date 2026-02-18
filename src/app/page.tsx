@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { Star, Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
 import Button from '@/components/Button';
 import ScrollToBookingButton from '@/components/ScrollToBookingButton';
@@ -16,6 +17,15 @@ import {
   ServicesSection,
   EquipmentShowcase,
 } from '@/components/sections';
+
+export const metadata: Metadata = {
+  title: 'Thẩm Mỹ Viện Chuẩn Y Khoa Tại Nghệ An',
+  description:
+    'Viện Thẩm Mỹ Quang Đăng mang đến liệu trình chăm da, trị mụn, trẻ hóa và làm đẹp công nghệ cao với đội ngũ chuyên gia giàu kinh nghiệm tại Nghệ An.',
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default async function Home() {
   // Fetch testimonials from Strapi (services now use hardcoded data)

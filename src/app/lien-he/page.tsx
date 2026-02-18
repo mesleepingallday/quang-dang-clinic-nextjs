@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube, Send, ShieldCheck, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
-import { Metadata } from 'next';
 import ScrollReveal from '@/components/ScrollReveal';
 import Button from '@/components/Button';
 

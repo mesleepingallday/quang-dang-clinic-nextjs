@@ -405,7 +405,8 @@ function ServicesPageContent() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               asChild
-              className="px-10 py-4 text-lg bg-white text-green-600 hover:bg-gray-100 border-none shadow-2xl"
+              variant="white"
+              className="px-10 py-4 text-lg shadow-2xl shadow-black/10 hover:shadow-2xl hover:shadow-black/20"
             >
               <Link href="/dat-lich">Đăng Ký Tư Vấn Ngay</Link>
             </Button>

@@ -1,7 +1,17 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { Check, Star, ShieldCheck, MapPin, Phone, Clock, Gift, Award, Heart } from 'lucide-react';
 import BookingForm from '@/components/BookingForm';
 import { SERVICES, TESTIMONIALS } from '@/lib/data';
+
+export const metadata: Metadata = {
+  title: 'Đặt Lịch Tư Vấn',
+  description:
+    'Đặt lịch tư vấn và soi da online tại Viện Thẩm Mỹ Quang Đăng. Nhận ưu đãi theo khung giờ, xác nhận nhanh qua hotline 0988 834 446.',
+  alternates: {
+    canonical: '/dat-lich',
+  },
+};
 
 export default function BookingPage() {
   // Schema.org JSON-LD

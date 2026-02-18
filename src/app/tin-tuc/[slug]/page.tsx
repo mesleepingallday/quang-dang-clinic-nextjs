@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Calendar, ChevronRight, Clock } from 'lucide-react';
 import Button from '@/components/Button';
@@ -28,6 +29,40 @@ export async function generateStaticParams() {
 }
 
 export const revalidate = 3600; // ISR: revalidate every hour
+
+export async function generateMetadata({ params }: BlogPostDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  try {
+    const post = await getBlogPostBySlug(slug);
+
+    if (!post) {
+      return {
+        title: 'Bài Viết Không Tồn Tại',
+        description: 'Nội dung bạn tìm kiếm hiện không còn tồn tại hoặc đã được cập nhật.',
+      };
+    }
+
+    return {
+      title: post.title,
+      description:
+        post.excerpt ||
+        'Khám phá kiến thức da liễu và xu hướng thẩm mỹ mới nhất tại Viện Thẩm Mỹ Quang Đăng.',
+      alternates: {
+        canonical: `/tin-tuc/${slug}`,
+      },
+    };
+  } catch {
+    return {
+      title: 'Tin Tức Làm Đẹp',
+      description:
+        'Cập nhật kiến thức chăm sóc da và góc nhìn chuyên gia về thẩm mỹ an toàn, hiệu quả.',
+      alternates: {
+        canonical: `/tin-tuc/${slug}`,
+      },
+    };
+  }
+}
 
 export default async function BlogPostDetail({ params }: BlogPostDetailPageProps) {
   const { slug } = await params;

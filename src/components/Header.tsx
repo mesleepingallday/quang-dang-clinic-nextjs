@@ -29,6 +29,7 @@ const Header: React.FC = () => {
   const closeSearch = useCallback(() => setIsSearchOpen(false), []);
 
   const isHomePage = pathname === '/';
+  const isCompactHeader = isScrolled || !isHomePage;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,16 +69,16 @@ const Header: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed w-full z-40 transition-all duration-500 will-change-transform ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-lg'
-            : isHomePage
-            ? 'bg-transparent'
-            : 'bg-white shadow-sm'
+        className={`${isHomePage ? 'fixed' : 'sticky'} top-0 w-full z-40 transition-all duration-500 will-change-transform ${
+          isCompactHeader
+            ? isScrolled
+              ? 'bg-white/95 backdrop-blur-md shadow-lg'
+              : 'bg-white shadow-sm'
+            : 'bg-transparent'
         }`}
       >
         {/* SCROLLED STATE - Single Row Layout */}
-        {isScrolled ? (
+        {isCompactHeader ? (
           <div className="container mx-auto px-4 md:px-8">
             <div className="flex items-center justify-between py-3">
               {/* LEFT: Logo */}

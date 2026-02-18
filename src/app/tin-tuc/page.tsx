@@ -1,11 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { Mail } from 'lucide-react';
 import Button from '@/components/Button';
 import { getBlogPosts, getBlogCategories, getStrapiMediaUrl } from '@/lib/strapi';
 import { BLOG_CATEGORIES as FALLBACK_CATEGORIES, BLOG_POSTS as FALLBACK_POSTS } from '@/lib/data';
 import BlogListingContent from './components/BlogListingContent';
 import { getSiteUrl } from '@/lib/site';
+
+export const metadata: Metadata = {
+  title: 'Tin Tức Làm Đẹp & Kiến Thức Da Liễu',
+  description:
+    'Theo dõi xu hướng thẩm mỹ, mẹo chăm sóc da và kiến thức điều trị chuyên sâu từ đội ngũ chuyên gia của Viện Thẩm Mỹ Quang Đăng.',
+  alternates: {
+    canonical: '/tin-tuc',
+  },
+};
 
 // Server component that fetches data at build time
 async function BlogPage() {

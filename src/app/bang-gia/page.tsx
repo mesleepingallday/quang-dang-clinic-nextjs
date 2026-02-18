@@ -1,10 +1,16 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { HelpCircle, ShieldCheck, Gift, Clock, Zap, Sparkles, TrendingDown, Droplets, Scissors, Eye, ZapOff, TrendingUp, Layers, Activity, Flame } from 'lucide-react';
 import Button from '@/components/Button';
 import { getPriceCategories } from '@/lib/strapi';
 
-export const metadata = {
-  title: "Bảng Giá Dịch Vụ Thẩm Mỹ 2024 - Viện Thẩm Mỹ Quang Đăng"
+export const metadata: Metadata = {
+  title: 'Bảng Giá Dịch Vụ',
+  description:
+    'Cập nhật bảng giá dịch vụ thẩm mỹ tại Viện Thẩm Mỹ Quang Đăng: chăm sóc da, triệt lông, trẻ hóa và liệu trình công nghệ cao minh bạch, rõ ràng.',
+  alternates: {
+    canonical: '/bang-gia',
+  },
 };
 
 const Pricing = async () => {

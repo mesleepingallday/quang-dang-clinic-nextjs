@@ -1,11 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { Shield, Users, Heart, Star, CheckCircle, MapPin, Clock } from 'lucide-react';
 import Button from '@/components/Button';
 
-export const metadata = {
-  title: "Về Chúng Tôi - Viện Thẩm Mỹ Quang Đăng"
+export const metadata: Metadata = {
+  title: 'Về Chúng Tôi',
+  description:
+    'Tìm hiểu câu chuyện thương hiệu, đội ngũ chuyên gia và triết lý điều trị chuẩn y khoa của Viện Thẩm Mỹ Quang Đăng tại Quỳnh Lưu, Nghệ An.',
+  alternates: {
+    canonical: '/gioi-thieu',
+  },
 };
 
 export default function About() {

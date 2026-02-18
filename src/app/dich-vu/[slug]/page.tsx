@@ -32,14 +32,22 @@ export async function generateMetadata({
   
   if (!service) {
     return {
-      title: "Dịch Vụ Không Tồn Tại | Quang Dang Clinic",
+      title: {
+        absolute: 'Dịch Vụ Không Tồn Tại',
+      },
+      description: 'Dịch vụ bạn tìm kiếm hiện không tồn tại hoặc đã được cập nhật.',
     };
   }
 
   return {
-    title: service.seo.metaTitle,
+    title: {
+      absolute: service.seo.metaTitle,
+    },
     description: service.seo.metaDescription,
     keywords: service.seo.keywords.join(", "),
+    alternates: {
+      canonical: `/dich-vu/${slug}`,
+    },
     openGraph: {
       title: service.seo.metaTitle,
       description: service.seo.metaDescription,
