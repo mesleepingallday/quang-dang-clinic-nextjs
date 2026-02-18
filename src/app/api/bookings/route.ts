@@ -97,8 +97,9 @@ export async function POST(request: NextRequest) {
     // Save to Strapi
     const strapiResult = await saveToStrapi(booking);
 
-    // Send notifications (fire-and-forget — don't block response)
-    sendAllNotifications(booking).then((results) => {
+    // Send notifications (await to ensure delivery in production)
+    try {
+      const results = await sendAllNotifications(booking);
       for (const r of results) {
         if (!r.success) {
           console.warn(`[Booking] Notification failed (${r.channel}):`, r.error);
@@ -122,7 +123,9 @@ export async function POST(request: NextRequest) {
           ).catch((err) => console.error('[Booking] Failed to update notified flag:', err));
         }
       }
-    });
+    } catch (notifyErr) {
+      console.error('[Booking] Notification error:', notifyErr);
+    }
 
     const response: BookingResponse = {
       success: true,
