@@ -5,6 +5,7 @@ export const BOOKING_CONFIG = {
   },
   webhook: {
     url: process.env.BOOKING_WEBHOOK_URL || '',
+    secret: process.env.BOOKING_WEBHOOK_SECRET || '',
     timeout: 5000,
   },
   email: {

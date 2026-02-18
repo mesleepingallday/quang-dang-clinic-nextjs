@@ -10,7 +10,7 @@ interface NotificationResult {
 export async function sendWebhookNotification(
   booking: BookingFormData
 ): Promise<NotificationResult> {
-  const { url, timeout } = BOOKING_CONFIG.webhook;
+  const { url, secret, timeout } = BOOKING_CONFIG.webhook;
   if (!url) {
     return { channel: 'webhook', success: false, error: 'No webhook URL configured' };
   }
@@ -21,7 +21,10 @@ export async function sendWebhookNotification(
 
     const res = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(secret && { 'x-webhook-secret': secret }),
+      },
       body: JSON.stringify({
         event: 'new_booking',
         booking: {
